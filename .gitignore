@@ -1,0 +1,30 @@
+# WordPress core files
+wp-admin/
+wp-includes/
+wp-*.php
+index.php
+xmlrpc.php
+license.txt
+readme.html
+
+# WordPress uploads
+wp-content/uploads/
+
+# WordPress default themes (keep yours)
+wp-content/themes/twenty*/
+!wp-content/themes/tennisblast-theme/
+
+# WordPress default plugins
+wp-content/plugins/hello.php
+wp-content/plugins/akismet/
+
+# Environment and system files
+.env
+.DS_Store
+Thumbs.db
+node_modules/
+
+# Local development
+*.log
+wp-config.php
+
