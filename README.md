@@ -12,3 +12,9 @@ The following documentation files provide detailed information about different a
 
 ## Team Communication
 - **Discord:** https://discord.gg/8eeVkyrj
+
+## Team Member Contribution
+
+- Name: Ornysha Biswas
+- Role: Research / Planning
+- Task: Investigating hosting platforms and initial setup
