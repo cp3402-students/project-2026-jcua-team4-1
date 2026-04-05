@@ -3,53 +3,47 @@
 <head>
     <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="profile" href="https://gmpg.org/xfn/11">
+    <title><?php wp_title( '|', true, 'right' ); ?><?php bloginfo( 'name' ); ?></title>
     <?php wp_head(); ?>
 </head>
-
 <body <?php body_class(); ?>>
-<?php wp_body_open(); ?>
 
-<div id="page" class="site">
+<header class="site-header">
+    <div class="header-inner">
 
-    <header id="masthead" class="site-header">
-
+        <!-- Logo / Site Name -->
         <div class="site-branding">
             <?php if ( has_custom_logo() ) : ?>
-                <div class="site-logo">
-                    <?php the_custom_logo(); ?>
-                </div>
+                <?php the_custom_logo(); ?>
             <?php else : ?>
-                <div class="site-logo">
-                    <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-                        Tennis Blast Kalynda Chase
-                    </a>
-                </div>
+                <a class="site-title" href="<?php echo esc_url( home_url( '/' ) ); ?>">
+                    <?php bloginfo( 'name' ); ?>
+                </a>
+                <?php $description = get_bloginfo( 'description' );
+                if ( $description ) : ?>
+                    <p class="site-description"><?php echo esc_html( $description ); ?></p>
+                <?php endif; ?>
             <?php endif; ?>
         </div>
 
-        <nav id="site-navigation" class="main-navigation" aria-label="Primary Navigation">
-            <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
-                &#9776; Menu
-            </button>
+        <!-- Hamburger for mobile -->
+        <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <!-- Navigation -->
+        <nav class="main-navigation" id="site-navigation">
             <?php
-            wp_nav_menu(
-                array(
-                    'theme_location' => 'primary',
-                    'menu_id'        => 'primary-menu',
-                    'container'      => false,
-                )
-            );
+            wp_nav_menu( array(
+                'theme_location' => 'primary',
+                'menu_id'        => 'primary-menu',
+                'container'      => false,
+                'fallback_cb'    => false,
+            ) );
             ?>
         </nav>
 
-        <div class="header-cta">
-            <a href="https://play.tennis.com.au/KalyndaChaseRegionalTennisCentre" 
-               class="btn-book" 
-               target="_blank" 
-               rel="noopener noreferrer">
-                Book Court Now
-            </a>
-        </div>
-
-    </header>
+    </div>
+</header>
