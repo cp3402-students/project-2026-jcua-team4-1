@@ -204,6 +204,7 @@ h1, h2, h3 { color: #1a1a2e; line-height: 1.2; }
     .footer-inner { grid-template-columns: 1fr; }
     .hero-title { font-size: 2rem; }
 }
+<<<<<<< HEAD
 /* ===== PROGRAMS / CLASSES PAGE ===== */
 .program-section { padding: 5rem 0; }
 .bg-light { background: #f9f9f9; }
