@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package tennisblast-theme
+ * @package KC_Tennis_Blast
  */
 
 ?>
@@ -14,7 +14,7 @@
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 	</header><!-- .entry-header -->
 
-	<?php tennisblast_theme_post_thumbnail(); ?>
+	<?php kc_tennis_blast_post_thumbnail(); ?>
 
 	<div class="entry-content">
 		<?php
@@ -22,7 +22,7 @@
 
 		wp_link_pages(
 			array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'tennisblast-theme' ),
+				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'kc-tennis-blast' ),
 				'after'  => '</div>',
 			)
 		);
@@ -36,7 +36,7 @@
 				sprintf(
 					wp_kses(
 						/* translators: %s: Name of current post. Only visible to screen readers */
-						__( 'Edit <span class="screen-reader-text">%s</span>', 'tennisblast-theme' ),
+						__( 'Edit <span class="screen-reader-text">%s</span>', 'kc-tennis-blast' ),
 						array(
 							'span' => array(
 								'class' => array(),

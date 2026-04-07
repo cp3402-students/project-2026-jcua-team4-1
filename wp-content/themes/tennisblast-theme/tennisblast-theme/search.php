@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#search-result
  *
- * @package tennisblast-theme
+ * @package KC_Tennis_Blast
  */
 
 get_header();
@@ -18,7 +18,7 @@ get_header();
 				<h1 class="page-title">
 					<?php
 					/* translators: %s: search query. */
-					printf( esc_html__( 'Search Results for: %s', 'tennisblast-theme' ), '<span>' . get_search_query() . '</span>' );
+					printf( esc_html__( 'Search Results for: %s', 'kc-tennis-blast' ), '<span>' . get_search_query() . '</span>' );
 					?>
 				</h1>
 			</header><!-- .page-header -->

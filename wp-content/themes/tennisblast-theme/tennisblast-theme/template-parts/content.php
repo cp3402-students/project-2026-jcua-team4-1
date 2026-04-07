@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package tennisblast-theme
+ * @package KC_Tennis_Blast
  */
 
 ?>
@@ -22,14 +22,14 @@
 			?>
 			<div class="entry-meta">
 				<?php
-				tennisblast_theme_posted_on();
-				tennisblast_theme_posted_by();
+				kc_tennis_blast_posted_on();
+				kc_tennis_blast_posted_by();
 				?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
-	<?php tennisblast_theme_post_thumbnail(); ?>
+	<?php kc_tennis_blast_post_thumbnail(); ?>
 
 	<div class="entry-content">
 		<?php
@@ -37,7 +37,7 @@
 			sprintf(
 				wp_kses(
 					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'tennisblast-theme' ),
+					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'kc-tennis-blast' ),
 					array(
 						'span' => array(
 							'class' => array(),
@@ -50,7 +50,7 @@
 
 		wp_link_pages(
 			array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'tennisblast-theme' ),
+				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'kc-tennis-blast' ),
 				'after'  => '</div>',
 			)
 		);
@@ -58,6 +58,6 @@
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		<?php tennisblast_theme_entry_footer(); ?>
+		<?php kc_tennis_blast_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->
