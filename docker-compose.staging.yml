@@ -1,4 +1,0 @@
-services:
-  wordpress:
-    ports:
-      - "80:80"
