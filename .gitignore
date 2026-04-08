@@ -19,7 +19,8 @@ wp-content/plugins/hello.php
 wp-content/plugins/akismet/
 
 # Environment and system files
-.env*
+.env.local
+.env.staging 
 .DS_Store
 Thumbs.db
 node_modules/
