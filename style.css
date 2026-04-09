@@ -647,3 +647,26 @@ h1, h2, h3 { color: #1a1a2e; line-height: 1.2; }
         border-bottom: 1px solid rgba(255,255,255,0.1);
     }
 }
+/* ===== FRONT PAGE LAYOUT FIX ===== */
+.front-page .get-started .container,
+.front-page .coaches .container,
+.front-page .cta-banner .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.front-page .coaches-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+/* Fix sections taking full width */
+.get-started,
+.coaches,
+.cta-banner {
+    width: 100%;
+    padding: 5rem 0;
+}
