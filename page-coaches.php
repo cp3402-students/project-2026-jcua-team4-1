@@ -15,7 +15,33 @@ get_header();
         skill, and enjoyment at every stage of their tennis journey.
       </p>
     </div>
+<div class="coach-info-section top-info">
 
+  <div class="info-card">
+    <h3>Professional Coaching</h3>
+    <p>
+      Our coaches are certified professionals with years of experience helping players
+      improve their skills, confidence, and game performance.
+    </p>
+  </div>
+
+  <div class="info-card highlight">
+    <h3>All Skill Levels</h3>
+    <p>
+      Whether you are a beginner or an advanced player, we provide structured programs
+      tailored to your individual needs and goals.
+    </p>
+  </div>
+
+  <div class="info-card">
+    <h3>Modern Training Methods</h3>
+    <p>
+      We use the latest coaching techniques focusing on technique, fitness, and mental
+      strength to ensure continuous improvement.
+    </p>
+  </div>
+
+</div>
     <div class="coaches-grid">
 
       <!-- Coach 1 -->
@@ -85,7 +111,16 @@ get_header();
           </div>
         </div>
       </article>
-
+<div class="coach-message-card">
+  <div class="message-content">
+    <h3>Train With Passion</h3>
+    <p>
+      Our coaching team is dedicated to helping every player improve,
+      build confidence, and enjoy the game of tennis at every level.
+    </p>
+    <a href="#" class="message-btn">Book a Session</a>
+  </div>
+</div>
       <!-- Coach 5 -->
       <article class="coach-card" data-target="coach-detail-5">
         <div class="coach-card-inner">
@@ -105,6 +140,8 @@ get_header();
 
     </div>
 
+
+</div>
     <!-- Detail Area -->
     <div id="coach-detail-wrapper" class="coach-detail-wrapper" aria-live="polite">
 
