@@ -287,102 +287,344 @@ h1, h2, h3 { color: #1a1a2e; line-height: 1.2; }
 .program-img-placeholder.light p { color: #ccc; }
 
 /* ===== SOCIAL TENNIS PAGE ===== */
-.social-section { padding: 5rem 0; }
+.social-section {
+    padding: 5.5rem 0;
+}
 
-.section-header { text-align: center; margin-bottom: 3rem; }
-.section-header h2 { font-size: 2rem; margin-bottom: 0.75rem; }
-.section-header p { color: #555; font-size: 1.1rem; }
-.section-header.light-text h2 { color: #fff; }
-.section-header.light-text p { color: #ccc; }
+.section-header {
+    text-align: center;
+    margin-bottom: 3.5rem;
+    max-width: 760px;
+    margin-left: auto;
+    margin-right: auto;
+}
 
+.section-header h2 {
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    margin-bottom: 0.85rem;
+    color: #1a1a2e;
+    line-height: 1.15;
+}
+
+.section-header p {
+    color: #5a5f73;
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+.section-header.light-text h2 {
+    color: #fff;
+}
+
+.section-header.light-text p {
+    color: rgba(255,255,255,0.8);
+}
+
+/* Fixtures */
 .fixtures-card {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
+    grid-template-columns: 1.05fr 1fr;
+    gap: 2.5rem;
     align-items: center;
-    background: #fff;
-    border-radius: 12px;
-    padding: 2rem;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 2.25rem;
+    box-shadow: 0 14px 40px rgba(0,0,0,0.08);
+    border: 1px solid #ececf2;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
+
+.fixtures-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+}
+
 .fixtures-image-placeholder {
-    background: #f0f0f0;
-    border-radius: 8px;
-    height: 250px;
+    background: linear-gradient(135deg, #f8f9fc 0%, #eef1f7 100%);
+    border-radius: 18px;
+    min-height: 280px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-size: 3rem;
+    font-size: 3.2rem;
+    border: 1px dashed #d6dbe8;
+    text-align: center;
+    padding: 2rem;
 }
-.fixtures-image-placeholder p { font-size: 0.9rem; color: #666; margin-top: 0.5rem; }
-.fixtures-info h3 { font-size: 1.4rem; margin-bottom: 1rem; }
-.fixtures-info p { color: #555; line-height: 1.8; margin-bottom: 1.5rem; }
 
+.fixtures-image-placeholder span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 82px;
+    height: 82px;
+    border-radius: 50%;
+    background: #f7c948;
+    color: #1a1a2e;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 10px 25px rgba(247, 201, 72, 0.35);
+}
+
+.fixtures-image-placeholder p {
+    font-size: 1rem;
+    color: #5a5f73;
+    margin-top: 0.4rem;
+    font-weight: 600;
+}
+
+.fixtures-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #1a1a2e;
+}
+
+.fixtures-info p {
+    color: #5a5f73;
+    line-height: 1.85;
+    margin-bottom: 1.6rem;
+    font-size: 1rem;
+}
+
+/* Court Hire */
 .court-hire-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
     gap: 1.5rem;
 }
-.hire-card {
-    background: #f9f9f9;
-    border-radius: 12px;
-    padding: 2rem;
-    text-align: center;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-.hire-card:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0,0,0,0.1); }
-.hire-card.featured { background: #1a1a2e; color: #fff; }
-.hire-card.featured h3 { color: #f7c948; }
-.hire-card.featured p { color: #ccc; }
-.hire-icon { font-size: 2.5rem; margin-bottom: 1rem; }
-.hire-card h3 { margin-bottom: 0.75rem; font-size: 1.1rem; }
-.hire-card p { color: #555; font-size: 0.95rem; margin-bottom: 1.5rem; }
 
+.hire-card {
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    box-shadow: 0 10px 28px rgba(0,0,0,0.06);
+    border: 1px solid #ececf2;
+    height: 100%;
+}
+
+.hire-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 18px 38px rgba(0,0,0,0.1);
+    border-color: #f7c948;
+}
+
+.hire-card.featured {
+    background: linear-gradient(135deg, #1a1a2e 0%, #222544 100%);
+    color: #fff;
+    border-color: transparent;
+    box-shadow: 0 18px 40px rgba(26, 26, 46, 0.3);
+}
+
+.hire-card.featured h3 {
+    color: #f7c948;
+}
+
+.hire-card.featured p {
+    color: rgba(255,255,255,0.82);
+}
+
+.hire-card.featured .btn-primary {
+    background: #f7c948;
+    color: #1a1a2e;
+}
+
+.hire-card.featured .btn-primary:hover {
+    background: #ffd45e;
+}
+
+.hire-icon {
+    font-size: 2.6rem;
+    margin-bottom: 1rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 78px;
+    height: 78px;
+    border-radius: 50%;
+    background: #fff7dc;
+    box-shadow: inset 0 0 0 1px rgba(247, 201, 72, 0.25);
+}
+
+.hire-card h3 {
+    margin-bottom: 0.8rem;
+    font-size: 1.15rem;
+    color: #1a1a2e;
+}
+
+.hire-card p {
+    color: #5a5f73;
+    font-size: 0.96rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+/* Membership */
 .membership-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 1.5rem;
-    margin-bottom: 2rem;
+    margin-bottom: 2.3rem;
+    align-items: stretch;
 }
+
 .membership-card {
     background: rgba(255,255,255,0.08);
     border: 1px solid rgba(255,255,255,0.15);
     border-radius: 12px;
     padding: 2rem;
-    color: #fff;
-    position: relative;
-    transition: transform 0.2s ease;
+    color: #1a1a2e;   /* ✅ FIXED */
 }
-.membership-card:hover { transform: translateY(-5px); }
+.membership-card h3,
+.membership-card p,
+.membership-card ul li,
+.membership-price,
+.membership-price span {
+    color: #1a1a2e;
+}
+
+.membership-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 35px rgba(0,0,0,0.2);
+}
+
 .membership-card.featured {
     background: #f7c948;
     border-color: #f7c948;
     color: #1a1a2e;
+    box-shadow: 0 18px 36px rgba(247, 201, 72, 0.28);
 }
-.membership-card.featured h3 { color: #1a1a2e; }
-.membership-card h3 { color: #f7c948; font-size: 1.2rem; margin-bottom: 0.5rem; }
-.membership-price { font-size: 1.5rem; font-weight: 800; margin-bottom: 1rem; }
-.membership-price span { font-size: 2rem; color: inherit; }
-.membership-card.featured .membership-price span { color: #1a1a2e; }
-.membership-card p { font-size: 0.9rem; margin-bottom: 1rem; opacity: 0.85; }
-.membership-card ul { list-style: none; padding: 0; }
-.membership-card ul li { padding: 0.3rem 0; font-size: 0.9rem; opacity: 0.9; }
+
+.membership-card.featured h3,
+.membership-card.featured p,
+.membership-card.featured ul li,
+.membership-card.featured .membership-price,
+.membership-card.featured .membership-price span {
+    color: #1a1a2e;
+}
+
+.membership-card h3 {
+    color: #1a1a2e;
+    font-size: 1.25rem;
+    margin-bottom: 0.6rem;
+}
+
+.membership-price {
+    font-size: 1.45rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+}
+
+.membership-price span {
+    font-size: 2.1rem;
+    color: inherit;
+}
+
+.membership-card p {
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+    opacity: 1;
+    line-height: 1.8;
+    color: #1a1a2e;
+}
+
+.membership-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.membership-card ul li {
+    padding: 0.45rem 0;
+    font-size: 0.95rem;
+    opacity: 1;
+    color: #1a1a2e;
+    border-top: 1px solid rgba(26,26,46,0.08);
+}
+
+.membership-card.featured ul li {
+    border-top: 1px solid rgba(26,26,46,0.12);
+}
+
 .popular-tag {
     position: absolute;
-    top: -12px;
+    top: -13px;
     left: 50%;
     transform: translateX(-50%);
-    background: #1a1a2e;
-    color: #f7c948;
-    padding: 0.2rem 1rem;
-    border-radius: 20px;
-    font-size: 0.75rem;
-    font-weight: 700;
+    background: #ffffff;
+    color: #1a1a2e;
+    padding: 0.32rem 1rem;
+    border-radius: 999px;
+    font-size: 0.74rem;
+    font-weight: 800;
+    letter-spacing: 0.4px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
 }
-.membership-cta { text-align: center; margin-top: 2rem; }
-.membership-cta p { color: #ccc; margin-bottom: 1rem; }
 
+.membership-cta {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.membership-cta p {
+    color: rgba(255,255,255,0.82);
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+/* Social Tennis page button polish */
+.page-social .btn-primary {
+    border-radius: 999px;
+    padding: 0.85rem 1.5rem;
+    box-shadow: 0 10px 24px rgba(247, 201, 72, 0.25);
+    transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+}
+
+.page-social .btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 28px rgba(247, 201, 72, 0.32);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .social-section {
+        padding: 4rem 0;
+    }
+
+    .fixtures-card {
+        grid-template-columns: 1fr;
+        padding: 1.5rem;
+        gap: 1.5rem;
+    }
+
+    .fixtures-image-placeholder {
+        min-height: 220px;
+    }
+
+    .membership-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 560px) {
+    .membership-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .court-hire-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-header h2 {
+        font-size: 1.8rem;
+    }
+
+    .fixtures-info h3 {
+        font-size: 1.3rem;
+    }
+}
 /* ===== VENUE HIRE PAGE ===== */
 .venue-intro { padding: 4rem 0; text-align: center; }
 .venue-intro h2 { font-size: 2rem; margin-bottom: 1rem; }
@@ -669,4 +911,448 @@ h1, h2, h3 { color: #1a1a2e; line-height: 1.2; }
 .cta-banner {
     width: 100%;
     padding: 5rem 0;
+}
+/*  SOCIAL TENNIS PAGE - NEW PHP CLASS FIX */
+
+.social-tennis-page {
+    background: #f6f7fb;
+}
+
+/* Hero */
+.social-hero {
+    background: linear-gradient(135deg, #0f122b 0%, #171b3f 100%);
+    color: #fff;
+    padding: 5rem 0;
+}
+
+.social-hero__inner {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.social-hero__content h1 {
+    font-size: clamp(2.3rem, 5vw, 4rem);
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+.social-hero__content p {
+    font-size: 1.08rem;
+    line-height: 1.8;
+    color: rgba(255,255,255,0.88);
+    margin-bottom: 1.5rem;
+    max-width: 700px;
+}
+
+.social-eyebrow {
+    display: inline-block;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    color: #f7c948;
+    margin-bottom: 1rem;
+}
+
+.social-hero__actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.social-hero__highlights {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.hero-highlight-card {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 14px;
+    padding: 1rem;
+    backdrop-filter: blur(6px);
+}
+
+.hero-highlight-card strong {
+    display: block;
+    color: #fff;
+    margin-bottom: 0.3rem;
+    font-size: 1rem;
+}
+
+.hero-highlight-card span {
+    color: rgba(255,255,255,0.8);
+    font-size: 0.95rem;
+}
+
+/* Fixtures board in hero */
+.social-hero__visual {
+    display: flex;
+    justify-content: center;
+}
+
+.fixtures-board {
+    width: 100%;
+    max-width: 430px;
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 1.5rem;
+    box-shadow: 0 18px 40px rgba(0,0,0,0.25);
+}
+
+.fixtures-board__title {
+    text-align: center;
+    background: #1a1a2e;
+    color: #fff;
+    padding: 1rem;
+    border-radius: 14px;
+    font-size: 1.4rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+}
+
+.fixture-row {
+    background: #d8ff2f;
+    border-radius: 14px;
+    padding: 0.9rem 1rem;
+    margin-bottom: 0.8rem;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.fixture-row:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+}
+
+.fixture-day {
+    display: block;
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: #1a1a2e;
+    margin-bottom: 0.2rem;
+}
+
+.fixture-session,
+.fixture-time {
+    display: block;
+    color: #1a1a2e;
+    font-size: 0.95rem;
+}
+
+.fixtures-board__cta {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    background: #f7c948;
+    color: #1a1a2e;
+    text-decoration: none;
+    font-weight: 700;
+    padding: 0.85rem 1.25rem;
+    border-radius: 999px;
+    margin-top: 0.5rem;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.fixtures-board__cta:hover {
+    background: #e6b800;
+    transform: translateY(-2px);
+}
+
+/* New section heading */
+.section-heading {
+    max-width: 760px;
+    margin: 0 auto 3rem;
+}
+
+.section-heading.center {
+    text-align: center;
+}
+
+.section-heading h2 {
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    line-height: 1.15;
+    margin-bottom: 0.8rem;
+    color: #1a1a2e;
+}
+
+.section-heading p {
+    color: #5a5f73;
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+.section-heading--light h2,
+.section-heading--light p {
+    color: #1a1a2e;
+}
+
+.section-kicker {
+    display: inline-block;
+    color: #f7c948;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 0.8rem;
+}
+
+/* Fixtures section */
+.social-fixtures-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: stretch;
+}
+
+.social-fixtures-card {
+    background: #fff;
+    border: 1px solid #ececf2;
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 12px 35px rgba(0,0,0,0.06);
+}
+
+.social-fixtures-card--feature {
+    background: linear-gradient(135deg, #fffdf6 0%, #ffffff 100%);
+}
+
+.social-fixtures-card__icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.social-fixtures-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #1a1a2e;
+}
+
+.social-fixtures-card p {
+    color: #5a5f73;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+
+.feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0 0;
+}
+
+.feature-list li {
+    padding: 0.7rem 0;
+    border-top: 1px solid #ececf2;
+    color: #444;
+}
+
+.session-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid #ececf2;
+}
+
+.session-item__day {
+    min-width: 120px;
+    background: #1a1a2e;
+    color: #fff;
+    font-weight: 700;
+    text-align: center;
+    padding: 0.7rem 0.9rem;
+    border-radius: 12px;
+}
+
+.session-item__details strong {
+    display: block;
+    color: #1a1a2e;
+    margin-bottom: 0.2rem;
+}
+
+.session-item__details span {
+    color: #666;
+}
+
+.fixtures-actions {
+    margin-top: 1.5rem;
+}
+
+/* Match your newer hire card names too */
+.hire-card__icon {
+    font-size: 2.3rem;
+    margin-bottom: 1rem;
+}
+
+/* Membership newer featured class */
+.membership-card--featured {
+    background: #f7c948;
+    border-color: #f7c948;
+    color: #1a1a2e;
+    box-shadow: 0 18px 36px rgba(247, 201, 72, 0.28);
+}
+
+.membership-card--featured h3,
+.membership-card--featured p,
+.membership-card--featured ul li,
+.membership-card--featured .membership-price,
+.membership-card--featured .membership-price span {
+    color: #1a1a2e;
+}
+
+/* Benefits section */
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+}
+
+.benefit-card {
+    background: #fff;
+    border: 1px solid #ececf2;
+    border-radius: 18px;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    box-shadow: 0 10px 28px rgba(0,0,0,0.05);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.benefit-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 38px rgba(0,0,0,0.09);
+}
+
+.benefit-card__icon {
+    display: block;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.benefit-card h3 {
+    margin-bottom: 0.7rem;
+    color: #1a1a2e;
+}
+
+.benefit-card p {
+    color: #5a5f73;
+    line-height: 1.7;
+}
+
+/* Bottom CTA */
+.social-bottom-cta {
+    padding: 5rem 0;
+    background: #f6f7fb;
+}
+
+.social-bottom-cta__box {
+    background: linear-gradient(135deg, #1a1a2e 0%, #222544 100%);
+    color: #fff;
+    padding: 3rem 2rem;
+    text-align: center;
+    border-radius: 24px;
+    box-shadow: 0 18px 40px rgba(26,26,46,0.18);
+}
+
+.social-bottom-cta__box h2 {
+    color: #fff;
+    margin-bottom: 0.8rem;
+    font-size: 2rem;
+}
+
+.social-bottom-cta__box p {
+    color: rgba(255,255,255,0.85);
+    margin-bottom: 1.4rem;
+    font-size: 1.05rem;
+}
+
+/* Better buttons on this page */
+.social-tennis-page .btn-primary,
+.social-tennis-page .btn-secondary,
+.social-tennis-page .btn-outline {
+    border-radius: 999px;
+    padding: 0.85rem 1.5rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.btn-outline {
+    display: inline-block;
+    background: #fff;
+    color: #1a1a2e;
+    border: 2px solid #e1e5ef;
+    padding: 0.75rem 1.25rem;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: all 0.2s ease;
+}
+
+.btn-outline:hover {
+    border-color: #f7c948;
+    color: #1a1a2e;
+    transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .social-hero__inner,
+    .social-fixtures-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .social-hero__highlights,
+    .benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .social-hero {
+        padding: 4rem 0;
+    }
+
+    .social-hero__content h1 {
+        font-size: 2.4rem;
+    }
+
+    .social-hero__actions {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .social-hero__highlights,
+    .benefits-grid,
+    .membership-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .session-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .session-item__day {
+        min-width: auto;
+    }
+}
+/* FIX MEMBERSHIP TEXT COLORS */
+.membership-card {
+    color: #1a1a2e; /* dark text */
+}
+
+.membership-card h3,
+.membership-card p,
+.membership-card ul li,
+.membership-price,
+.membership-price span {
+    color: #1a1a2e;
+}
+
+/* keep featured (yellow) looking good */
+.membership-card.featured {
+    color: #1a1a2e;
 }
