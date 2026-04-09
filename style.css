@@ -486,3 +486,164 @@ h1, h2, h3 { color: #1a1a2e; line-height: 1.2; }
     .why-grid { grid-template-columns: 1fr; }
     .membership-grid { grid-template-columns: 1fr; }
 }
+/* ===== HEADER & NAVBAR ===== */
+.site-header {
+    background-color: #1a1a2e;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    gap: 1rem;
+}
+
+/* Logo */
+.site-branding .site-title {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.3rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    white-space: nowrap;
+}
+
+.site-branding .custom-logo {
+    max-height: 50px;
+    width: auto;
+}
+
+/* Nav links */
+.main-navigation {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.main-navigation ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 0.25rem;
+    align-items: center;
+}
+
+.main-navigation ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 0.5rem 0.85rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.main-navigation ul li a:hover,
+.main-navigation ul li.current-menu-item > a {
+    background-color: rgba(247, 201, 72, 0.15);
+    color: #f7c948;
+}
+
+/* Book Now button */
+.btn-book-now {
+    display: inline-block;
+    background-color: #f7c948;
+    color: #1a1a2e !important;
+    padding: 0.55rem 1.25rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.btn-book-now:hover {
+    background-color: #e6b800;
+    transform: translateY(-1px);
+}
+
+/* Hamburger */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    z-index: 1001;
+}
+
+.menu-toggle .bar {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: #ffffff;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* Hamburger animation when open */
+.menu-toggle.active .bar:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+.menu-toggle.active .bar:nth-child(2) {
+    opacity: 0;
+}
+.menu-toggle.active .bar:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 900px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    .header-cta {
+        display: none;
+    }
+
+    .main-navigation {
+        display: none;
+        position: fixed;
+        top: 70px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #1a1a2e;
+        padding: 2rem;
+        flex-direction: column;
+        justify-content: flex-start;
+        overflow-y: auto;
+    }
+
+    .main-navigation.toggled {
+        display: flex;
+    }
+
+    .main-navigation ul {
+        flex-direction: column;
+        width: 100%;
+        gap: 0.5rem;
+    }
+
+    .main-navigation ul li a {
+        display: block;
+        padding: 1rem;
+        font-size: 1.1rem;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+}

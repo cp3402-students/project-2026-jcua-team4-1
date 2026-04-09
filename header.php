@@ -3,13 +3,13 @@
 <head>
     <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title><?php wp_title( '|', true, 'right' ); ?><?php bloginfo( 'name' ); ?></title>
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
+<?php wp_body_open(); ?>
 
-<header class="site-header">
-    <div class="header-inner">
+<header class="site-header" id="site-header">
+    <div class="header-inner container">
 
         <!-- Logo / Site Name -->
         <div class="site-branding">
@@ -19,31 +19,36 @@
                 <a class="site-title" href="<?php echo esc_url( home_url( '/' ) ); ?>">
                     <?php bloginfo( 'name' ); ?>
                 </a>
-                <?php $description = get_bloginfo( 'description' );
-                if ( $description ) : ?>
-                    <p class="site-description"><?php echo esc_html( $description ); ?></p>
-                <?php endif; ?>
             <?php endif; ?>
         </div>
 
-        <!-- Hamburger for mobile -->
-        <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-
         <!-- Navigation -->
-        <nav class="main-navigation" id="site-navigation">
+        <nav class="main-navigation" id="site-navigation" aria-label="Primary Navigation">
             <?php
             wp_nav_menu( array(
                 'theme_location' => 'primary',
                 'menu_id'        => 'primary-menu',
                 'container'      => false,
                 'fallback_cb'    => false,
+                'items_wrap'     => '<ul id="%1$s" class="%2$s">%3$s</ul>',
             ) );
             ?>
         </nav>
+
+        <!-- Book Now CTA -->
+        <div class="header-cta">
+            <a href="https://play.tennis.com.au/KalyndaChaseRegionalTennisCentre" 
+               class="btn-book-now" target="_blank" rel="noopener">
+                Book Now
+            </a>
+        </div>
+
+        <!-- Hamburger for mobile -->
+        <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false" aria-label="Toggle Navigation">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
 
     </div>
 </header>

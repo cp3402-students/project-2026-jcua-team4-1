@@ -43,7 +43,7 @@ get_header();
                    class="btn-primary" target="_blank">Book a Court Now</a>
                 <a href="<?php echo esc_url( get_permalink( get_page_by_path('classes') ) ); ?>" 
                    class="btn-secondary">View Classes</a>
->>>>>>> 4d3e12c87ecf40319f49f01df9eaa55a8547e2a1
+
             </div>
         </div>
     </section>
@@ -153,7 +153,7 @@ get_header();
             <p>10 courts available — 24/7 court hire. Book yours today!</p>
             <a href="https://play.tennis.com.au/KalyndaChaseRegionalTennisCentre" 
                class="btn-primary" target="_blank">Book a Court Now</a>
->>>>>>> 4d3e12c87ecf40319f49f01df9eaa55a8547e2a1
+
         </div>
     </section>
 
