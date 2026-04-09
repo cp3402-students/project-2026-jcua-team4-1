@@ -1,3 +1,13 @@
+/*
+Theme Name: KC Tennis Blast
+Author: Team 4
+Description: Custom WordPress theme for KC Tennis Blast
+Version: 1.0
+Text Domain: kc-blast-theme
+*/
+
+
+
 /* ===== GLOBAL RESET & TYPOGRAPHY ===== */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -204,7 +214,6 @@ h1, h2, h3 { color: #1a1a2e; line-height: 1.2; }
     .footer-inner { grid-template-columns: 1fr; }
     .hero-title { font-size: 2rem; }
 }
-<<<<<<< HEAD
 /* ===== PROGRAMS / CLASSES PAGE ===== */
 .program-section { padding: 5rem 0; }
 .bg-light { background: #f9f9f9; }
