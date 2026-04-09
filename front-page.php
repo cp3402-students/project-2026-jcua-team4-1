@@ -159,9 +159,3 @@ get_header();
 
 </main>
 
-<<<<<<< HEAD
-<?php
-get_footer();
-=======
-<?php get_footer(); ?>
->>>>>>> 4d3e12c87ecf40319f49f01df9eaa55a8547e2a1
