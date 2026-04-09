@@ -1356,3 +1356,299 @@ h1, h2, h3 { color: #1a1a2e; line-height: 1.2; }
 .membership-card.featured {
     color: #1a1a2e;
 }
+/* =========================================
+   PRO SHOP PAGE
+========================================= */
+
+.pro-shop-page {
+    background: #f6f7fb;
+}
+
+/* Hero */
+.pro-shop-hero {
+    background: linear-gradient(135deg, #0f122b 0%, #171b3f 100%);
+    color: #fff;
+    padding: 6rem 0 5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.pro-shop-hero::before {
+    content: "";
+    position: absolute;
+    top: -80px;
+    right: -80px;
+    width: 260px;
+    height: 260px;
+    background: rgba(247, 201, 72, 0.10);
+    border-radius: 50%;
+    filter: blur(10px);
+}
+
+.pro-shop-hero__inner {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.pro-shop-eyebrow {
+    display: inline-block;
+    color: #f7c948;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.pro-shop-hero__content h1 {
+    font-size: clamp(2.4rem, 5vw, 4rem);
+    line-height: 1.1;
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+.pro-shop-hero__content p {
+    font-size: 1.06rem;
+    line-height: 1.9;
+    color: rgba(255,255,255,0.88);
+    max-width: 760px;
+    margin: 0 auto 1rem;
+}
+
+.pro-shop-hero__actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+/* General section */
+.pro-shop-section {
+    padding: 5.5rem 0;
+}
+
+.pro-shop-section--light {
+    background: #f6f7fb;
+}
+
+.pro-shop-section--white {
+    background: #ffffff;
+}
+
+.pro-shop-section--dark {
+    background: linear-gradient(135deg, #1a1a2e 0%, #20264f 100%);
+}
+
+/* Brand cards */
+.brand-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.brand-card {
+    background: #fff;
+    border: 1px solid #ececf2;
+    border-radius: 20px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 10px 28px rgba(0,0,0,0.05);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.brand-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 38px rgba(0,0,0,0.09);
+}
+
+.brand-card h3 {
+    font-size: 1.7rem;
+    color: #1a1a2e;
+    margin-bottom: 0.7rem;
+}
+
+.brand-card p {
+    color: #5a5f73;
+    line-height: 1.75;
+}
+
+/* Racquet cards */
+.racquet-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+}
+
+.racquet-card {
+    position: relative;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fc 100%);
+    border: 1px solid #ececf2;
+    border-radius: 22px;
+    padding: 2rem 1.4rem;
+    min-height: 250px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.06);
+    transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+    overflow: hidden;
+}
+
+.racquet-card::before {
+    content: "";
+    position: absolute;
+    top: -40px;
+    right: -40px;
+    width: 120px;
+    height: 120px;
+    background: rgba(247, 201, 72, 0.13);
+    border-radius: 50%;
+}
+
+.racquet-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 42px rgba(0,0,0,0.1);
+    border-color: #f7c948;
+}
+
+.racquet-card__badge {
+    display: inline-block;
+    background: #f7c948;
+    color: #1a1a2e;
+    padding: 0.35rem 0.8rem;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 2;
+}
+
+.racquet-card h3 {
+    font-size: 1.8rem;
+    line-height: 1.05;
+    margin-bottom: 1rem;
+    color: #111827;
+    position: relative;
+    z-index: 2;
+}
+
+.racquet-card p {
+    color: #4f566b;
+    line-height: 1.75;
+    font-size: 0.97rem;
+    position: relative;
+    z-index: 2;
+}
+
+/* Accessories */
+.accessory-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+}
+
+.accessory-card {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 20px;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.accessory-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 35px rgba(0,0,0,0.18);
+}
+
+.accessory-icon {
+    display: inline-block;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.accessory-card h3 {
+    color: #f7c948;
+    margin-bottom: 0.75rem;
+    font-size: 1.2rem;
+}
+
+.accessory-card p {
+    color: rgba(255,255,255,0.82);
+    line-height: 1.75;
+}
+
+/* CTA */
+.pro-shop-cta {
+    padding: 5rem 0;
+    background: #f6f7fb;
+}
+
+.pro-shop-cta__box {
+    background: #fff;
+    border-radius: 26px;
+    padding: 3rem 2rem;
+    text-align: center;
+    box-shadow: 0 16px 40px rgba(0,0,0,0.07);
+    border: 1px solid #ececf2;
+}
+
+.pro-shop-cta__box h2 {
+    font-size: 2rem;
+    color: #1a1a2e;
+    margin-bottom: 0.8rem;
+}
+
+.pro-shop-cta__box p {
+    color: #5a5f73;
+    max-width: 720px;
+    margin: 0 auto 1.5rem;
+    line-height: 1.8;
+}
+
+/* Better button shape */
+.pro-shop-page .btn-primary,
+.pro-shop-page .btn-secondary-dark {
+    border-radius: 999px;
+    padding: 0.9rem 1.6rem;
+}
+
+/* Responsive */
+@media (max-width: 1100px) {
+    .racquet-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .accessory-grid,
+    .brand-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .pro-shop-hero {
+        padding: 4.5rem 0 4rem;
+    }
+
+    .pro-shop-hero__content h1 {
+        font-size: 2.4rem;
+    }
+
+    .pro-shop-hero__actions {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .brand-grid,
+    .racquet-grid,
+    .accessory-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .pro-shop-section {
+        padding: 4rem 0;
+    }
+}
