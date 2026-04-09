@@ -11,13 +11,13 @@ get_header();
     <section class="classes-hero">
         <div class="classes-hero-content">
             <h1>CLASSES</h1>
-            <p>Get involved. The court is calling!</p>
+            <p>Join our programs and book your class online anytime, from anywhere.</p>
         </div>
     </section>
 
     <section class="classes-page">
 
-        <div class="class-item">
+        <div class="class-item show">
             <div class="class-text">
                 <span class="class-tag">KIDS PROGRAM</span>
                 <h2>🎾 Hot Shots Program</h2>
@@ -36,7 +36,7 @@ get_header();
                     <li><strong>Club Tennis</strong> – Advanced</li>
                 </ul>
 
-                <a href="#" class="class-btn">Book Now — 0421 177 764</a>
+                <a href="<?php echo esc_url(home_url('/book-classes')); ?>" class="class-btn">Book Online</a>
             </div>
 
             <div class="class-image-card">
@@ -45,7 +45,7 @@ get_header();
             </div>
         </div>
 
-        <div class="class-item dark">
+        <div class="class-item dark show">
             <div class="class-text">
                 <span class="class-tag">GROUP TRAINING</span>
                 <h2>💪 Squad Training</h2>
@@ -60,9 +60,11 @@ get_header();
                     <li>Elite squad</li>
                 </ul>
 
-                <p>Contact Head Coach Tim today to learn more about squad training.</p>
+                <p>
+                    Book your squad training online and choose from available class times.
+                </p>
 
-                <a href="#" class="class-btn">Contact Tim — 0421 177 764</a>
+                <a href="<?php echo esc_url(home_url('/book-classes')); ?>" class="class-btn">Book Online</a>
             </div>
 
             <div class="class-image-card">
@@ -71,7 +73,7 @@ get_header();
             </div>
         </div>
 
-        <div class="class-item">
+        <div class="class-item show">
             <div class="class-text">
                 <span class="class-tag">1-ON-1 COACHING</span>
                 <h2>🏆 Private Classes</h2>
@@ -88,7 +90,7 @@ get_header();
                     <li>Flexible scheduling</li>
                 </ul>
 
-                <a href="#" class="class-btn">Book a Private Class</a>
+                <a href="<?php echo esc_url(home_url('/book-classes')); ?>" class="class-btn">Book Online</a>
             </div>
 
             <div class="class-image-card">
@@ -97,7 +99,7 @@ get_header();
             </div>
         </div>
 
-        <div class="class-item dark">
+        <div class="class-item dark show">
             <div class="class-text">
                 <span class="class-tag">JUNIOR TOURNAMENTS</span>
                 <h2>🚌 Tournament Travel</h2>
@@ -113,7 +115,7 @@ get_header();
                     <li>Club group travel</li>
                 </ul>
 
-                <a href="#" class="class-btn">Get More Info</a>
+                <a href="<?php echo esc_url(home_url('/book-classes')); ?>" class="class-btn">Book Online</a>
             </div>
 
             <div class="class-image-card">
@@ -126,33 +128,13 @@ get_header();
 
     <section class="classes-cta">
         <div class="classes-cta-content">
-            <h2>Ready to Start Playing?</h2>
-            <p>Join one of our programs today — all ages and skill levels welcome!</p>
-            <a href="#" class="class-btn dark-btn">Call Us — 0421 177 764</a>
+            <h2>Book Your Class Online</h2>
+            <p>Choose your class, check available schedules, and submit your booking online.</p>
+            <a href="<?php echo esc_url(home_url('/book-classes')); ?>" class="class-btn dark-btn">Go to Booking Page</a>
         </div>
     </section>
 
 </main>
-
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-    const items = document.querySelectorAll(".class-item");
-
-    const observer = new IntersectionObserver(function(entries) {
-        entries.forEach(function(entry) {
-            if (entry.isIntersecting) {
-                entry.target.classList.add("show");
-            }
-        });
-    }, {
-        threshold: 0.15
-    });
-
-    items.forEach(function(item) {
-        observer.observe(item);
-    });
-});
-</script>
 
 <?php
 get_footer();
