@@ -115,6 +115,19 @@ h1, h2, h3 { color: #1a1a2e; line-height: 1.2; }
     margin: 2rem auto 0;
 }
 
+.footer-court .btn-primary{
+    color: #000000;
+}
+
+.footer-court .btn-primary:hover {
+    background-color: #e6b800;
+    color: #000000;
+}
+
+.footer-hours .footer-hours__time {
+    transform: translate(67px);
+}
+
 /* ===== HERO (Homepage) ===== */
 .hero {
     position: relative;
@@ -576,7 +589,7 @@ h1, h2, h3 { color: #1a1a2e; line-height: 1.2; }
 }
 
 .membership-cta p {
-    color: rgba(255,255,255,0.82);
+    color: black;
     margin-bottom: 1rem;
     font-size: 1rem;
 }
@@ -1431,6 +1444,17 @@ h1, h2, h3 { color: #1a1a2e; line-height: 1.2; }
     gap: 1rem;
     flex-wrap: wrap;
     margin-top: 2rem;
+
+}
+
+.pro-shop-hero__actions .btn-secondary-dark {
+    background-color: #f7c948;
+    color: black;
+}
+
+.pro-shop-hero__actions .btn-secondary-dark:hover {
+    background-color: #e6b800;
+    color: black;
 }
 
 /* General section */
@@ -1584,7 +1608,7 @@ h1, h2, h3 { color: #1a1a2e; line-height: 1.2; }
 }
 
 .accessory-card p {
-    color: rgba(255,255,255,0.82);
+    color: black;
     line-height: 1.75;
 }
 
