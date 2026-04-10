@@ -4,6 +4,46 @@
  */
 get_header();
 ?>
+<section class="coaches-hero">
+  <div class="coaches-hero-overlay"></div>
+
+  <div class="coaches-hero-inner">
+    <div class="coaches-hero-content">
+      <span class="hero-kicker">Tennis Blast Coaching</span>
+      <h1>Inspiring Players Through Passion, Skill & Confidence</h1>
+      <p>
+        Learn from dedicated coaches who help every player grow with strong technique,
+        smart training, and a real love for the game.
+      </p>
+    </div>
+
+    <div class="hero-info-cards" id="heroInfoCards">
+      <div class="hero-info-card hero-card-left">
+        <h3>Dedicated Coaching</h3>
+        <p>
+          Our coaches create a positive learning environment where players can improve
+          technique, confidence, and match awareness step by step.
+        </p>
+      </div>
+
+      <div class="hero-info-card hero-card-middle">
+        <h3>Built Around Growth</h3>
+        <p>
+          From beginners to competitive players, every lesson is designed to support
+          development, consistency, and enjoyment on court.
+        </p>
+      </div>
+
+      <div class="hero-info-card hero-card-right">
+        <h3>More Than Tennis</h3>
+        <p>
+          Tennis builds focus, discipline, movement, and resilience while helping
+          players enjoy an active and rewarding sport for life.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section class="coaches-page">
   <div class="container">
@@ -265,54 +305,20 @@ get_header();
 <script>
 document.addEventListener('DOMContentLoaded', function () {
   const buttons = document.querySelectorAll('.coach-see-more');
-  const detailPanels = document.querySelectorAll('.coach-detail-panel');
-  const detailWrapper = document.getElementById('coach-detail-wrapper');
-
-  detailPanels.forEach(panel => {
-    panel.style.display = 'none';
-  });
-
-  buttons.forEach(button => {
-    button.addEventListener('click', function () {
-      const targetId = this.getAttribute('data-target');
-      const targetPanel = document.getElementById(targetId);
-
-      detailPanels.forEach(panel => {
-        panel.style.display = 'none';
-        panel.classList.remove('active');
-      });
-
-      if (targetPanel) {
-        targetPanel.style.display = 'grid';
-        targetPanel.classList.add('active');
-
-        setTimeout(() => {
-          targetPanel.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-        }, 100);
-      }
-    });
-  });
-});
-
-</script>
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-  const buttons = document.querySelectorAll('.coach-see-more');
   const panels = document.querySelectorAll('.coach-detail-panel');
+  const heroInfoCards = document.getElementById('heroInfoCards');
+  let heroCardsShown = false;
 
-  panels.forEach(panel => {
+  panels.forEach(function (panel) {
     panel.style.display = 'none';
   });
 
-  buttons.forEach(button => {
+  buttons.forEach(function (button) {
     button.addEventListener('click', function () {
       const targetId = this.getAttribute('data-target');
       const targetPanel = document.getElementById(targetId);
 
-      panels.forEach(panel => {
+      panels.forEach(function (panel) {
         panel.style.display = 'none';
         panel.classList.remove('active');
       });
@@ -321,7 +327,7 @@ document.addEventListener('DOMContentLoaded', function () {
         targetPanel.style.display = 'grid';
         targetPanel.classList.add('active');
 
-        setTimeout(() => {
+        setTimeout(function () {
           targetPanel.scrollIntoView({
             behavior: 'smooth',
             block: 'start'
@@ -329,6 +335,28 @@ document.addEventListener('DOMContentLoaded', function () {
         }, 100);
       }
     });
+  });
+
+  function showHeroCards() {
+    if (!heroCardsShown && heroInfoCards) {
+      heroInfoCards.classList.add('is-visible');
+      heroCardsShown = true;
+    }
+  }
+
+  const heroSection = document.querySelector('.coaches-hero');
+
+  if (heroSection) {
+    heroSection.addEventListener('mouseenter', showHeroCards, { once: true });
+  }
+
+  window.addEventListener('scroll', function () {
+    if (!heroCardsShown && heroSection) {
+      const triggerPoint = heroSection.offsetTop + 120;
+      if (window.scrollY > triggerPoint - window.innerHeight / 1.2) {
+        showHeroCards();
+      }
+    }
   });
 
   document.addEventListener('click', function (e) {
