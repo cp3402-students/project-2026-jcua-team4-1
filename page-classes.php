@@ -14,7 +14,32 @@ get_header();
             <p>Join our programs and book your class online anytime, from anywhere.</p>
         </div>
     </section>
+    <section class="classes-info-overview">
+    <div class="classes-info-wrap">
 
+        <div class="classes-info-card" data-target="class-detail-enrolment">
+            <span class="classes-info-label">01</span>
+            <h3>Enrolment Package</h3>
+            <p>Welcome! Thank you for choosing Tennis Blast at Kalynda Chase Tennis Centre.</p>
+            <button class="classes-see-more" type="button" data-target="class-detail-enrolment">See More</button>
+        </div>
+
+        <div class="classes-info-card" data-target="class-detail-program">
+            <span class="classes-info-label">02</span>
+            <h3>Coaching Program</h3>
+            <p>We provide a wide range of coaching programs for both adults and children. Our coaches are fully</p>
+            <button class="classes-see-more" type="button" data-target="class-detail-program">See More</button>
+        </div>
+
+        <div class="classes-info-card" data-target="class-detail-membership">
+            <span class="classes-info-label">03</span>
+            <h3>Membership Fact</h3>
+            <p>What is Hot Shots membership?</p>
+            <button class="classes-see-more" type="button" data-target="class-detail-membership">See More</button>
+        </div>
+
+    </div>
+</section>
     <section class="classes-page">
 
         <div class="class-item show">
@@ -125,7 +150,39 @@ get_header();
         </div>
 
     </section>
+    <section class="classes-detail-area" id="classes-detail-area" aria-live="polite">
 
+    <div id="class-detail-enrolment" class="classes-detail-panel">
+        <button class="classes-go-top" type="button">Go Top</button>
+        <span class="classes-detail-tag">Enrolment Package</span>
+        <h2>Enrolment Package</h2>
+        <p>Welcome! Thank you for choosing Tennis Blast at Kalynda Chase Tennis Centre.</p>
+        <p>
+            Add the rest of your enrolment package content here later.
+        </p>
+    </div>
+
+    <div id="class-detail-program" class="classes-detail-panel">
+        <button class="classes-go-top" type="button">Go Top</button>
+        <span class="classes-detail-tag">Coaching Program</span>
+        <h2>Coaching Program</h2>
+        <p>We provide a wide range of coaching programs for both adults and children. Our coaches are fully</p>
+        <p>
+            Add the rest of your coaching program content here later.
+        </p>
+    </div>
+
+    <div id="class-detail-membership" class="classes-detail-panel">
+        <button class="classes-go-top" type="button">Go Top</button>
+        <span class="classes-detail-tag">Membership Fact</span>
+        <h2>Membership Fact</h2>
+        <p>What is Hot Shots membership?</p>
+        <p>
+            Add the rest of your membership content here later.
+        </p>
+    </div>
+
+</section>
     <section class="classes-cta">
         <div class="classes-cta-content">
             <h2>Book Your Class Online</h2>
@@ -135,7 +192,66 @@ get_header();
     </section>
 
 </main>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const buttons = document.querySelectorAll('.classes-see-more');
+    const panels = document.querySelectorAll('.classes-detail-panel');
+    const goTopButtons = document.querySelectorAll('.classes-go-top');
 
+    panels.forEach(function (panel) {
+        panel.style.display = 'none';
+    });
+
+    buttons.forEach(function (button) {
+        button.addEventListener('click', function () {
+            const targetId = this.getAttribute('data-target');
+            const targetPanel = document.getElementById(targetId);
+
+            panels.forEach(function (panel) {
+                panel.style.display = 'none';
+                panel.classList.remove('active');
+            });
+
+            if (targetPanel) {
+                targetPanel.style.display = 'block';
+
+                setTimeout(function () {
+                    targetPanel.classList.add('active');
+                }, 10);
+
+                setTimeout(function () {
+                    targetPanel.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }, 100);
+            }
+        });
+    });
+
+    goTopButtons.forEach(function (button) {
+        button.addEventListener('click', function () {
+            const panel = this.closest('.classes-detail-panel');
+
+            if (panel) {
+                panel.classList.remove('active');
+
+                setTimeout(function () {
+                    panel.style.display = 'none';
+
+                    const heroSection = document.querySelector('.classes-hero');
+                    if (heroSection) {
+                        heroSection.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                }, 250);
+            }
+        });
+    });
+});
+</script>
 <?php
 get_footer();
 ?>
