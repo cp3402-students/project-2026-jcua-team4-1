@@ -61,7 +61,6 @@ get_header(); ?>
             <h2>Send Us a Message</h2>
 
             <?php
-            // Recommended: use a plugin like Contact Form 7
             // Replace with your actual shortcode
             echo do_shortcode('[contact-form-7 id="123" title="Contact Form"]');
             ?>
@@ -101,7 +100,7 @@ get_header(); ?>
 
     <section class="contact-extra">
         <div class="container">
-            <h2>Partners</h2>
+            <h2>Sponsors and Partners</h2>
 
             <ul>
                 <li>
