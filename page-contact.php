@@ -60,40 +60,43 @@ get_header(); ?>
         <div class="container">
             <h2>Send Us a Message</h2>
 
-            <?php
-            // Replace with your actual shortcode
-            echo do_shortcode('[contact-form-7 id="123" title="Contact Form"]');
-            ?>
+            <?php if (shortcode_exists('contact-form-7')) : ?>
+            
+                <?php echo do_shortcode('[contact-form-7 id="123" title="Contact Form"]'); ?>
 
-            <!-- Fallback HTML form if plugin not used -->
-            <form method="post" action="">
-                <div class="form-group">
-                    <label for="first_name">First Name</label>
-                    <input type="text" name="first_name" required>
-                </div>
+            <?php else: ?>
 
-                <div class="form-group">
-                    <label for="last_name">Last Name</label>
-                    <input type="text" name="last_name" required>
-                </div>
+                <!-- Fallback HTML form if plugin not used -->
+                <form method="post" action="">
+                    <div class="form-group">
+                        <label for="first_name">First Name</label>
+                        <input type="text" name="first_name" required>
+                    </div>
 
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" name="email" required>
-                </div>
+                    <div class="form-group">
+                        <label for="last_name">Last Name</label>
+                        <input type="text" name="last_name" required>
+                    </div>
 
-                <div class="form-group">
-                    <label for="phone">Phone</label>
-                    <input type="text" name="phone">
-                </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" required>
+                    </div>
 
-                <div class="form-group">
-                    <label for="message">How can we help?</label>
-                    <textarea name="message" required></textarea>
-                </div>
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input type="text" name="phone">
+                    </div>
 
-                <button type="submit">Send Message</button>
-            </form>
+                    <div class="form-group">
+                        <label for="message">How can we help?</label>
+                        <textarea name="message" required></textarea>
+                    </div>
+
+                    <button type="submit">Send Message</button>
+                </form>
+
+            <?php endif; ?>
 
         </div>
     </section>
