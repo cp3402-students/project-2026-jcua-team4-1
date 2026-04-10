@@ -1876,3 +1876,208 @@ h1, h2, h3 { color: #1a1a2e; line-height: 1.2; }
     min-height: 220px;
   }
 }
+
+/* ================================
+   CONTACT PAGE – KC TENNIS BLAST
+   ================================ */
+
+.contact-page {
+    font-family: 'Poppins', sans-serif;
+    color: #0A1A2F;
+    background: #FFFFFF;
+}
+
+/* -------------------------------
+   HERO SECTION
+-------------------------------- */
+.contact-hero {
+    background: #0A1A2F;
+    color: #FFFFFF;
+    padding: 80px 0;
+    text-align: center;
+}
+
+.contact-hero h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.contact-hero p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+/* -------------------------------
+   CONTACT DETAILS + HOURS
+-------------------------------- */
+.contact-details {
+    padding: 60px 0;
+    background: #F5F5F5;
+}
+
+.contact-details .container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.contact-info,
+.contact-hours {
+    flex: 1 1 300px;
+    background: #FFFFFF;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+
+.contact-info h2,
+.contact-hours h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #1B2A41;
+}
+
+.contact-info p,
+.contact-hours p,
+.contact-hours li {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.contact-info a {
+    color: #1B2A41;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    color: #F9D342;
+}
+
+.contact-hours ul {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-hours li strong {
+    color: #1B2A41;
+}
+
+/* -------------------------------
+   CONTACT FORM
+-------------------------------- */
+.contact-form-section {
+    padding: 60px 0;
+}
+
+.contact-form-section h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #1B2A41;
+}
+
+.contact-form-section form {
+    max-width: 700px;
+    margin: 0 auto;
+    background: #FFFFFF;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #0A1A2F;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #E0E0E0;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #F9D342;
+    outline: none;
+}
+
+button[type="submit"] {
+    background: #F9D342;
+    color: #0A1A2F;
+    padding: 14px 28px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    display: block;
+    margin: 0 auto;
+}
+
+button[type="submit"]:hover {
+    background: #e6c030;
+}
+
+/* -------------------------------
+   PARTNERS SECTION
+-------------------------------- */
+.contact-extra {
+    padding: 60px 0;
+    background: #F5F5F5;
+}
+
+.contact-extra h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 25px;
+    color: #1B2A41;
+}
+
+.contact-extra ul {
+    list-style: none;
+    padding: 0;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.contact-extra li {
+    margin-bottom: 12px;
+    text-align: center;
+}
+
+.contact-extra a {
+    color: #1B2A41;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.contact-extra a:hover {
+    color: #F9D342;
+}
+
+/* -------------------------------
+   RESPONSIVE
+-------------------------------- */
+@media (max-width: 768px) {
+    .contact-details .container {
+        flex-direction: column;
+    }
+
+    .contact-hero h1 {
+        font-size: 2.4rem;
+    }
+}
