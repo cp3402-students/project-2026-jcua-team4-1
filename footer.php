@@ -13,7 +13,7 @@
             <p>Mon–Thu: 1:00pm – 9:00pm</p>
             <p>Friday: 1:00pm – 7:30pm</p>
             <p>Saturday: 7:00am – 11:00am</p>
-            <p>Saturday: 3:00pm – 6:30pm</p>
+            <p class="footer-hours__time"> 3:00pm – 6:30pm</p>
             <p>Sunday: 3:30pm – 6:30pm</p>
         </div>
 
