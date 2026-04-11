@@ -26,13 +26,13 @@ function kc_tennis_blast_setup() {
 	// Enable featured images
 	add_theme_support( 'post-thumbnails' );
 
-	// Register menu
-register_nav_menus(
-    array(
-        'primary' => esc_html__( 'Primary Menu', 'kc-blast-theme' ),
-        'footer'  => esc_html__( 'Footer Menu', 'kc-blast-theme' ),
-    )
-);
+	// Register menus
+	register_nav_menus(
+		array(
+			'primary' => esc_html__( 'Primary Menu', 'kc-tennis-blast' ),
+			'footer'  => esc_html__( 'Footer Menu', 'kc-tennis-blast' ),
+		)
+	);
 
 	// Switch default markup
 	add_theme_support(
@@ -66,16 +66,15 @@ add_action( 'after_setup_theme', 'kc_tennis_blast_setup' );
  * Enqueue scripts and styles
  */
 function kc_tennis_blast_scripts() {
-    wp_enqueue_style(
-        'kc-tennis-blast-style',
-        get_stylesheet_directory_uri() . '/style.css',
-        array(),
-        filemtime(get_stylesheet_directory() . '/style.css')
-    );
+	wp_enqueue_style(
+		'kc-tennis-blast-style',
+		get_stylesheet_directory_uri() . '/style.css',
+		array(),
+		filemtime( get_stylesheet_directory() . '/style.css' )
+	);
 }
-add_action('wp_enqueue_scripts', 'kc_tennis_blast_scripts');
+add_action( 'wp_enqueue_scripts', 'kc_tennis_blast_scripts' );
 
 /**
- * Custom functions (you can add yours below safely)
-
+ * Custom functions (add yours below safely)
  */
