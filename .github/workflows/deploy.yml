@@ -15,12 +15,11 @@ jobs:
 
       - name: Build theme
         run: |
-          cd wp-content/themes/kc-blast-theme
           npm install
           npm run build
 
       - name: Package theme
-        run: tar -czf theme.tar.gz wp-content/themes/kc-blast-theme
+        run: tar -czf kc-blast-theme.tar.gz --exclude=node_modules --exclude=.git .
 
       - name: Upload to staging server
         uses: appleboy/scp-action@v0.1.7
@@ -51,12 +50,11 @@ jobs:
 
       - name: Build theme
         run: |
-          cd wp-content/themes/your-theme
           npm install
           npm run build
 
       - name: Package theme
-        run: tar -czf theme.tar.gz wp-content/themes/your-theme
+        run: tar -czf kc-blast-theme.tar.gz --exclude=node_modules --exclude=.git .
 
       - name: Upload to production server
         uses: appleboy/scp-action@v0.1.7
