@@ -40,7 +40,7 @@ jobs:
           script: |
             cd /home/deploy
             tar -xzf theme.tar.gz
-            sudo rsync -avz wp-content/themes/kc-blast-theme /opt/bitnami/wordpress/wp-content/themes/kc-blast-theme
+            sudo rsync -avz wp-content/themes/kc-blast-theme/ /opt/bitnami/wordpress/wp-content/themes/kc-blast-theme/
             rm theme.tar.gz
 
   deploy-production:
