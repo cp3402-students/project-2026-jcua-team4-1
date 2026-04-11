@@ -1,4 +1,4 @@
-name: Deploy WordPress Theme to Lightsail
+name: Deploy WordPress Theme to Lightsail staging
 
 on:
   push:
@@ -20,7 +20,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          cd wp-content/themes/your-theme
+          cd wp-content/themes/kc-blast-theme
           npm install
           npm run build
 
