@@ -4,49 +4,77 @@ on:
   push:
     branches:
       - main
+      - staging
 
 jobs:
-  build-and-deploy:
+  deploy-staging:
+    if: github.ref == 'refs/heads/staging'
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
-      - name: Install Node (if your theme uses npm)
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18'
-
-      - name: Install dependencies
+      - name: Build theme
         run: |
-          cd wp-content/themes/kc-tennis-blast-theme
+          cd wp-content/themes/your-theme
           npm install
           npm run build
 
-      - name: Create deployment package
-        run: |
-          tar -czf theme.tar.gz wp-content/themes/kc-tennis-blast-theme
+      - name: Package theme
+        run: tar -czf theme.tar.gz wp-content/themes/kc-blast-theme
 
-      - name: Copy files to Lightsail via SSH
+      - name: Upload to staging server
         uses: appleboy/scp-action@v0.1.7
         with:
-          host: ${{ secrets.LIGHTSAIL_HOST }}
-          username: ${{ secrets.LIGHTSAIL_USER }}
-          key: ${{ secrets.LIGHTSAIL_SSH_KEY }}
+          host: ${{ secrets.STAGING_HOST }}
+          username: ${{ secrets.STAGING_USER }}
+          key: ${{ secrets.STAGING_SSH_KEY }}
           source: "theme.tar.gz"
           target: "/home/deploy/"
 
-      - name: Deploy on Lightsail
+      - name: Deploy on staging
         uses: appleboy/ssh-action@v0.1.7
         with:
-          host: ${{ secrets.LIGHTSAIL_HOST }}
-          username: ${{ secrets.LIGHTSAIL_USER }}
-          key: ${{ secrets.LIGHTSAIL_SSH_KEY }}
+          host: ${{ secrets.STAGING_HOST }}
+          username: ${{ secrets.STAGING_USER }}
+          key: ${{ secrets.STAGING_SSH_KEY }}
           script: |
             cd /home/deploy
             tar -xzf theme.tar.gz
-            sudo rsync -avz wp-content/themes/your-theme /opt/bitnami/wordpress/wp-content/themes/
-            sudo chown -R bitnami:daemon /opt/bitnami/wordpress/wp-content/themes/your-theme
-            sudo chmod -R 775 /opt/bitnami/wordpress/wp-content/themes/your-theme
+            sudo rsync -avz wp-content/themes/kc-blast-theme /opt/bitnami/wordpress/wp-content/themes/kc-blast-theme
+            rm theme.tar.gz
+
+  deploy-production:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Build theme
+        run: |
+          cd wp-content/themes/your-theme
+          npm install
+          npm run build
+
+      - name: Package theme
+        run: tar -czf theme.tar.gz wp-content/themes/your-theme
+
+      - name: Upload to production server
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.PROD_HOST }}
+          username: ${{ secrets.PROD_USER }}
+          key: ${{ secrets.PROD_SSH_KEY }}
+          source: "theme.tar.gz"
+          target: "/home/deploy/"
+
+      - name: Deploy on production
+        uses: appleboy/ssh-action@v0.1.7
+        with:
+          host: ${{ secrets.PROD_HOST }}
+          username: ${{ secrets.PROD_USER }}
+          key: ${{ secrets.PROD_SSH_KEY }}
+          script: |
+            cd /home/deploy
+            tar -xzf theme.tar.gz
+            sudo rsync -avz wp-content/themes/kc-blast-theme /opt/bitnami/wordpress/wp-content/themes/kc-blast-theme
             rm theme.tar.gz
