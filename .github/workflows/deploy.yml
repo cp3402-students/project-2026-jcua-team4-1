@@ -1,4 +1,4 @@
-name: Deploy WordPress Theme to Lightsail
+name: Deploy WordPress to Lightsail
 
 on:
   push:
@@ -7,332 +7,72 @@ on:
       - staging
 
 jobs:
-  test:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18'
-          cache: 'npm'
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Lint theme
-        run: npm run lint
-        continue-on-error: true
-
-      - name: Build theme
-        run: npm run build
-
-      - name: Test build output
-        run: |
-          if [ ! -d "dist" ]; then
-            echo "Build output directory not found!"
-            exit 1
-          fi
-          echo "✓ Build successful"
-
   deploy-staging:
-    needs: test
     if: github.ref == 'refs/heads/staging'
     runs-on: ubuntu-latest
-    environment: staging
-    
     steps:
       - uses: actions/checkout@v3
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18'
-          cache: 'npm'
-
-      - name: Install and build theme
+      - name: Build theme
         run: |
           npm install
           npm run build
 
-      - name: Create backup on staging
-        uses: appleboy/ssh-action@v0.1.7
-        with:
-          host: ${{ secrets.STAGING_HOST }}
-          username: ${{ secrets.STAGING_USER }}
-          key: ${{ secrets.STAGING_SSH_KEY }}
-          script: |
-            BACKUP_DATE=$(date +%Y%m%d-%H%M%S)
-            THEME_PATH="/opt/bitnami/wordpress/wp-content/themes/kc-blast-theme"
-            
-            # Backup current theme
-            if [ -d "$THEME_PATH" ]; then
-              sudo cp -r "$THEME_PATH" "$THEME_PATH.backup-$BACKUP_DATE"
-              echo "✓ Theme backup created: $THEME_PATH.backup-$BACKUP_DATE"
-            else
-              echo "⚠ Theme directory not found, skipping backup"
-            fi
-
       - name: Package theme
-        run: |
-          tar -czf kc-blast-theme.tar.gz \
-            --exclude=node_modules \
-            --exclude=.git \
-            --exclude=.DS_Store \
-            --exclude=*.log \
-            wp-content/themes/kc-blast-theme/
-          echo "✓ Theme packaged"
-          ls -lh kc-blast-theme.tar.gz
+        run: tar -czf kc-blast-theme.tar.gz --exclude=node_modules --exclude=.git .
 
-      - name: Upload theme to staging
+      - name: Upload to staging server
         uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.STAGING_HOST }}
           username: ${{ secrets.STAGING_USER }}
           key: ${{ secrets.STAGING_SSH_KEY }}
           source: "kc-blast-theme.tar.gz"
-          target: "/tmp/"
-          strip_file_name: true
+          target: "/home/deploy/"
 
-      - name: Deploy theme on staging
+      - name: Deploy on staging
         uses: appleboy/ssh-action@v0.1.7
         with:
           host: ${{ secrets.STAGING_HOST }}
           username: ${{ secrets.STAGING_USER }}
           key: ${{ secrets.STAGING_SSH_KEY }}
           script: |
-            set -e  # Exit on error
-            
-            THEME_PATH="/opt/bitnami/wordpress/wp-content/themes"
-            TEMP_DIR="/tmp"
-            
-            echo "📦 Starting theme deployment to staging..."
-            
-            # Extract theme
-            cd $TEMP_DIR
+            cd /home/deploy
             tar -xzf kc-blast-theme.tar.gz
-            echo "✓ Theme extracted"
-            
-            # Deploy with sudo
-            sudo rsync -avz wp-content/themes/kc-blast-theme/ $THEME_PATH/kc-blast-theme/ \
-              --delete \
-              --backup-dir=$THEME_PATH/kc-blast-theme.backup-$(date +%Y%m%d-%H%M%S)
-            echo "✓ Theme deployed to staging"
-            
-            # Fix permissions
-            sudo chown -R bitnami:daemon $THEME_PATH/kc-blast-theme/
-            sudo chmod -R 755 $THEME_PATH/kc-blast-theme/
-            echo "✓ Permissions updated"
-            
-            # Verify deployment
-            if [ -f "$THEME_PATH/kc-blast-theme/functions.php" ]; then
-              echo "✓ Deployment verified"
-            else
-              echo "✗ Deployment failed: functions.php not found"
-              exit 1
-            fi
-            
-            # Clear WordPress caches
-            cd /opt/bitnami/wordpress
-            wp cache flush --allow-root 2>/dev/null || true
-            echo "✓ WordPress cache cleared"
-            
-            # Cleanup
-            rm -f $TEMP_DIR/kc-blast-theme.tar.gz
-            echo "✓ Cleanup complete"
-
-      - name: Notify staging deployment success
-        if: success()
-        uses: actions/github-script@v6
-        with:
-          script: |
-            github.rest.repos.createDeploymentStatus({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              deployment_id: context.payload.deployment.id || 1,
-              state: 'success',
-              description: '✅ Theme deployed to Staging'
-            });
-            console.log('✅ Staging deployment successful');
-
-      - name: Notify staging deployment failure
-        if: failure()
-        uses: actions/github-script@v6
-        with:
-          script: |
-            console.log('❌ Staging deployment failed');
-            // Add Slack notification here if needed
+            sudo rsync -avz wp-content/themes/kc-blast-theme /opt/bitnami/wordpress/wp-content/themes/
+            rm kc-blast-theme.tar.gz
 
   deploy-production:
-    needs: test
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
-    environment: production
-    
     steps:
       - uses: actions/checkout@v3
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18'
-          cache: 'npm'
-
-      - name: Install and build theme
+      - name: Build theme
         run: |
           npm install
           npm run build
 
-      - name: Create backup on production
-        uses: appleboy/ssh-action@v0.1.7
-        with:
-          host: ${{ secrets.PROD_HOST }}
-          username: ${{ secrets.PROD_USER }}
-          key: ${{ secrets.PROD_SSH_KEY }}
-          script: |
-            BACKUP_DATE=$(date +%Y%m%d-%H%M%S)
-            THEME_PATH="/opt/bitnami/wordpress/wp-content/themes/kc-blast-theme"
-            
-            # CRITICAL: Backup current theme
-            if [ -d "$THEME_PATH" ]; then
-              sudo cp -r "$THEME_PATH" "$THEME_PATH.backup-$BACKUP_DATE"
-              echo "✓ CRITICAL: Theme backup created: $THEME_PATH.backup-$BACKUP_DATE"
-              
-              # Keep only last 5 backups
-              cd /opt/bitnami/wordpress/wp-content/themes
-              ls -dt kc-blast-theme.backup-* 2>/dev/null | tail -n +6 | xargs -r sudo rm -rf
-              echo "✓ Old backups cleaned (keeping last 5)"
-            else
-              echo "✗ ERROR: Theme directory not found!"
-              exit 1
-            fi
-
       - name: Package theme
-        run: |
-          tar -czf kc-blast-theme.tar.gz \
-            --exclude=node_modules \
-            --exclude=.git \
-            --exclude=.DS_Store \
-            --exclude=*.log \
-            wp-content/themes/kc-blast-theme/
-          echo "✓ Theme packaged for production"
-          ls -lh kc-blast-theme.tar.gz
+        run: tar -czf kc-blast-theme.tar.gz --exclude=node_modules --exclude=.git .
 
-      - name: Upload theme to production
+      - name: Upload to production server
         uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.PROD_HOST }}
           username: ${{ secrets.PROD_USER }}
           key: ${{ secrets.PROD_SSH_KEY }}
-          source: "kc-blast-theme.tar.gz"
-          target: "/tmp/"
-          strip_file_name: true
+          source: "theme.tar.gz"
+          target: "/home/deploy/"
 
-      - name: Deploy theme on production
+      - name: Deploy on production
         uses: appleboy/ssh-action@v0.1.7
         with:
           host: ${{ secrets.PROD_HOST }}
           username: ${{ secrets.PROD_USER }}
           key: ${{ secrets.PROD_SSH_KEY }}
           script: |
-            set -e  # Exit on error
-            
-            THEME_PATH="/opt/bitnami/wordpress/wp-content/themes"
-            TEMP_DIR="/tmp"
-            BACKUP_DATE=$(date +%Y%m%d-%H%M%S)
-            
-            echo "🚀 PRODUCTION DEPLOYMENT STARTED at $(date)"
-            
-            # Extract theme
-            cd $TEMP_DIR
-            tar -xzf kc-blast-theme.tar.gz
-            echo "✓ Theme extracted"
-            
-            # Verify theme files before deployment
-            if [ ! -f "wp-content/themes/kc-blast-theme/functions.php" ]; then
-              echo "✗ CRITICAL ERROR: functions.php not found in package!"
-              exit 1
-            fi
-            echo "✓ Theme validation passed"
-            
-            # Deploy with sudo and automatic backup
-            sudo rsync -avz wp-content/themes/kc-blast-theme/ $THEME_PATH/kc-blast-theme/ \
-              --delete \
-              --backup-dir=$THEME_PATH/kc-blast-theme.backup-$BACKUP_DATE
-            echo "✓ Theme deployed to production"
-            
-            # Fix permissions
-            sudo chown -R bitnami:daemon $THEME_PATH/kc-blast-theme/
-            sudo chmod -R 755 $THEME_PATH/kc-blast-theme/
-            echo "✓ Permissions updated on production"
-            
-            # Verify deployment
-            if [ -f "$THEME_PATH/kc-blast-theme/functions.php" ]; then
-              echo "✓ PRODUCTION: Deployment verified successfully"
-            else
-              echo "✗ CRITICAL: Deployment failed - functions.php missing!"
-              exit 1
-            fi
-            
-            # Clear WordPress caches
-            cd /opt/bitnami/wordpress
-            wp cache flush --allow-root 2>/dev/null || true
-            wp rewrite flush --allow-root 2>/dev/null || true
-            echo "✓ WordPress cache and rewrites flushed"
-            
-            # Quick health check
-            echo "🔍 Running health check..."
-            if wp theme list --allow-root | grep -q "kc-blast-theme"; then
-              echo "✓ Theme is recognized by WordPress"
-            fi
-            
-            # Cleanup
-            rm -f $TEMP_DIR/kc-blast-theme.tar.gz
-            echo "✓ Production cleanup complete"
-            echo "🚀 PRODUCTION DEPLOYMENT COMPLETED at $(date)"
-
-      - name: Create GitHub Release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: release-${{ github.run_number }}
-          release_name: Production Deployment #${{ github.run_number }}
-          body: |
-            🚀 Theme deployed to production
-
-            **Commit:** ${{ github.sha }}
-            **Author:** ${{ github.actor }}
-            **Time:** ${{ github.event.head_commit.timestamp }}
-
-            [View changes](https://github.com/${{ github.repository }}/compare/${{ github.event.before }}...${{ github.event.after }})
-          draft: false
-          prerelease: false
-
-      - name: Notify production deployment success
-        if: success()
-        uses: actions/github-script@v6
-        with:
-          script: |
-            console.log('✅ Production deployment successful!');
-            github.rest.repos.createDeploymentStatus({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              deployment_id: context.payload.deployment.id || 1,
-              state: 'success',
-              description: '🚀 Theme deployed to Production'
-            });
-
-      - name: Notify production deployment failure
-        if: failure()
-        uses: actions/github-script@v6
-        with:
-          script: |
-            console.log('❌ CRITICAL: Production deployment failed!');
-            github.rest.issues.create({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              title: '🚨 Production Deployment Failed',
-              body: `Production theme deployment failed!\n\nRun: ${context.runId}\nCommit: ${context.sha}\n\n[View logs](${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId})`
-            });
+            cd /home/deploy
+            tar -xzf theme.tar.gz
+            sudo rsync -avz wp-content/themes/kc-blast-theme /opt/bitnami/wordpress/wp-content/themes/
+            rm theme.tar.gz
