@@ -20,13 +20,13 @@ jobs:
 
       - name: Install dependencies
         run: |
-          cd wp-content/themes/your-theme
+          cd wp-content/themes/kc-tennis-blast-theme
           npm install
           npm run build
 
       - name: Create deployment package
         run: |
-          tar -czf theme.tar.gz wp-content/themes/your-theme
+          tar -czf theme.tar.gz wp-content/themes/kc-tennis-blast-theme
 
       - name: Copy files to Lightsail via SSH
         uses: appleboy/scp-action@v0.1.7
