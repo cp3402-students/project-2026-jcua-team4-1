@@ -1,0 +1,52 @@
+name: Deploy WordPress Theme to Lightsail
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Install Node (if your theme uses npm)
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: |
+          cd wp-content/themes/your-theme
+          npm install
+          npm run build
+
+      - name: Create deployment package
+        run: |
+          tar -czf theme.tar.gz wp-content/themes/your-theme
+
+      - name: Copy files to Lightsail via SSH
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.LIGHTSAIL_HOST }}
+          username: ${{ secrets.LIGHTSAIL_USER }}
+          key: ${{ secrets.LIGHTSAIL_SSH_KEY }}
+          source: "theme.tar.gz"
+          target: "/home/deploy/"
+
+      - name: Deploy on Lightsail
+        uses: appleboy/ssh-action@v0.1.7
+        with:
+          host: ${{ secrets.LIGHTSAIL_HOST }}
+          username: ${{ secrets.LIGHTSAIL_USER }}
+          key: ${{ secrets.LIGHTSAIL_SSH_KEY }}
+          script: |
+            cd /home/deploy
+            tar -xzf theme.tar.gz
+            sudo rsync -avz wp-content/themes/your-theme /opt/bitnami/wordpress/wp-content/themes/
+            sudo chown -R bitnami:daemon /opt/bitnami/wordpress/wp-content/themes/your-theme
+            sudo chmod -R 775 /opt/bitnami/wordpress/wp-content/themes/your-theme
+            rm theme.tar.gz
