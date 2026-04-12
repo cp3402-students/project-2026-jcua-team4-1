@@ -41,12 +41,12 @@ jobs:
             tar -xzf theme.tar.gz
 
             # Sync theme into Bitnami WordPress directory
-            sudo rsync -avz kc-blast-theme/ \
+            rsync -avz kc-blast-theme/ \
               /opt/bitnami/wordpress/wp-content/themes/kc-blast-theme/
 
             # Fix permissions for Bitnami
-            sudo chown -R bitnami:daemon /opt/bitnami/wordpress/wp-content/themes/kc-blast-theme
-            sudo chmod -R 775 /opt/bitnami/wordpress/wp-content/themes/kc-blast-theme
+            chown -R bitnami:daemon /opt/bitnami/wordpress/wp-content/themes/kc-blast-theme
+            chmod -R 775 /opt/bitnami/wordpress/wp-content/themes/kc-blast-theme
 
             # Cleanup
             rm -rf kc-blast-theme theme.tar.gz
