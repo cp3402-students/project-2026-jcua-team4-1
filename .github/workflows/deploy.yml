@@ -26,12 +26,12 @@ jobs:
             --exclude=".git" \
             --exclude=".github" \
             ./ \
-            ${{ secrets.PROD_USER }}@${{ secrets.PROD_HOST }}:/opt/bitnami/wordpress/wp-content/themes/your-theme/
+            ${{ secrets.PROD_USER }}@${{ secrets.PROD_HOST }}:/opt/bitnami/wordpress/wp-content/themes/kc-blast-theme/
 
       - name: Fix Permissions
         run: |
           ssh ${{ secrets.PROD_USER }}@${{ secrets.PROD_HOST }} << 'EOF'
-            sudo chown -R bitnami:daemon /opt/bitnami/wordpress/wp-content/themes/your-theme
-            sudo find /opt/bitnami/wordpress/wp-content/themes/your-theme -type d -exec chmod 775 {} \;
-            sudo find /opt/bitnami/wordpress/wp-content/themes/your-theme -type f -exec chmod 664 {} \;
+            sudo chown -R bitnami:daemon /opt/bitnami/wordpress/wp-content/themes/kc-blast-theme
+            sudo find /opt/bitnami/wordpress/wp-content/themes/kc-blast-theme -type d -exec chmod 775 {} \;
+            sudo find /opt/bitnami/wordpress/wp-content/themes/kc-blast-theme -type f -exec chmod 664 {} \;
           EOF
