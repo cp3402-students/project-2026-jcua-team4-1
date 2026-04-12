@@ -6,8 +6,37 @@ Version: 1.0
 Text Domain: kc-blast-theme
 */
 
-/* ===== GLOBAL RESET & TYPOGRAPHY ===== */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+/* =============================================================================
+   TABLE OF CONTENTS
+   1.  Global Reset & Typography
+   2.  Buttons
+   3.  Header & Navbar
+   4.  Hero (Homepage)
+   5.  Inner Page Hero Banner
+   6.  Page Content Area
+   7.  Get Started Section
+   8.  Coaches (Homepage)
+   9.  CTA Banner
+   10. Footer
+   11. Programs / Classes Page Layout
+   12. Social Tennis Page
+   13. Venue Hire Page
+   14. Pro Shop Page
+   15. Classes Page
+   16. Coaches Page
+   17. Contact Page
+   18. Responsive Overrides
+============================================================================= */
+
+
+/* =============================================================================
+   1. GLOBAL RESET & TYPOGRAPHY
+============================================================================= */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
 body {
     font-family: 'Segoe UI', Arial, sans-serif;
@@ -22,9 +51,20 @@ body {
     padding: 0 2rem;
 }
 
-h1, h2, h3 { color: #1a1a2e; line-height: 1.2; }
+h1, h2, h3 {
+    color: #1a1a2e;
+    line-height: 1.2;
+}
 
-/* ===== BUTTONS ===== */
+.text-center { text-align: center; }
+.bg-light     { background: #f9f9f9; }
+.bg-white     { background: #ffffff; }
+.bg-navy      { background: #1a1a2e; }
+
+
+/* =============================================================================
+   2. BUTTONS
+============================================================================= */
 .btn-primary {
     display: inline-block;
     background-color: #f7c948;
@@ -33,9 +73,9 @@ h1, h2, h3 { color: #1a1a2e; line-height: 1.2; }
     border-radius: 4px;
     text-decoration: none;
     font-weight: 700;
-    transition: background 0.2s ease;
     border: none;
     cursor: pointer;
+    transition: background 0.2s ease;
 }
 .btn-primary:hover { background-color: #e6b800; }
 
@@ -50,678 +90,11 @@ h1, h2, h3 { color: #1a1a2e; line-height: 1.2; }
     border: 2px solid #fff;
     transition: all 0.2s ease;
 }
-.btn-secondary:hover { background: #fff; color: #1a1a2e; }
-
-/* ===== INNER PAGE HERO BANNER ===== */
-.page-hero {
-    background-color: #1a1a2e;
-    padding: 4rem 0;
-    text-align: center;
-}
-.page-hero h1 {
-    color: #f7c948;
-    font-size: clamp(1.8rem, 4vw, 3rem);
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
-/* ===== PAGE CONTENT AREA ===== */
-.page-content {
-    padding: 4rem 0;
-}
-.page-content p {
-    font-size: 1.05rem;
-    line-height: 1.8;
-    color: #444;
-    margin-bottom: 1.5rem;
-}
-.page-content h2 {
-    font-size: 1.6rem;
-    margin: 2rem 0 1rem;
-    color: #1a1a2e;
-}
-
-/* ===== FOOTER ===== */
-.site-footer {
-    background-color: #1a1a2e;
-    color: #ccc;
-    padding: 4rem 2rem 2rem;
-}
-.footer-inner {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-.site-footer h3 {
-    color: #f7c948;
-    margin-bottom: 1rem;
-    font-size: 1rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-.site-footer p { margin-bottom: 0.5rem; font-size: 0.95rem; }
-.site-footer a { color: #ccc; text-decoration: none; }
-.site-footer a:hover { color: #f7c948; }
-.footer-copy {
-    text-align: center;
-    border-top: 1px solid #333;
-    padding-top: 1.5rem;
-    margin-top: 2rem;
-    font-size: 0.85rem;
-    color: #888;
-    max-width: 1200px;
-    margin: 2rem auto 0;
-}
-
-.footer-court .btn-primary{
-    color: #000000;
-}
-
-.footer-court .btn-primary:hover {
-    background-color: #e6b800;
-    color: #000000;
-}
-
-.footer-hours .footer-hours__time {
-    transform: translate(67px);
-}
-
-/* ===== HERO (Homepage) ===== */
-.hero {
-    position: relative;
-    min-height: 90vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    background-color: #1a1a2e;
-    background-size: cover;
-    background-position: center;
-}
-.hero-overlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(26,26,46,0.75);
-}
-.hero-content {
-    position: relative;
-    z-index: 1;
-    color: #fff;
-    padding: 2rem;
-}
-.hero-title {
-    font-size: clamp(2rem, 5vw, 3.5rem);
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: #fff;
-    margin-bottom: 0.5rem;
-}
-.hero-subtitle {
-    font-size: 1.5rem;
-    color: #f7c948;
-    margin-bottom: 2rem;
-}
-.hero-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
-
-/* ===== GET STARTED ===== */
-.get-started {
-    padding: 5rem 0;
-    text-align: center;
-    background: #f9f9f9;
-}
-.get-started h2 { font-size: 2rem; margin-bottom: 1rem; }
-.get-started p {
-    max-width: 700px;
-    margin: 0 auto 2rem;
-    font-size: 1.1rem;
-    color: #555;
-}
-
-/* ===== COACHES ===== */
-.coaches { padding: 5rem 0; text-align: center; }
-.coaches h2 { font-size: 2rem; margin-bottom: 0.5rem; }
-.coaches > .container > p { color: #555; margin-bottom: 3rem; }
-.coaches-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
-}
-.coach-card {
-    background: #f9f9f9;
-    border-radius: 8px;
-    padding: 2rem;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-    transition: transform 0.2s ease;
-}
-.coach-card:hover { transform: translateY(-5px); }
-.coach-card img {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 1rem;
-}
-.coach-card h3 { color: #1a1a2e; margin-bottom: 0.75rem; }
-.coach-card p { color: #555; line-height: 1.7; margin-bottom: 1.5rem; }
-
-/* ===== CTA BANNER ===== */
-.cta-banner {
-    background-color: #f7c948;
-    padding: 4rem 2rem;
-    text-align: center;
-}
-.cta-banner h2 { color: #1a1a2e; font-size: 2rem; margin-bottom: 1rem; }
-.cta-banner p { color: #1a1a2e; margin-bottom: 2rem; font-size: 1.1rem; }
-.cta-banner .btn-primary { background: #1a1a2e; color: #f7c948; }
-.cta-banner .btn-primary:hover { background: #2d2d4e; }
-
-/* ===== RESPONSIVE ===== */
-@media (max-width: 768px) {
-    .coaches-grid { grid-template-columns: 1fr; }
-    .footer-inner { grid-template-columns: 1fr; }
-    .hero-title { font-size: 2rem; }
-}
-/* ===== PROGRAMS / CLASSES PAGE ===== */
-.program-section { padding: 5rem 0; }
-.bg-light { background: #f9f9f9; }
-.bg-white { background: #ffffff; }
-.bg-navy { background: #1a1a2e; }
-
-.program-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: center;
-}
-.program-grid.reverse { direction: rtl; }
-.program-grid.reverse > * { direction: ltr; }
-
-.program-badge {
-    display: inline-block;
-    background: #f7c948;
-    color: #1a1a2e;
-    padding: 0.3rem 1rem;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 1rem;
-}
-.program-badge.yellow { background: #f7c948; color: #1a1a2e; }
-
-.program-text h2 { font-size: 1.8rem; margin-bottom: 1rem; }
-.program-text h3 { font-size: 1.1rem; margin: 1.5rem 0 0.75rem; color: #1a1a2e; }
-.program-text p { color: #555; line-height: 1.8; margin-bottom: 1rem; }
-.light-text { color: #fff !important; }
-.light-text h2 { color: #fff; }
-.light-text p { color: #ccc !important; }
-
-.program-list {
-    list-style: none;
-    padding: 0;
-    margin-bottom: 1.5rem;
-}
-.program-list li {
-    padding: 0.5rem 0;
-    border-bottom: 1px solid #eee;
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    color: #444;
-}
-.program-list.plain li { border: none; padding: 0.3rem 0; }
-.program-list.light-text li { color: #ccc; border-color: #333; }
-
-.badge {
-    padding: 0.2rem 0.6rem;
-    border-radius: 12px;
-    font-size: 0.75rem;
-    font-weight: 700;
-    color: white;
-}
-.badge.blue { background: #0077cc; }
-.badge.red { background: #cc2200; }
-.badge.orange { background: #e67300; }
-.badge.green { background: #2d8a00; }
-.badge.navy { background: #1a1a2e; }
-
-.program-img-placeholder {
-    background: #e8e8e8;
-    border-radius: 12px;
-    height: 300px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: 4rem;
-}
-.program-img-placeholder p { font-size: 1rem; color: #666; margin-top: 1rem; }
-.program-img-placeholder.dark { background: #2d2d4e; }
-.program-img-placeholder.dark p { color: #aaa; }
-.program-img-placeholder.light { background: rgba(255,255,255,0.1); }
-.program-img-placeholder.light p { color: #ccc; }
-
-/* ===== SOCIAL TENNIS PAGE ===== */
-.social-section {
-    padding: 5.5rem 0;
-}
-
-.section-header {
-    text-align: center;
-    margin-bottom: 3.5rem;
-    max-width: 760px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.section-header h2 {
-    font-size: clamp(2rem, 4vw, 2.8rem);
-    margin-bottom: 0.85rem;
-    color: #1a1a2e;
-    line-height: 1.15;
-}
-
-.section-header p {
-    color: #5a5f73;
-    font-size: 1.05rem;
-    line-height: 1.8;
-}
-
-.section-header.light-text h2 {
-    color: #fff;
-}
-
-.section-header.light-text p {
-    color: rgba(255,255,255,0.8);
-}
-
-/* Fixtures */
-.fixtures-card {
-    display: grid;
-    grid-template-columns: 1.05fr 1fr;
-    gap: 2.5rem;
-    align-items: center;
-    background: #ffffff;
-    border-radius: 20px;
-    padding: 2.25rem;
-    box-shadow: 0 14px 40px rgba(0,0,0,0.08);
-    border: 1px solid #ececf2;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.fixtures-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 20px 50px rgba(0,0,0,0.12);
-}
-
-.fixtures-image-placeholder {
-    background: linear-gradient(135deg, #f8f9fc 0%, #eef1f7 100%);
-    border-radius: 18px;
-    min-height: 280px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: 3.2rem;
-    border: 1px dashed #d6dbe8;
-    text-align: center;
-    padding: 2rem;
-}
-
-.fixtures-image-placeholder span {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 82px;
-    height: 82px;
-    border-radius: 50%;
-    background: #f7c948;
-    color: #1a1a2e;
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    box-shadow: 0 10px 25px rgba(247, 201, 72, 0.35);
-}
-
-.fixtures-image-placeholder p {
-    font-size: 1rem;
-    color: #5a5f73;
-    margin-top: 0.4rem;
-    font-weight: 600;
-}
-
-.fixtures-info h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    color: #1a1a2e;
-}
-
-.fixtures-info p {
-    color: #5a5f73;
-    line-height: 1.85;
-    margin-bottom: 1.6rem;
-    font-size: 1rem;
-}
-
-/* Court Hire */
-.court-hire-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-    gap: 1.5rem;
-}
-
-.hire-card {
-    background: #ffffff;
-    border-radius: 18px;
-    padding: 2rem 1.5rem;
-    text-align: center;
-    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-    box-shadow: 0 10px 28px rgba(0,0,0,0.06);
-    border: 1px solid #ececf2;
-    height: 100%;
-}
-
-.hire-card:hover {
-    transform: translateY(-7px);
-    box-shadow: 0 18px 38px rgba(0,0,0,0.1);
-    border-color: #f7c948;
-}
-
-.hire-card.featured {
-    background: linear-gradient(135deg, #1a1a2e 0%, #222544 100%);
-    color: #fff;
-    border-color: transparent;
-    box-shadow: 0 18px 40px rgba(26, 26, 46, 0.3);
-}
-
-.hire-card.featured h3 {
-    color: #f7c948;
-}
-
-.hire-card.featured p {
-    color: rgba(255,255,255,0.82);
-}
-
-.hire-card.featured .btn-primary {
-    background: #f7c948;
-    color: #1a1a2e;
-}
-
-.hire-card.featured .btn-primary:hover {
-    background: #ffd45e;
-}
-
-.hire-icon {
-    font-size: 2.6rem;
-    margin-bottom: 1rem;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 78px;
-    height: 78px;
-    border-radius: 50%;
-    background: #fff7dc;
-    box-shadow: inset 0 0 0 1px rgba(247, 201, 72, 0.25);
-}
-
-.hire-card h3 {
-    margin-bottom: 0.8rem;
-    font-size: 1.15rem;
-    color: #1a1a2e;
-}
-
-.hire-card p {
-    color: #5a5f73;
-    font-size: 0.96rem;
-    line-height: 1.8;
-    margin-bottom: 1.5rem;
-}
-
-/* Membership */
-.membership-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 1.5rem;
-    margin-bottom: 2.3rem;
-    align-items: stretch;
-}
-
-.membership-card {
-    background: rgba(255,255,255,0.08);
-    border: 1px solid rgba(255,255,255,0.15);
-    border-radius: 12px;
-    padding: 2rem;
-    color: #1a1a2e;   /* ✅ FIXED */
-}
-.membership-card h3,
-.membership-card p,
-.membership-card ul li,
-.membership-price,
-.membership-price span {
-    color: #1a1a2e;
-}
-
-.membership-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 18px 35px rgba(0,0,0,0.2);
-}
-
-.membership-card.featured {
-    background: #f7c948;
-    border-color: #f7c948;
-    color: #1a1a2e;
-    box-shadow: 0 18px 36px rgba(247, 201, 72, 0.28);
-}
-
-.membership-card.featured h3,
-.membership-card.featured p,
-.membership-card.featured ul li,
-.membership-card.featured .membership-price,
-.membership-card.featured .membership-price span {
-    color: #1a1a2e;
-}
-
-.membership-card h3 {
-    color: #1a1a2e;
-    font-size: 1.25rem;
-    margin-bottom: 0.6rem;
-}
-
-.membership-price {
-    font-size: 1.45rem;
-    font-weight: 800;
-    margin-bottom: 1rem;
-}
-
-.membership-price span {
-    font-size: 2.1rem;
-    color: inherit;
-}
-
-.membership-card p {
-    font-size: 0.95rem;
-    margin-bottom: 1rem;
-    opacity: 1;
-    line-height: 1.8;
-    color: #1a1a2e;
-}
-
-.membership-card ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.membership-card ul li {
-    padding: 0.45rem 0;
-    font-size: 0.95rem;
-    opacity: 1;
-    color: #1a1a2e;
-    border-top: 1px solid rgba(26,26,46,0.08);
-}
-
-.membership-card.featured ul li {
-    border-top: 1px solid rgba(26,26,46,0.12);
-}
-
-.popular-tag {
-    position: absolute;
-    top: -13px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: #ffffff;
-    color: #1a1a2e;
-    padding: 0.32rem 1rem;
-    border-radius: 999px;
-    font-size: 0.74rem;
-    font-weight: 800;
-    letter-spacing: 0.4px;
-    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
-}
-
-.membership-cta {
-    text-align: center;
-    margin-top: 2rem;
-}
-
-.membership-cta p {
-    color: black;
-    margin-bottom: 1rem;
-    font-size: 1rem;
-}
-
-/* Social Tennis page button polish */
-.page-social .btn-primary {
-    border-radius: 999px;
-    padding: 0.85rem 1.5rem;
-    box-shadow: 0 10px 24px rgba(247, 201, 72, 0.25);
-    transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
-}
-
-.page-social .btn-primary:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 14px 28px rgba(247, 201, 72, 0.32);
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .social-section {
-        padding: 4rem 0;
-    }
-
-    .fixtures-card {
-        grid-template-columns: 1fr;
-        padding: 1.5rem;
-        gap: 1.5rem;
-    }
-
-    .fixtures-image-placeholder {
-        min-height: 220px;
-    }
-
-    .membership-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-}
-
-@media (max-width: 560px) {
-    .membership-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .court-hire-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .section-header h2 {
-        font-size: 1.8rem;
-    }
-
-    .fixtures-info h3 {
-        font-size: 1.3rem;
-    }
-}
-/* ===== VENUE HIRE PAGE ===== */
-.venue-intro { padding: 4rem 0; text-align: center; }
-.venue-intro h2 { font-size: 2rem; margin-bottom: 1rem; }
-.venue-intro p { font-size: 1.1rem; color: #555; max-width: 650px; margin: 0 auto 2rem; }
-.text-center { text-align: center; }
-
-.venue-section { padding: 5rem 0; }
-
-.venue-cards-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-}
-.venue-card {
+.btn-secondary:hover {
     background: #fff;
-    border-radius: 12px;
-    padding: 2.5rem;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-    position: relative;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    border-top: 4px solid #e0e0e0;
-}
-.venue-card:hover { transform: translateY(-8px); box-shadow: 0 12px 35px rgba(0,0,0,0.12); }
-.venue-card.featured { border-top-color: #f7c948; }
-.venue-card-icon { font-size: 3rem; margin-bottom: 1rem; display: block; }
-.venue-card-badge {
-    position: absolute;
-    top: 1.5rem;
-    right: 1.5rem;
-    background: #1a1a2e;
-    color: #fff;
-    padding: 0.25rem 0.75rem;
-    border-radius: 20px;
-    font-size: 0.7rem;
-    font-weight: 700;
-    text-transform: uppercase;
-}
-.venue-card-badge.yellow { background: #f7c948; color: #1a1a2e; }
-.venue-card h3 { font-size: 1.4rem; margin-bottom: 0.5rem; color: #1a1a2e; }
-.venue-price {
-    font-size: 2.5rem;
-    font-weight: 800;
     color: #1a1a2e;
-    margin-bottom: 1.5rem;
-}
-.venue-price span { font-size: 1rem; font-weight: 400; color: #777; }
-.venue-includes {
-    list-style: none;
-    padding: 0;
-    margin-bottom: 2rem;
-}
-.venue-includes li {
-    padding: 0.5rem 0;
-    border-bottom: 1px solid #f0f0f0;
-    font-size: 0.95rem;
-    color: #444;
 }
 
-.why-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2rem;
-}
-.why-card {
-    text-align: center;
-    padding: 2rem;
-    background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.06);
-    transition: transform 0.2s ease;
-}
-.why-card:hover { transform: translateY(-5px); }
-.why-card span { font-size: 3rem; display: block; margin-bottom: 1rem; }
-.why-card h3 { color: #1a1a2e; margin-bottom: 0.5rem; }
-.why-card p { color: #666; font-size: 0.95rem; }
-
-.cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
 .btn-secondary-dark {
     display: inline-block;
     background: transparent;
@@ -733,22 +106,39 @@ h1, h2, h3 { color: #1a1a2e; line-height: 1.2; }
     border: 2px solid #1a1a2e;
     transition: all 0.2s ease;
 }
-.btn-secondary-dark:hover { background: #1a1a2e; color: #fff; }
+.btn-secondary-dark:hover {
+    background: #1a1a2e;
+    color: #fff;
+}
 
-/* ===== RESPONSIVE ===== */
-@media (max-width: 768px) {
-    .program-grid { grid-template-columns: 1fr; gap: 2rem; }
-    .program-grid.reverse { direction: ltr; }
-    .fixtures-card { grid-template-columns: 1fr; }
-    .venue-cards-grid { grid-template-columns: 1fr; }
-    .why-grid { grid-template-columns: 1fr 1fr; }
-    .membership-grid { grid-template-columns: 1fr 1fr; }
+.btn-outline {
+    display: inline-block;
+    background: #fff;
+    color: #1a1a2e;
+    border: 2px solid #e1e5ef;
+    padding: 0.75rem 1.25rem;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: all 0.2s ease;
 }
-@media (max-width: 480px) {
-    .why-grid { grid-template-columns: 1fr; }
-    .membership-grid { grid-template-columns: 1fr; }
+.btn-outline:hover {
+    border-color: #f7c948;
+    color: #1a1a2e;
+    transform: translateY(-2px);
 }
-/* ===== HEADER & NAVBAR ===== */
+
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+
+/* =============================================================================
+   3. HEADER & NAVBAR
+============================================================================= */
 .site-header {
     background-color: #1a1a2e;
     position: sticky;
@@ -769,7 +159,6 @@ h1, h2, h3 { color: #1a1a2e; line-height: 1.2; }
     gap: 1rem;
 }
 
-/* Logo */
 .site-branding .site-title {
     color: #ffffff;
     text-decoration: none;
@@ -784,7 +173,6 @@ h1, h2, h3 { color: #1a1a2e; line-height: 1.2; }
     width: auto;
 }
 
-/* Nav links */
 .main-navigation {
     flex: 1;
     display: flex;
@@ -807,17 +195,16 @@ h1, h2, h3 { color: #1a1a2e; line-height: 1.2; }
     border-radius: 4px;
     font-size: 0.9rem;
     font-weight: 500;
-    transition: all 0.2s ease;
     white-space: nowrap;
+    transition: all 0.2s ease;
 }
 
 .main-navigation ul li a:hover,
 .main-navigation ul li.current-menu-item > a {
-    background-color: rgba(247, 201, 72, 0.15);
+    background-color: rgba(247,201,72,0.15);
     color: #f7c948;
 }
 
-/* Book Now button */
 .btn-book-now {
     display: inline-block;
     background-color: #f7c948;
@@ -830,7 +217,6 @@ h1, h2, h3 { color: #1a1a2e; line-height: 1.2; }
     white-space: nowrap;
     transition: background 0.2s ease, transform 0.2s ease;
 }
-
 .btn-book-now:hover {
     background-color: #e6b800;
     transform: translateY(-1px);
@@ -857,26 +243,13 @@ h1, h2, h3 { color: #1a1a2e; line-height: 1.2; }
     transition: all 0.3s ease;
 }
 
-/* Hamburger animation when open */
-.menu-toggle.active .bar:nth-child(1) {
-    transform: translateY(7px) rotate(45deg);
-}
-.menu-toggle.active .bar:nth-child(2) {
-    opacity: 0;
-}
-.menu-toggle.active .bar:nth-child(3) {
-    transform: translateY(-7px) rotate(-45deg);
-}
+.menu-toggle.active .bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.menu-toggle.active .bar:nth-child(2) { opacity: 0; }
+.menu-toggle.active .bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-/* ===== MOBILE ===== */
 @media (max-width: 900px) {
-    .menu-toggle {
-        display: flex;
-    }
-
-    .header-cta {
-        display: none;
-    }
+    .menu-toggle  { display: flex; }
+    .header-cta   { display: none; }
 
     .main-navigation {
         display: none;
@@ -892,9 +265,7 @@ h1, h2, h3 { color: #1a1a2e; line-height: 1.2; }
         overflow-y: auto;
     }
 
-    .main-navigation.toggled {
-        display: flex;
-    }
+    .main-navigation.toggled { display: flex; }
 
     .main-navigation ul {
         flex-direction: column;
@@ -909,34 +280,311 @@ h1, h2, h3 { color: #1a1a2e; line-height: 1.2; }
         border-bottom: 1px solid rgba(255,255,255,0.1);
     }
 }
-/* ===== FRONT PAGE LAYOUT FIX ===== */
-.front-page .get-started .container,
-.front-page .coaches .container,
-.front-page .cta-banner .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
+
+
+/* =============================================================================
+   4. HERO (HOMEPAGE)
+============================================================================= */
+.hero {
+    position: relative;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #1a1a2e;
+    background-size: cover;
+    background-position: center;
 }
 
-.front-page .coaches-grid {
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(26,26,46,0.75);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    color: #fff;
+    padding: 2rem;
+}
+
+.hero-title {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    color: #f7c948;
+    margin-bottom: 2rem;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+
+/* =============================================================================
+   5. INNER PAGE HERO BANNER
+============================================================================= */
+.page-hero {
+    background-color: #1a1a2e;
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.page-hero h1 {
+    color: #f7c948;
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+
+/* =============================================================================
+   6. PAGE CONTENT AREA
+============================================================================= */
+.page-content { padding: 4rem 0; }
+
+.page-content p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #444;
+    margin-bottom: 1.5rem;
+}
+
+.page-content h2 {
+    font-size: 1.6rem;
+    margin: 2rem 0 1rem;
+    color: #1a1a2e;
+}
+
+
+/* =============================================================================
+   7. GET STARTED SECTION
+============================================================================= */
+.get-started {
+    padding: 5rem 0;
+    text-align: center;
+    background: #f9f9f9;
+}
+
+.get-started h2 { font-size: 2rem; margin-bottom: 1rem; }
+
+.get-started p {
+    max-width: 700px;
+    margin: 0 auto 2rem;
+    font-size: 1.1rem;
+    color: #555;
+}
+
+
+/* =============================================================================
+   8. COACHES (HOMEPAGE SECTION)
+============================================================================= */
+.coaches {
+    padding: 5rem 0;
+    text-align: center;
+    width: 100%;
+}
+
+.coaches h2 { font-size: 2rem; margin-bottom: 0.5rem; }
+.coaches > .container > p { color: #555; margin-bottom: 3rem; }
+
+.coaches-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
     margin-top: 2rem;
 }
 
-/* Fix sections taking full width */
-.get-started,
-.coaches,
-.cta-banner {
-    width: 100%;
-    padding: 5rem 0;
+/* Front-page override: force 3 columns */
+.front-page .coaches-grid {
+    grid-template-columns: repeat(3, 1fr);
 }
-/*  SOCIAL TENNIS PAGE - NEW PHP CLASS FIX */
 
-.social-tennis-page {
-    background: #f6f7fb;
+.coach-card {
+    background: #f9f9f9;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    transition: transform 0.2s ease;
 }
+.coach-card:hover { transform: translateY(-5px); }
+
+.coach-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.coach-card h3 { color: #1a1a2e; margin-bottom: 0.75rem; }
+.coach-card p  { color: #555; line-height: 1.7; margin-bottom: 1.5rem; }
+
+
+/* =============================================================================
+   9. CTA BANNER
+============================================================================= */
+.cta-banner {
+    background-color: #f7c948;
+    padding: 4rem 2rem;
+    text-align: center;
+    width: 100%;
+}
+
+.cta-banner h2 { color: #1a1a2e; font-size: 2rem; margin-bottom: 1rem; }
+.cta-banner p  { color: #1a1a2e; font-size: 1.1rem; margin-bottom: 2rem; }
+
+.cta-banner .btn-primary { background: #1a1a2e; color: #f7c948; }
+.cta-banner .btn-primary:hover { background: #2d2d4e; }
+
+
+/* =============================================================================
+   10. FOOTER
+============================================================================= */
+.site-footer {
+    background-color: #1a1a2e;
+    color: #ccc;
+    padding: 4rem 2rem 2rem;
+}
+
+.footer-inner {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.site-footer h3 {
+    color: #f7c948;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.site-footer p   { margin-bottom: 0.5rem; font-size: 0.95rem; }
+.site-footer a   { color: #ccc; text-decoration: none; }
+.site-footer a:hover { color: #f7c948; }
+
+.footer-copy {
+    text-align: center;
+    border-top: 1px solid #333;
+    padding-top: 1.5rem;
+    margin: 2rem auto 0;
+    max-width: 1200px;
+    font-size: 0.85rem;
+    color: #888;
+}
+
+.footer-court .btn-primary       { color: #000000; }
+.footer-court .btn-primary:hover { background-color: #e6b800; color: #000000; }
+
+.footer-hours .footer-hours__time { transform: translate(67px); }
+
+
+/* =============================================================================
+   11. PROGRAMS / CLASSES PAGE LAYOUT
+============================================================================= */
+.program-section { padding: 5rem 0; }
+
+.program-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.program-grid.reverse         { direction: rtl; }
+.program-grid.reverse > *     { direction: ltr; }
+
+.program-badge {
+    display: inline-block;
+    background: #f7c948;
+    color: #1a1a2e;
+    padding: 0.3rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+}
+
+.program-text h2 { font-size: 1.8rem; margin-bottom: 1rem; }
+.program-text h3 { font-size: 1.1rem; margin: 1.5rem 0 0.75rem; color: #1a1a2e; }
+.program-text p  { color: #555; line-height: 1.8; margin-bottom: 1rem; }
+
+.light-text      { color: #fff !important; }
+.light-text h2   { color: #fff; }
+.light-text p    { color: #ccc !important; }
+
+.program-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1.5rem;
+}
+
+.program-list li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: #444;
+}
+
+.program-list.plain li          { border: none; padding: 0.3rem 0; }
+.program-list.light-text li     { color: #ccc; border-color: #333; }
+
+/* Badges */
+.badge {
+    padding: 0.2rem 0.6rem;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: white;
+}
+.badge.blue   { background: #0077cc; }
+.badge.red    { background: #cc2200; }
+.badge.orange { background: #e67300; }
+.badge.green  { background: #2d8a00; }
+.badge.navy   { background: #1a1a2e; }
+
+/* Placeholder image blocks */
+.program-img-placeholder {
+    background: #e8e8e8;
+    border-radius: 12px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+}
+.program-img-placeholder p      { font-size: 1rem; color: #666; margin-top: 1rem; }
+.program-img-placeholder.dark   { background: #2d2d4e; }
+.program-img-placeholder.dark p { color: #aaa; }
+.program-img-placeholder.light  { background: rgba(255,255,255,0.1); }
+.program-img-placeholder.light p{ color: #ccc; }
+
+
+/* =============================================================================
+   12. SOCIAL TENNIS PAGE
+============================================================================= */
+.social-tennis-page { background: #f6f7fb; }
 
 /* Hero */
 .social-hero {
@@ -1010,11 +658,8 @@ h1, h2, h3 { color: #1a1a2e; line-height: 1.2; }
     font-size: 0.95rem;
 }
 
-/* Fixtures board in hero */
-.social-hero__visual {
-    display: flex;
-    justify-content: center;
-}
+/* Fixtures board */
+.social-hero__visual { display: flex; justify-content: center; }
 
 .fixtures-board {
     width: 100%;
@@ -1043,26 +688,14 @@ h1, h2, h3 { color: #1a1a2e; line-height: 1.2; }
     margin-bottom: 0.8rem;
     transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
-
 .fixture-row:hover {
     transform: translateY(-4px);
     box-shadow: 0 12px 24px rgba(0,0,0,0.12);
 }
 
-.fixture-day {
-    display: block;
-    font-size: 1.35rem;
-    font-weight: 800;
-    color: #1a1a2e;
-    margin-bottom: 0.2rem;
-}
-
+.fixture-day     { display: block; font-size: 1.35rem; font-weight: 800; color: #1a1a2e; margin-bottom: 0.2rem; }
 .fixture-session,
-.fixture-time {
-    display: block;
-    color: #1a1a2e;
-    font-size: 0.95rem;
-}
+.fixture-time    { display: block; color: #1a1a2e; font-size: 0.95rem; }
 
 .fixtures-board__cta {
     display: inline-block;
@@ -1077,21 +710,18 @@ h1, h2, h3 { color: #1a1a2e; line-height: 1.2; }
     margin-top: 0.5rem;
     transition: background 0.2s ease, transform 0.2s ease;
 }
-
 .fixtures-board__cta:hover {
     background: #e6b800;
     transform: translateY(-2px);
 }
 
-/* New section heading */
+/* Section headings */
 .section-heading {
     max-width: 760px;
     margin: 0 auto 3rem;
 }
 
-.section-heading.center {
-    text-align: center;
-}
+.section-heading.center { text-align: center; }
 
 .section-heading h2 {
     font-size: clamp(2rem, 4vw, 2.8rem);
@@ -1100,16 +730,10 @@ h1, h2, h3 { color: #1a1a2e; line-height: 1.2; }
     color: #1a1a2e;
 }
 
-.section-heading p {
-    color: #5a5f73;
-    font-size: 1.05rem;
-    line-height: 1.8;
-}
+.section-heading p { color: #5a5f73; font-size: 1.05rem; line-height: 1.8; }
 
 .section-heading--light h2,
-.section-heading--light p {
-    color: #1a1a2e;
-}
+.section-heading--light p { color: #1a1a2e; }
 
 .section-kicker {
     display: inline-block;
@@ -1121,7 +745,28 @@ h1, h2, h3 { color: #1a1a2e; line-height: 1.2; }
     margin-bottom: 0.8rem;
 }
 
-/* Fixtures section */
+/* Also used on earlier social section markup */
+.section-header {
+    text-align: center;
+    margin: 0 auto 3.5rem;
+    max-width: 760px;
+}
+
+.section-header h2 {
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    margin-bottom: 0.85rem;
+    color: #1a1a2e;
+    line-height: 1.15;
+}
+
+.section-header p { color: #5a5f73; font-size: 1.05rem; line-height: 1.8; }
+
+.section-header.light-text h2 { color: #fff; }
+.section-header.light-text p  { color: rgba(255,255,255,0.8); }
+
+/* Fixtures grid */
+.social-section { padding: 5.5rem 0; }
+
 .social-fixtures-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -1141,34 +786,13 @@ h1, h2, h3 { color: #1a1a2e; line-height: 1.2; }
     background: linear-gradient(135deg, #fffdf6 0%, #ffffff 100%);
 }
 
-.social-fixtures-card__icon {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-}
+.social-fixtures-card__icon { font-size: 2rem; margin-bottom: 1rem; }
 
-.social-fixtures-card h3 {
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-    color: #1a1a2e;
-}
+.social-fixtures-card h3 { font-size: 1.8rem; margin-bottom: 1rem; color: #1a1a2e; }
+.social-fixtures-card p  { color: #5a5f73; line-height: 1.8; margin-bottom: 1rem; }
 
-.social-fixtures-card p {
-    color: #5a5f73;
-    line-height: 1.8;
-    margin-bottom: 1rem;
-}
-
-.feature-list {
-    list-style: none;
-    padding: 0;
-    margin: 1rem 0 0;
-}
-
-.feature-list li {
-    padding: 0.7rem 0;
-    border-top: 1px solid #ececf2;
-    color: #444;
-}
+.feature-list { list-style: none; padding: 0; margin: 1rem 0 0; }
+.feature-list li { padding: 0.7rem 0; border-top: 1px solid #ececf2; color: #444; }
 
 .session-item {
     display: flex;
@@ -1188,43 +812,198 @@ h1, h2, h3 { color: #1a1a2e; line-height: 1.2; }
     border-radius: 12px;
 }
 
-.session-item__details strong {
-    display: block;
+.session-item__details strong { display: block; color: #1a1a2e; margin-bottom: 0.2rem; }
+.session-item__details span   { color: #666; }
+
+.fixtures-actions { margin-top: 1.5rem; }
+
+/* Older fixtures card style */
+.fixtures-card {
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    gap: 2.5rem;
+    align-items: center;
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 2.25rem;
+    box-shadow: 0 14px 40px rgba(0,0,0,0.08);
+    border: 1px solid #ececf2;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.fixtures-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+}
+
+.fixtures-image-placeholder {
+    background: linear-gradient(135deg, #f8f9fc 0%, #eef1f7 100%);
+    border-radius: 18px;
+    min-height: 280px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 3.2rem;
+    border: 1px dashed #d6dbe8;
+    text-align: center;
+    padding: 2rem;
+}
+
+.fixtures-image-placeholder span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 82px;
+    height: 82px;
+    border-radius: 50%;
+    background: #f7c948;
     color: #1a1a2e;
-    margin-bottom: 0.2rem;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 10px 25px rgba(247,201,72,0.35);
 }
 
-.session-item__details span {
-    color: #666;
+.fixtures-image-placeholder p { font-size: 1rem; color: #5a5f73; margin-top: 0.4rem; font-weight: 600; }
+
+.fixtures-info h3 { font-size: 1.5rem; margin-bottom: 1rem; color: #1a1a2e; }
+.fixtures-info p  { color: #5a5f73; line-height: 1.85; margin-bottom: 1.6rem; font-size: 1rem; }
+
+/* Court hire cards */
+.court-hire-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 1.5rem;
 }
 
-.fixtures-actions {
-    margin-top: 1.5rem;
+.hire-card {
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    box-shadow: 0 10px 28px rgba(0,0,0,0.06);
+    border: 1px solid #ececf2;
+    height: 100%;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+.hire-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 18px 38px rgba(0,0,0,0.1);
+    border-color: #f7c948;
 }
 
-/* Match your newer hire card names too */
+.hire-card.featured {
+    background: linear-gradient(135deg, #1a1a2e 0%, #222544 100%);
+    color: #fff;
+    border-color: transparent;
+    box-shadow: 0 18px 40px rgba(26,26,46,0.3);
+}
+.hire-card.featured h3          { color: #f7c948; }
+.hire-card.featured p           { color: rgba(255,255,255,0.82); }
+.hire-card.featured .btn-primary { background: #f7c948; color: #1a1a2e; }
+.hire-card.featured .btn-primary:hover { background: #ffd45e; }
+
+.hire-icon,
 .hire-card__icon {
     font-size: 2.3rem;
     margin-bottom: 1rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 78px;
+    height: 78px;
+    border-radius: 50%;
+    background: #fff7dc;
+    box-shadow: inset 0 0 0 1px rgba(247,201,72,0.25);
 }
 
-/* Membership newer featured class */
+.hire-card h3 { margin-bottom: 0.8rem; font-size: 1.15rem; color: #1a1a2e; }
+.hire-card p  { color: #5a5f73; font-size: 0.96rem; line-height: 1.8; margin-bottom: 1.5rem; }
+
+/* Membership */
+.membership-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2.3rem;
+    align-items: stretch;
+}
+
+.membership-card {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 12px;
+    padding: 2rem;
+    color: #1a1a2e;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.membership-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 35px rgba(0,0,0,0.2);
+}
+
+.membership-card h3,
+.membership-card p,
+.membership-card ul li,
+.membership-price,
+.membership-price span { color: #1a1a2e; }
+
+.membership-card.featured,
 .membership-card--featured {
     background: #f7c948;
     border-color: #f7c948;
     color: #1a1a2e;
-    box-shadow: 0 18px 36px rgba(247, 201, 72, 0.28);
+    box-shadow: 0 18px 36px rgba(247,201,72,0.28);
 }
 
+.membership-card.featured h3,
+.membership-card.featured p,
+.membership-card.featured ul li,
+.membership-card.featured .membership-price,
+.membership-card.featured .membership-price span,
 .membership-card--featured h3,
 .membership-card--featured p,
 .membership-card--featured ul li,
 .membership-card--featured .membership-price,
-.membership-card--featured .membership-price span {
+.membership-card--featured .membership-price span { color: #1a1a2e; }
+
+.membership-card h3 { font-size: 1.25rem; margin-bottom: 0.6rem; }
+
+.membership-price {
+    font-size: 1.45rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+}
+.membership-price span { font-size: 2.1rem; }
+
+.membership-card p { font-size: 0.95rem; margin-bottom: 1rem; line-height: 1.8; }
+
+.membership-card ul { list-style: none; padding: 0; margin: 0; }
+.membership-card ul li {
+    padding: 0.45rem 0;
+    font-size: 0.95rem;
+    border-top: 1px solid rgba(26,26,46,0.08);
+}
+.membership-card.featured ul li { border-top-color: rgba(26,26,46,0.12); }
+
+.popular-tag {
+    position: absolute;
+    top: -13px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #ffffff;
     color: #1a1a2e;
+    padding: 0.32rem 1rem;
+    border-radius: 999px;
+    font-size: 0.74rem;
+    font-weight: 800;
+    letter-spacing: 0.4px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
 }
 
-/* Benefits section */
+.membership-cta { text-align: center; margin-top: 2rem; }
+.membership-cta p { color: black; margin-bottom: 1rem; font-size: 1rem; }
+
+/* Benefits */
 .benefits-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -1240,33 +1019,17 @@ h1, h2, h3 { color: #1a1a2e; line-height: 1.2; }
     box-shadow: 0 10px 28px rgba(0,0,0,0.05);
     transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
-
 .benefit-card:hover {
     transform: translateY(-6px);
     box-shadow: 0 18px 38px rgba(0,0,0,0.09);
 }
 
-.benefit-card__icon {
-    display: block;
-    font-size: 2rem;
-    margin-bottom: 1rem;
-}
-
-.benefit-card h3 {
-    margin-bottom: 0.7rem;
-    color: #1a1a2e;
-}
-
-.benefit-card p {
-    color: #5a5f73;
-    line-height: 1.7;
-}
+.benefit-card__icon { display: block; font-size: 2rem; margin-bottom: 1rem; }
+.benefit-card h3    { margin-bottom: 0.7rem; color: #1a1a2e; }
+.benefit-card p     { color: #5a5f73; line-height: 1.7; }
 
 /* Bottom CTA */
-.social-bottom-cta {
-    padding: 5rem 0;
-    background: #f6f7fb;
-}
+.social-bottom-cta { padding: 5rem 0; background: #f6f7fb; }
 
 .social-bottom-cta__box {
     background: linear-gradient(135deg, #1a1a2e 0%, #222544 100%);
@@ -1277,114 +1040,125 @@ h1, h2, h3 { color: #1a1a2e; line-height: 1.2; }
     box-shadow: 0 18px 40px rgba(26,26,46,0.18);
 }
 
-.social-bottom-cta__box h2 {
-    color: #fff;
-    margin-bottom: 0.8rem;
-    font-size: 2rem;
-}
+.social-bottom-cta__box h2 { color: #fff; margin-bottom: 0.8rem; font-size: 2rem; }
+.social-bottom-cta__box p  { color: rgba(255,255,255,0.85); margin-bottom: 1.4rem; font-size: 1.05rem; }
 
-.social-bottom-cta__box p {
-    color: rgba(255,255,255,0.85);
-    margin-bottom: 1.4rem;
-    font-size: 1.05rem;
-}
-
-/* Better buttons on this page */
+/* Button overrides on social & page-social */
 .social-tennis-page .btn-primary,
 .social-tennis-page .btn-secondary,
-.social-tennis-page .btn-outline {
+.social-tennis-page .btn-outline,
+.page-social .btn-primary {
+    display: inline-flex;       
+    align-items: center;        
+    justify-content: center;    
     border-radius: 999px;
-    padding: 0.85rem 1.5rem;
+    padding: calc(- 10px - 5px) 25px;
+    line-height: 1;            
     font-weight: 700;
     text-decoration: none;
+    height: auto;               
+    box-shadow: 0 10px 24px rgba(247, 201, 72, 0.25);
+    transition: all 0.25s ease;
+		
 }
 
-.btn-outline {
-    display: inline-block;
+.social_button_text{
+	transform: translateY(-14px);
+}
+
+.social-tennis-page .btn-primary:hover,
+.page-social .btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 28px rgba(247,201,72,0.32);
+}
+
+
+/* =============================================================================
+   13. VENUE HIRE PAGE
+============================================================================= */
+.venue-intro { padding: 4rem 0; text-align: center; }
+.venue-intro h2 { font-size: 2rem; margin-bottom: 1rem; }
+.venue-intro p  { font-size: 1.1rem; color: #555; max-width: 650px; margin: 0 auto 2rem; }
+
+.venue-section { padding: 5rem 0; }
+
+.venue-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.venue-card {
     background: #fff;
-    color: #1a1a2e;
-    border: 2px solid #e1e5ef;
-    padding: 0.75rem 1.25rem;
-    border-radius: 999px;
-    text-decoration: none;
+    border-radius: 12px;
+    padding: 2.5rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    position: relative;
+    border-top: 4px solid #e0e0e0;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.venue-card:hover { transform: translateY(-8px); box-shadow: 0 12px 35px rgba(0,0,0,0.12); }
+.venue-card.featured { border-top-color: #f7c948; }
+
+.venue-card-icon  { font-size: 3rem; margin-bottom: 1rem; display: block; }
+
+.venue-card-badge {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    background: #1a1a2e;
+    color: #fff;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.7rem;
     font-weight: 700;
-    transition: all 0.2s ease;
+    text-transform: uppercase;
 }
+.venue-card-badge.yellow { background: #f7c948; color: #1a1a2e; }
 
-.btn-outline:hover {
-    border-color: #f7c948;
+.venue-card h3 { font-size: 1.4rem; margin-bottom: 0.5rem; color: #1a1a2e; }
+
+.venue-price {
+    font-size: 2.5rem;
+    font-weight: 800;
     color: #1a1a2e;
-    transform: translateY(-2px);
+    margin-bottom: 1.5rem;
+}
+.venue-price span { font-size: 1rem; font-weight: 400; color: #777; }
+
+.venue-includes { list-style: none; padding: 0; margin-bottom: 2rem; }
+.venue-includes li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 0.95rem;
+    color: #444;
 }
 
-/* Responsive */
-@media (max-width: 992px) {
-    .social-hero__inner,
-    .social-fixtures-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .social-hero__highlights,
-    .benefits-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
+.why-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
 }
 
-@media (max-width: 768px) {
-    .social-hero {
-        padding: 4rem 0;
-    }
-
-    .social-hero__content h1 {
-        font-size: 2.4rem;
-    }
-
-    .social-hero__actions {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .social-hero__highlights,
-    .benefits-grid,
-    .membership-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .session-item {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .session-item__day {
-        min-width: auto;
-    }
+.why-card {
+    text-align: center;
+    padding: 2rem;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+    transition: transform 0.2s ease;
 }
-/* FIX MEMBERSHIP TEXT COLORS */
-.membership-card {
-    color: #1a1a2e; /* dark text */
-}
+.why-card:hover  { transform: translateY(-5px); }
+.why-card span   { font-size: 3rem; display: block; margin-bottom: 1rem; }
+.why-card h3     { color: #1a1a2e; margin-bottom: 0.5rem; }
+.why-card p      { color: #666; font-size: 0.95rem; }
 
-.membership-card h3,
-.membership-card p,
-.membership-card ul li,
-.membership-price,
-.membership-price span {
-    color: #1a1a2e;
-}
 
-/* keep featured (yellow) looking good */
-.membership-card.featured {
-    color: #1a1a2e;
-}
-/* =========================================
-   PRO SHOP PAGE
-========================================= */
+/* =============================================================================
+   14. PRO SHOP PAGE
+============================================================================= */
+.pro-shop-page { background: #f6f7fb; }
 
-.pro-shop-page {
-    background: #f6f7fb;
-}
-
-/* Hero */
 .pro-shop-hero {
     background: linear-gradient(135deg, #0f122b 0%, #171b3f 100%);
     color: #fff;
@@ -1400,7 +1174,7 @@ h1, h2, h3 { color: #1a1a2e; line-height: 1.2; }
     right: -80px;
     width: 260px;
     height: 260px;
-    background: rgba(247, 201, 72, 0.10);
+    background: rgba(247,201,72,0.10);
     border-radius: 50%;
     filter: blur(10px);
 }
@@ -1444,35 +1218,21 @@ h1, h2, h3 { color: #1a1a2e; line-height: 1.2; }
     gap: 1rem;
     flex-wrap: wrap;
     margin-top: 2rem;
-
 }
 
 .pro-shop-hero__actions .btn-secondary-dark {
     background-color: #f7c948;
     color: black;
 }
-
 .pro-shop-hero__actions .btn-secondary-dark:hover {
     background-color: #e6b800;
     color: black;
 }
 
-/* General section */
-.pro-shop-section {
-    padding: 5.5rem 0;
-}
-
-.pro-shop-section--light {
-    background: #f6f7fb;
-}
-
-.pro-shop-section--white {
-    background: #ffffff;
-}
-
-.pro-shop-section--dark {
-    background: #ffffff;
-}
+.pro-shop-section { padding: 5.5rem 0; }
+.pro-shop-section--light { background: #f6f7fb; }
+.pro-shop-section--white,
+.pro-shop-section--dark  { background: #ffffff; }
 
 /* Brand cards */
 .brand-grid {
@@ -1487,25 +1247,15 @@ h1, h2, h3 { color: #1a1a2e; line-height: 1.2; }
     border-radius: 20px;
     padding: 2rem;
     text-align: center;
-    box-shadow: 0 10px 28px yellow rgba(0,0,0,0.05);
+    box-shadow: 0 10px 28px rgba(0,0,0,0.05);
     transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
-
 .brand-card:hover {
     transform: translateY(-6px);
     box-shadow: 0 18px 38px rgba(0,0,0,0.09);
 }
-
-.brand-card h3 {
-    font-size: 1.7rem;
-    color: #1a1a2e;
-    margin-bottom: 0.7rem;
-}
-
-.brand-card p {
-    color: #5a5f73;
-    line-height: 1.75;
-}
+.brand-card h3 { font-size: 1.7rem; color: #1a1a2e; margin-bottom: 0.7rem; }
+.brand-card p  { color: #5a5f73; line-height: 1.75; }
 
 /* Racquet cards */
 .racquet-grid {
@@ -1522,8 +1272,8 @@ h1, h2, h3 { color: #1a1a2e; line-height: 1.2; }
     padding: 2rem 1.4rem;
     min-height: 250px;
     box-shadow: 0 12px 30px rgba(0,0,0,0.06);
-    transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
     overflow: hidden;
+    transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
 }
 
 .racquet-card::before {
@@ -1533,7 +1283,7 @@ h1, h2, h3 { color: #1a1a2e; line-height: 1.2; }
     right: -40px;
     width: 120px;
     height: 120px;
-    background: rgba(247, 201, 72, 0.13);
+    background: rgba(247,201,72,0.13);
     border-radius: 50%;
 }
 
@@ -1574,7 +1324,7 @@ h1, h2, h3 { color: #1a1a2e; line-height: 1.2; }
     z-index: 2;
 }
 
-/* Accessories */
+/* Accessory cards */
 .accessory-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -1589,34 +1339,17 @@ h1, h2, h3 { color: #1a1a2e; line-height: 1.2; }
     text-align: center;
     transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
-
 .accessory-card:hover {
     transform: translateY(-6px);
     box-shadow: 0 18px 35px rgba(0,0,0,0.18);
 }
 
-.accessory-icon {
-    display: inline-block;
-    font-size: 2rem;
-    margin-bottom: 1rem;
-}
+.accessory-icon    { display: inline-block; font-size: 2rem; margin-bottom: 1rem; }
+.accessory-card h3 { color: #f7c948; margin-bottom: 0.75rem; font-size: 1.2rem; }
+.accessory-card p  { color: black; line-height: 1.75; }
 
-.accessory-card h3 {
-    color: #f7c948;
-    margin-bottom: 0.75rem;
-    font-size: 1.2rem;
-}
-
-.accessory-card p {
-    color: black;
-    line-height: 1.75;
-}
-
-/* CTA */
-.pro-shop-cta {
-    padding: 5rem 0;
-    background: #f6f7fb;
-}
+/* Pro shop CTA */
+.pro-shop-cta { padding: 5rem 0; background: #f6f7fb; }
 
 .pro-shop-cta__box {
     background: #fff;
@@ -1627,20 +1360,9 @@ h1, h2, h3 { color: #1a1a2e; line-height: 1.2; }
     border: 1px solid #ececf2;
 }
 
-.pro-shop-cta__box h2 {
-    font-size: 2rem;
-    color: #1a1a2e;
-    margin-bottom: 0.8rem;
-}
+.pro-shop-cta__box h2 { font-size: 2rem; color: #1a1a2e; margin-bottom: 0.8rem; }
+.pro-shop-cta__box p  { color: #5a5f73; max-width: 720px; margin: 0 auto 1.5rem; line-height: 1.8; }
 
-.pro-shop-cta__box p {
-    color: #5a5f73;
-    max-width: 720px;
-    margin: 0 auto 1.5rem;
-    line-height: 1.8;
-}
-
-/* Better button shape */
 .pro-shop-page .btn-primary,
 .pro-shop-page .btn-secondary-dark {
     border-radius: 999px;
@@ -1648,6 +1370,7 @@ h1, h2, h3 { color: #1a1a2e; line-height: 1.2; }
     color: black;
 }
 
+<<<<<<< HEAD
 /* Responsive */
 @media (max-width: 1100px) {
     .racquet-grid {
@@ -1685,219 +1408,310 @@ h1, h2, h3 { color: #1a1a2e; line-height: 1.2; }
     }
 }
 
+=======
+>>>>>>> 739221d (Initial commit: KC Tennis Blast theme files)
 
+/* =============================================================================
+   15. CLASSES PAGE
+============================================================================= */
 .classes-hero {
-  background: #16163a;
-  color: #fff;
-  text-align: center;
-  padding: 80px 20px;
+    background: #16163a;
+    color: #fff;
+    text-align: center;
+    padding: 80px 20px;
 }
 
 .classes-hero-content h1 {
-  margin: 0;
-  font-size: 56px;
-  font-weight: 800;
-  color: #f1c644;
-  letter-spacing: 2px;
+    margin: 0;
+    font-size: 56px;
+    font-weight: 800;
+    color: #f1c644;
+    letter-spacing: 2px;
 }
 
 .classes-hero-content p {
-  margin-top: 10px;
-  font-size: 18px;
-  color: rgba(255,255,255,0.85);
+    margin-top: 10px;
+    font-size: 18px;
+    color: rgba(255,255,255,0.85);
 }
 
 .classes-page {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px;
 }
 
+/* Info overview cards */
+.classes-info-overview {
+    position: relative;
+    margin-top: -35px;
+    padding: 0 20px 60px;
+    z-index: 5;
+}
+
+.classes-info-wrap {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(260px, 1fr));
+    gap: 24px;
+}
+
+.classes-info-card {
+    position: relative;
+    background: rgba(255,255,255,0.92);
+    border: 1px solid rgba(18,43,74,0.08);
+    border-radius: 28px;
+    padding: 30px 26px;
+    box-shadow: 0 18px 45px rgba(12,35,64,0.12);
+    backdrop-filter: blur(10px);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+.classes-info-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 24px 55px rgba(12,35,64,0.18);
+}
+
+.classes-info-label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    margin-bottom: 18px;
+    background: linear-gradient(135deg, #0c4a7c, #1b77c5);
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.95rem;
+}
+
+.classes-info-card h3 { margin: 0 0 14px; font-size: 1.45rem; line-height: 1.3; color: #0f2238; }
+
+.classes-info-card p {
+    margin: 0 0 22px;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #4a5b6c;
+    min-height: 85px;
+}
+
+.classes-see-more {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 13px 24px;
+    border: none;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #0c4a7c, #1b77c5);
+    color: #ffffff;
+    font-size: 0.98rem;
+    font-weight: 800;
+    letter-spacing: 0.3px;
+    cursor: pointer;
+    box-shadow: 0 10px 24px rgba(12,74,124,0.22);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.classes-see-more:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 28px rgba(12,74,124,0.28);
+}
+
+/* Detail panels */
+.classes-detail-area {
+    max-width: 1180px;
+    margin: 20px auto 70px;
+    padding: 0 20px;
+}
+
+.classes-detail-panel {
+    display: none;
+    position: relative;
+    background: #ffffff;
+    border-radius: 28px;
+    padding: 36px 32px;
+    box-shadow: 0 20px 50px rgba(15,34,56,0.12);
+    border: 1px solid rgba(15,34,56,0.08);
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.classes-detail-panel.active {
+    display: block !important;
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+.classes-detail-tag {
+    display: inline-block;
+    margin-bottom: 16px;
+    padding: 8px 16px;
+    border-radius: 999px;
+    background: rgba(27,119,197,0.12);
+    color: #0c4a7c;
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.classes-detail-panel h2 { margin: 0 0 16px; font-size: 2rem; color: #0f2238; }
+.classes-detail-panel p  { margin: 0 0 14px; font-size: 1rem; line-height: 1.8; color: #455668; }
+
+.classes-go-top {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 999px;
+    background: #0f2238;
+    color: #ffffff;
+    font-weight: 800;
+    font-size: 0.94rem;
+    cursor: pointer;
+    transition: transform 0.25s ease, background 0.25s ease;
+}
+.classes-go-top:hover {
+    transform: translateY(-2px);
+    background: #1b77c5;
+}
+
+/* Class list items */
 .class-item {
-  display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: 50px;
-  align-items: center;
-  padding: 60px 0;
-  border-bottom: 1px solid #e5e5e5;
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.7s ease;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 50px;
+    align-items: center;
+    padding: 60px 0;
+    border-bottom: 1px solid #e5e5e5;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.7s ease;
 }
 
 .class-item.show {
-  opacity: 1;
-  transform: translateY(0);
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .class-item.dark {
-  background: #171738;
-  color: #fff;
-  padding: 60px 30px;
-  border-radius: 20px;
-  margin: 30px 0;
-  border-bottom: none;
+    background: #171738;
+    color: #fff;
+    padding: 60px 30px;
+    border-radius: 20px;
+    margin: 30px 0;
+    border-bottom: none;
 }
 
-.class-text {
-  max-width: 600px;
-}
+.class-text { max-width: 600px; }
 
 .class-tag {
-  display: inline-block;
-  background: #f1c644;
-  color: #111;
-  font-weight: 700;
-  font-size: 13px;
-  padding: 8px 16px;
-  border-radius: 999px;
-  margin-bottom: 15px;
-  letter-spacing: 0.5px;
+    display: inline-block;
+    background: #f1c644;
+    color: #111;
+    font-weight: 700;
+    font-size: 13px;
+    padding: 8px 16px;
+    border-radius: 999px;
+    margin-bottom: 15px;
+    letter-spacing: 0.5px;
 }
 
-.class-text h2 {
-  font-size: 36px;
-  margin: 0 0 15px;
-  line-height: 1.2;
-}
+.class-text h2 { font-size: 36px; margin: 0 0 15px; line-height: 1.2; }
+.class-text h4 { margin: 25px 0 15px; font-size: 18px; font-weight: 700; }
+.class-text p  { font-size: 16px; line-height: 1.8; margin-bottom: 20px; }
 
-.class-text h4 {
-  margin-top: 25px;
-  margin-bottom: 15px;
-  font-size: 18px;
-  font-weight: 700;
-}
-
-.class-text p {
-  font-size: 16px;
-  line-height: 1.8;
-  margin-bottom: 20px;
-}
-
-.class-list {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 25px;
-}
-
+.class-list { list-style: none; padding: 0; margin: 0 0 25px; }
 .class-list li {
-  margin-bottom: 12px;
-  padding-left: 28px;
-  position: relative;
-  line-height: 1.6;
+    margin-bottom: 12px;
+    padding-left: 28px;
+    position: relative;
+    line-height: 1.6;
 }
-
 .class-list li::before {
-  content: "✔";
-  color: #67b85f;
-  position: absolute;
-  left: 0;
-  top: 0;
-  font-weight: bold;
+    content: "✔";
+    color: #67b85f;
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-weight: bold;
 }
 
 .class-btn {
-  display: inline-block;
-  background: #f1c644;
-  color: #111;
-  text-decoration: none;
-  font-weight: 700;
-  padding: 14px 26px;
-  border-radius: 10px;
-  transition: all 0.3s ease;
+    display: inline-block;
+    background: #f1c644;
+    color: #111;
+    text-decoration: none;
+    font-weight: 700;
+    padding: 14px 26px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
 }
-
 .class-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-  color: #111;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    color: #111;
 }
 
 .class-image-card {
-  background: #efefef;
-  min-height: 260px;
-  border-radius: 18px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
-  text-align: center;
-  padding: 30px;
+    background: #efefef;
+    min-height: 260px;
+    border-radius: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 30px;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
-.class-item.dark .class-image-card {
-  background: #2a2b57;
-  color: #fff;
-}
+.class-item.dark .class-image-card { background: #2a2b57; color: #fff; }
 
 .class-image-card:hover {
-  transform: scale(1.03);
-  box-shadow: 0 18px 35px rgba(0,0,0,0.12);
+    transform: scale(1.03);
+    box-shadow: 0 18px 35px rgba(0,0,0,0.12);
 }
 
-.class-image-card .icon {
-  font-size: 48px;
-  margin-bottom: 15px;
-}
-
-.class-image-card p {
-  margin: 0;
-  font-size: 16px;
-  font-weight: 600;
-}
+.class-image-card .icon { font-size: 48px; margin-bottom: 15px; }
+.class-image-card p     { margin: 0; font-size: 16px; font-weight: 600; }
 
 .classes-cta {
-  background: #f1c644;
-  text-align: center;
-  padding: 70px 20px;
+    background: #f1c644;
+    text-align: center;
+    padding: 70px 20px;
 }
 
-.classes-cta-content h2 {
-  margin: 0 0 12px;
-  font-size: 42px;
-  color: #111;
+.classes-cta-content h2 { margin: 0 0 12px; font-size: 42px; color: #111; }
+.classes-cta-content p  { margin: 0 0 25px; font-size: 17px; color: #222; }
+
+.dark-btn        { background: #171738; color: #fff; }
+.dark-btn:hover  { color: #fff; }
+.class-image-card {
+    background: #f3f3f3;
+    border-radius: 28px;
+    padding: 18px;
+    text-align: center;
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.08);
 }
 
-.classes-cta-content p {
-  margin: 0 0 25px;
-  font-size: 17px;
-  color: #222;
+.class-card-img {
+    width: 95%;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 22px;
+    display: block;
+    margin: 0 auto 22px;
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.14);
 }
 
-.dark-btn {
-  background: #171738;
-  color: #fff;
-}
-
-.dark-btn:hover {
-  color: #fff;
-}
-
-/* Responsive */
-@media (max-width: 900px) {
-  .class-item {
-    grid-template-columns: 1fr;
-    gap: 30px;
-    text-align: left;
-  }
-
-  .class-text h2 {
-    font-size: 30px;
-  }
-
-  .classes-hero-content h1 {
-    font-size: 42px;
-  }
-
-  .classes-cta-content h2 {
+.class-image-card h3 {
+    margin: 0;
     font-size: 32px;
-  }
-
-  .class-image-card {
-    min-height: 220px;
-  }
+    font-weight: 700;
+    color: #1d1d3c;
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 /* ================================
@@ -2200,64 +2014,185 @@ button[type="submit"]:hover {
 /* =========================
    COACHES PAGE
 ========================= */
+=======
+>>>>>>> 739221d (Initial commit: KC Tennis Blast theme files)
 
+/* =============================================================================
+   16. COACHES PAGE
+============================================================================= */
+
+/* Hero */
+.coaches-hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.coaches-hero img.hero-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.coaches-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(rgba(8,18,30,0.35), rgba(8,18,30,0.55));
+    z-index: 1;
+}
+
+.coaches-hero-inner {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 110px 20px 60px;
+}
+
+.coaches-hero-content { max-width: 760px; margin-bottom: 40px; }
+
+.hero-kicker {
+    display: inline-block;
+    margin-bottom: 18px;
+    padding: 8px 16px;
+    border: 1px solid rgba(255,255,255,0.35);
+    border-radius: 999px;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(8px);
+    color: #ffffff;
+    font-size: 0.88rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.coaches-hero-content h1 {
+    margin: 0 0 18px;
+    font-size: clamp(2.6rem, 5vw, 4.8rem);
+    line-height: 1.08;
+    font-weight: 800;
+    color: #ffffff;
+    text-shadow: 0 3px 18px rgba(0,0,0,0.25);
+}
+
+.coaches-hero-content p {
+    max-width: 650px;
+    margin: 0;
+    font-size: 1.08rem;
+    line-height: 1.8;
+    color: rgba(255,255,255,0.92);
+    text-shadow: 0 2px 12px rgba(0,0,0,0.18);
+}
+
+/* Hero info cards */
+.hero-info-cards {
+    display: flex;
+    gap: 20px;
+    max-width: 1000px;
+    margin-top: 40px;
+}
+
+.hero-info-card {
+    position: relative;
+    flex: 1;
+    padding: 22px 20px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.14);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.2);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    color: #ffffff;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.hero-info-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px);
+    background-size: 24px 24px;
+    opacity: 0.2;
+    pointer-events: none;
+}
+
+.hero-info-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+    pointer-events: none;
+}
+
+.hero-info-card h3,
+.hero-info-card p { position: relative; z-index: 2; }
+
+.hero-info-card h3 { margin: 0 0 12px; font-size: 1.15rem; font-weight: 800; line-height: 1.3; color: #ffffff; }
+.hero-info-card p  { margin: 0; font-size: 0.95rem; line-height: 1.7; font-weight: 600; color: rgba(255,255,255,0.94); }
+
+.hero-info-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 24px 55px rgba(0,0,0,0.24);
+    border-color: rgba(255,255,255,0.3);
+}
+
+/* Coaches content area */
 .coaches-page {
-  padding: 80px 0;
-  background: #f6f7f9;
+    position: relative;
+    z-index: 3;
+    padding: 80px 0;
+    background: #ffffff;
 }
 
-.coaches-page .container {
-  max-width: 1250px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
+.coaches-page .container { max-width: 1250px; margin: 0 auto; padding: 0 20px; }
 
-.coaches-header {
-  text-align: left;
-  margin-bottom: 40px;
-}
+.coaches-header { text-align: left; margin-bottom: 40px; }
+.coaches-header h1 { font-size: 2.8rem; font-weight: 800; color: #121a26; margin-bottom: 14px; line-height: 1.2; }
+.coaches-header p  { max-width: 760px; font-size: 1.04rem; color: #5a6472; line-height: 1.7; margin: 0; }
 
-.coaches-header h1 {
-  font-size: 2.8rem;
-  font-weight: 800;
-  color: #121a26;
-  margin-bottom: 14px;
-  line-height: 1.2;
-}
-
-.coaches-header p {
-  max-width: 760px;
-  font-size: 1.04rem;
-  color: #5a6472;
-  line-height: 1.7;
-  margin: 0;
-}
-
-/* ===== COACHES GRID ===== */
-.coaches-grid {
+/* Top info cards */
+.coach-info-section {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
-    align-items: start;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    margin-bottom: 40px;
 }
 
-.coach-card {
-    background: #f9f9f9;
-    border-radius: 12px;
-    padding: 1.5rem;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-    transition: transform 0.2s ease;
+.info-card {
+    background: #ffffff;
+    padding: 26px 22px;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+.info-card:hover { transform: translateY(-6px); box-shadow: 0 16px 35px rgba(0,0,0,0.1); }
+.info-card h3    { font-size: 1.2rem; font-weight: 800; margin-bottom: 10px; color: #121a26; }
+.info-card p     { font-size: 0.95rem; color: #5a6472; line-height: 1.6; }
+
+.info-card.highlight             { background: #6f2dbd; }
+.info-card.highlight h3,
+.info-card.highlight p           { color: #ffffff; }
+
+/* Coach cards (coaches page) */
+.coaches-page .coach-card {
     height: 380px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     overflow: hidden;
+    padding: 1.5rem;
 }
 
-.coach-card:hover { transform: translateY(-5px); }
-
-.coach-card img {
+.coaches-page .coach-card img {
     width: 100%;
     height: 200px;
     object-fit: cover;
@@ -2265,16 +2200,9 @@ button[type="submit"]:hover {
     margin-bottom: 1rem;
 }
 
-.coach-card h3 {
-    color: #1a1a2e;
-    margin-bottom: 0.5rem;
-    font-size: 1rem;
-}
+.coaches-page .coach-card h3 { font-size: 1rem; }
 
-.coach-card p {
-    color: #555;
-    line-height: 1.6;
-    margin-bottom: 1rem;
+.coaches-page .coach-card p {
     font-size: 0.9rem;
     flex-grow: 1;
     overflow: hidden;
@@ -2283,339 +2211,792 @@ button[type="submit"]:hover {
     -webkit-box-orient: vertical;
 }
 
-.coach-card .btn-primary {
-    width: 100%;
-    text-align: center;
-    margin-top: auto;
-}
-
-/* Middle CTA card same size */
-.coach-card.cta-card {
-    background: linear-gradient(135deg, #7c3aed, #9f5cf7);
-    color: #fff;
-    height: 380px;
+/* Message card */
+.coach-message-card {
+    background: linear-gradient(135deg, #6f2dbd, #9b5de5);
+    border-radius: 30px;
+    padding: 30px 25px;
+    display: flex;
+    align-items: center;
     justify-content: center;
     text-align: center;
+    color: #ffffff;
+    box-shadow: 0 15px 40px rgba(111,45,189,0.25);
+    position: relative;
+    overflow: hidden;
 }
 
-.coach-card.cta-card h3 {
-    color: #fff;
-    font-size: 1.3rem;
-    margin-bottom: 1rem;
+.coach-message-card::before {
+    content: "";
+    position: absolute;
+    width: 120px;
+    height: 200px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 50%;
+    top: -40px;
+    right: -40px;
 }
 
-.coach-card.cta-card p {
-    color: rgba(255,255,255,0.9);
-    -webkit-line-clamp: 4;
+.coach-message-card::after {
+    content: "";
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 50%;
+    bottom: -30px;
+    left: -30px;
 }
 
-.coach-card.cta-card .btn-primary {
-    background: #fff;
-    color: #7c3aed;
-    border-radius: 50px;
+.message-content h3 { font-size: 1.4rem; font-weight: 800; margin-bottom: 12px; color: #ffffff; }
+.message-content p  { font-size: 0.95rem; line-height: 1.6; margin-bottom: 18px; color: #ffffff; }
+
+.message-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #ffffff;
+    color: #6f2dbd;
     font-weight: 700;
+    font-size: 0.9rem;
+    text-decoration: none;
+    border-radius: 999px;
+    transition: all 0.3s ease;
+}
+.message-btn:hover {
+    background: #f3f3f3;
+    transform: translateY(-2px);
 }
 
-.coach-card.cta-card .btn-primary:hover {
-    background: #f0e6ff;
-}
-/* =========================
-   Coaches Hero Section
-========================= */
-.coaches-hero {
-  position: relative;
-  min-height: 100vh;
-  background: linear-gradient(rgba(8, 18, 30, 0.35), rgba(8, 18, 30, 0.55)),
-    url("http://localhost/kc-tennis-blast/wp-content/themes/kc-blast-theme/assets/images/image6.png") center center / cover no-repeat;
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-}
-
-.coaches-hero-overlay {
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(circle at top right, rgba(255, 214, 10, 0.20), transparent 30%),
-    radial-gradient(circle at bottom left, rgba(255, 255, 255, 0.08), transparent 25%);
-  z-index: 1;
-}
-
-.coaches-hero-inner {
-  position: relative;
-  z-index: 2;
-  width: 100%;
-  max-width: 1320px;
-  margin: 0 auto;
-  padding: 120px 24px 80px;
-}
-
-.coaches-hero-content {
-  max-width: 760px;
-  margin-bottom: 50px;
-}
-
-.hero-kicker {
-  display: inline-block;
-  margin-bottom: 18px;
-  padding: 8px 16px;
-  border: 1px solid rgba(255,255,255,0.35);
-  border-radius: 999px;
-  background: rgba(255,255,255,0.10);
-  backdrop-filter: blur(8px);
-  color: #ffffff;
-  font-size: 0.88rem;
-  font-weight: 700;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-}
-
-.coaches-hero-content h1 {
-  margin: 0 0 18px;
-  font-size: clamp(2.6rem, 5vw, 4.8rem);
-  line-height: 1.08;
-  font-weight: 800;
-  color: #ffffff;
-  text-shadow: 0 3px 18px rgba(0, 0, 0, 0.25);
-}
-
-.coaches-hero-content p {
-  max-width: 650px;
-  margin: 0;
-  font-size: 1.08rem;
-  line-height: 1.8;
-  color: rgba(255,255,255,0.92);
-  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.18);
-}
-
-.hero-info-cards {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(240px, 1fr));
-  gap: 24px;
-  align-items: stretch;
-}
-
-/* hidden at first */
-.hero-info-card {
-  position: relative;
-  padding: 28px 24px;
-  border-radius: 24px;
-  overflow: hidden;
-  border: 1px solid rgba(255,255,255,0.18);
-  background: rgba(15, 25, 35, 0.24);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.18);
-  opacity: 0;
-  transform: translateY(40px);
-  transition:
-    opacity 0.8s ease,
-    transform 0.8s ease,
-    box-shadow 0.35s ease,
-    border-color 0.35s ease;
-}
-
-/* racket/net style overlay */
-.hero-info-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(rgba(255,255,255,0.10) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.10) 1px, transparent 1px);
-  background-size: 24px 24px;
-  opacity: 0.20;
-  pointer-events: none;
-}
-
-.hero-info-card::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(255,255,255,0.10), rgba(255,255,255,0.02));
-  pointer-events: none;
-}
-
-.hero-info-card h3,
-.hero-info-card p {
-  position: relative;
-  z-index: 2;
-}
-
-.hero-info-card h3 {
-  margin: 0 0 12px;
-  font-size: 1.25rem;
-  font-weight: 800;
-  color: #ffffff;
-  line-height: 1.3;
-}
-
-.hero-info-card p {
-  margin: 0;
-  font-size: 0.98rem;
-  line-height: 1.75;
-  font-weight: 600;
-  color: rgba(255,255,255,0.94);
-}
-
-/* slide directions */
-.hero-card-left {
-  transform: translateX(-90px);
-}
-
-.hero-card-middle {
-  transform: translateY(60px);
-}
-
-.hero-card-right {
-  transform: translateX(90px);
-}
-
-/* show animation */
-.hero-info-cards.is-visible .hero-info-card {
-  opacity: 1;
-}
-
-.hero-info-cards.is-visible .hero-card-left {
-  transform: translateX(0);
-  transition-delay: 0.08s;
-}
-
-.hero-info-cards.is-visible .hero-card-middle {
-  transform: translateY(0);
-  transition-delay: 0.22s;
-}
-
-.hero-info-cards.is-visible .hero-card-right {
-  transform: translateX(0);
-  transition-delay: 0.36s;
-}
-
-.hero-info-card:hover {
-  transform: translateY(-8px) !important;
-  box-shadow: 0 24px 55px rgba(0, 0, 0, 0.24);
-  border-color: rgba(255,255,255,0.30);
-}
-
-/* make coaches section sit nicely after hero */
-.coaches-page {
-  position: relative;
-  z-index: 3;
-  background: #ffffff;
-}
-
-/* responsive */
-@media (max-width: 991px) {
-  .coaches-hero {
-    min-height: auto;
-    padding-bottom: 40px;
-  }
-
-  .coaches-hero-inner {
-    padding: 110px 20px 60px;
-  }
-
-  .hero-info-cards {
-    grid-template-columns: 1fr;
-    gap: 18px;
-  }
-
-  .hero-card-left,
-  .hero-card-middle,
-  .hero-card-right {
-    transform: translateY(40px);
-  }
-
-  .hero-info-cards.is-visible .hero-card-left,
-  .hero-info-cards.is-visible .hero-card-middle,
-  .hero-info-cards.is-visible .hero-card-right {
-    transform: translateY(0);
-  }
-}
-
-@media (max-width: 575px) {
-  .coaches-hero-content h1 {
-    font-size: 2.2rem;
-  }
-
-  .coaches-hero-content p {
-    font-size: 1rem;
-  }
-
-  .hero-info-card {
-    padding: 22px 18px;
-    border-radius: 18px;
-  }
-}
-/* =========================
-   DETAIL SECTION
-========================= */
-
-.coach-detail-wrapper {
-  margin-top: 55px;
-}
+/* Coach detail panel */
+.coach-detail-wrapper { margin-top: 55px; }
 
 .coach-detail-panel {
-  display: none;
-  grid-template-columns: 420px 1fr;
-  gap: 34px;
-  background: #ffffff;
-  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.08);
-  padding: 28px;
-  border: 1px solid #eceef2;
+    display: none;
+    grid-template-columns: 420px 1fr;
+    gap: 34px;
+    background: #ffffff;
+    box-shadow: 0 14px 40px rgba(0,0,0,0.08);
+    padding: 28px;
+    border: 1px solid #eceef2;
 }
 
 .coach-detail-panel.active {
-  animation: coachFadeUp 0.45s ease;
-}
-
-.coach-detail-image {
-  width: 100%;
-}
-
-.coach-detail-image img {
-  width: 100%;
-  height: 100%;
-  min-height: 460px;
-  object-fit: cover;
-  display: block;
-}
-
-.coach-detail-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.coach-detail-tag {
-  display: inline-block;
-  align-self: flex-start;
-  background: #f2e9ff;
-  color: #6f2dbd;
-  padding: 8px 14px;
-  font-size: 0.85rem;
-  font-weight: 700;
-  margin-bottom: 16px;
-}
-
-.coach-detail-content h2 {
-  font-size: 2rem;
-  line-height: 1.2;
-  color: #121a26;
-  margin: 0 0 16px;
-  font-weight: 800;
-}
-
-.coach-detail-content p {
-  color: #525d6a;
-  font-size: 1rem;
-  line-height: 1.8;
-  margin: 0 0 14px;
+    display: grid !important;
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    animation: coachFadeUp 0.45s ease;
 }
 
 @keyframes coachFadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.coach-detail-image         { width: 100%; }
+.coach-detail-image img     { width: 100%; height: 100%; min-height: 460px; object-fit: cover; display: block; }
+
+.coach-detail-content { display: flex; flex-direction: column; justify-content: center; }
+
+.coach-detail-tag {
+    display: inline-block;
+    align-self: flex-start;
+    background: #f2e9ff;
+    color: #6f2dbd;
+    padding: 8px 14px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+.coach-detail-content h2 { font-size: 2rem; line-height: 1.2; color: #121a26; margin: 0 0 16px; font-weight: 800; }
+.coach-detail-content p  { color: #525d6a; font-size: 1rem; line-height: 1.8; margin: 0 0 14px; }
+
+.coach-close-detail {
+    background: #121a26;
+    color: #ffffff;
+    border: none;
+    padding: 10px 16px;
+    font-size: 0.88rem;
+    font-weight: 700;
+    cursor: pointer;
+    margin-bottom: 18px;
+    width: fit-content;
+}
+.coach-close-detail:hover { background: #000000; }
+
+
+/* =============================================================================
+   17. CONTACT PAGE
+============================================================================= */
+.contact-page {
+    font-family: 'Poppins', sans-serif;
+    color: #0A1A2F;
+    background: #FFFFFF;
+}
+
+.contact-hero {
+    background: #0A1A2F;
+    color: #FFFFFF;
+    padding: 80px 0;
+    text-align: center;
+}
+
+.contact-hero h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #f7c948;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.contact-hero p { font-size: 1.2rem; opacity: 0.9; }
+
+.contact-details { padding: 60px 0; background: #F5F5F5; }
+
+.contact-details .container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.contact-info,
+.contact-hours {
+    flex: 1 1 300px;
+    background: #FFFFFF;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+
+.contact-info h2,
+.contact-hours h2 { font-size: 1.8rem; margin-bottom: 20px; color: #1B2A41; }
+
+.contact-info p,
+.contact-hours p,
+.contact-hours li { font-size: 1rem; margin-bottom: 10px; }
+
+.contact-info a            { color: #1B2A41; font-weight: 600; text-decoration: none; }
+.contact-info a:hover      { color: #F9D342; }
+.contact-hours ul          { list-style: none; padding: 0; }
+.contact-hours li strong   { color: #1B2A41; }
+
+.contact-form-section      { padding: 60px 0; }
+.contact-form-section h2   { text-align: center; font-size: 2rem; margin-bottom: 30px; color: #1B2A41; }
+
+.contact-form-section form {
+    max-width: 700px;
+    margin: 0 auto;
+    background: #FFFFFF;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+
+.form-group            { margin-bottom: 20px; }
+.form-group label      { display: block; font-weight: 600; margin-bottom: 8px; color: #0A1A2F; }
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #E0E0E0;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus { border-color: #F9D342; outline: none; }
+
+button[type="submit"] {
+    background: #F9D342;
+    color: #0A1A2F;
+    padding: 14px 28px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+    transition: background 0.2s ease;
+}
+button[type="submit"]:hover { background: #e6c030; }
+
+.contact-extra { padding: 60px 0; background: #F5F5F5; }
+.contact-extra h2 { text-align: center; font-size: 2rem; margin-bottom: 25px; color: #1B2A41; }
+
+.contact-extra ul {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 0;
+    list-style: none;
+}
+
+.contact-extra li { margin-bottom: 12px; text-align: center; }
+.contact-extra a  { color: #1B2A41; font-weight: 600; text-decoration: none; }
+.contact-extra a:hover { color: #F9D342; }
+
+/* Contact Form 7 */
+.wpcf7 form {
+    max-width: 700px;
+    margin: 0 auto;
+    background: #FFFFFF;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    font-family: 'Poppins', sans-serif;
+}
+
+.wpcf7 form label {
+    display: block;
+    font-weight: 600;
+    color: #0A1A2F;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.wpcf7 input[type="text"],
+.wpcf7 input[type="email"],
+.wpcf7 input[type="tel"],
+.wpcf7 textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #E0E0E0;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 20px;
+    transition: border-color 0.2s ease;
+}
+
+.wpcf7 input:focus,
+.wpcf7 textarea:focus { border-color: #F9D342; outline: none; }
+
+.wpcf7 input[type="submit"] {
+    background: #F9D342;
+    color: #0A1A2F;
+    padding: 14px 28px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+    transition: background 0.2s ease;
+}
+.wpcf7 input[type="submit"]:hover { background: #e6c030; }
+
+.wpcf7-not-valid-tip {
+    color: #D9534F;
+    font-size: 0.9rem;
+    margin-top: -15px;
+    margin-bottom: 10px;
+}
+
+.wpcf7-response-output { border-radius: 6px; padding: 12px 15px; margin-top: 20px; font-weight: 600; }
+.wpcf7-mail-sent-ok    { border: 2px solid #28a745; color: #28a745; }
+.wpcf7-validation-errors,
+.wpcf7-mail-sent-ng    { border: 2px solid #D9534F; color: #D9534F; }
+
+
+/* =============================================================================
+   18. RESPONSIVE OVERRIDES
+============================================================================= */
+
+/* — 1100px — */
+@media (max-width: 1100px) {
+    .racquet-grid,
+    .accessory-grid,
+    .brand-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* — 992px — */
+@media (max-width: 992px) {
+    .social-hero__inner,
+    .social-fixtures-grid { grid-template-columns: 1fr; }
+
+    .social-hero__highlights,
+    .benefits-grid         { grid-template-columns: repeat(2, 1fr); }
+
+    .coaches-hero          { min-height: auto; }
+    .hero-info-cards       { flex-direction: column; }
+
+    .coach-info-section    { grid-template-columns: repeat(2, 1fr); }
+    .coaches-page .coaches-grid { grid-template-columns: repeat(2, 1fr); }
+
+    .coach-detail-panel    { grid-template-columns: 1fr; }
+    .coach-detail-image img{ min-height: 380px; }
+
+    .classes-info-wrap     { grid-template-columns: 1fr; }
+    .classes-info-overview { margin-top: -30px; }
+    .classes-info-card p   { min-height: auto; }
+    .classes-detail-panel  { padding: 28px 22px; }
+    .classes-go-top        { position: static; margin-bottom: 18px; }
+}
+
+/* — 768px — */
+@media (max-width: 768px) {
+    .program-grid          { grid-template-columns: 1fr; gap: 2rem; }
+    .program-grid.reverse  { direction: ltr; }
+
+    .social-section        { padding: 4rem 0; }
+    .social-hero           { padding: 4rem 0; }
+    .social-hero__content h1{ font-size: 2.4rem; }
+    .social-hero__actions  { flex-direction: column; align-items: flex-start; }
+    .social-hero__highlights,
+    .benefits-grid,
+    .membership-grid       { grid-template-columns: 1fr; }
+
+    .fixtures-card         { grid-template-columns: 1fr; padding: 1.5rem; gap: 1.5rem; }
+    .fixtures-image-placeholder { min-height: 220px; }
+
+    .venue-cards-grid      { grid-template-columns: 1fr; }
+    .why-grid              { grid-template-columns: 1fr 1fr; }
+
+    .pro-shop-hero         { padding: 4.5rem 0 4rem; }
+    .pro-shop-hero__content h1 { font-size: 2.4rem; }
+    .pro-shop-hero__actions { flex-direction: column; align-items: center; }
+    .brand-grid,
+    .racquet-grid,
+    .accessory-grid        { grid-template-columns: 1fr; }
+    .pro-shop-section      { padding: 4rem 0; }
+
+    .footer-inner          { grid-template-columns: 1fr; }
+    .hero-title            { font-size: 2rem; }
+
+    .class-item            { grid-template-columns: 1fr; gap: 30px; text-align: left; }
+    .class-text h2         { font-size: 30px; }
+    .classes-hero-content h1{ font-size: 42px; }
+    .classes-cta-content h2 { font-size: 32px; }
+    .class-image-card      { min-height: 220px; }
+
+    .coaches-page          { padding: 55px 0; }
+    .coaches-page .container{ padding: 0 16px; }
+    .coaches-header        { text-align: center; margin-bottom: 28px; }
+    .coaches-header h1     { font-size: 2rem; }
+    .coaches-header p      { font-size: 0.98rem; }
+    .coach-info-section,
+    .coaches-page .coaches-grid { grid-template-columns: 1fr; }
+    .coach-detail-wrapper  { margin-top: 36px; }
+    .coach-detail-panel    { padding: 18px; gap: 20px; }
+    .coach-detail-image img{ min-height: 280px; }
+    .coach-detail-content h2{ font-size: 1.55rem; }
+    .coach-detail-content p { font-size: 0.96rem; }
+
+    .contact-details .container { flex-direction: column; }
+    .contact-hero h1       { font-size: 2.4rem; }
+
+    .session-item          { flex-direction: column; align-items: flex-start; }
+    .session-item__day     { min-width: auto; }
+}
+
+/* — 560px — */
+@media (max-width: 560px) {
+    .membership-grid       { grid-template-columns: 1fr; }
+    .court-hire-grid       { grid-template-columns: 1fr; }
+    .section-header h2     { font-size: 1.8rem; }
+    .fixtures-info h3      { font-size: 1.3rem; }
+}
+
+/* — 575px — */
+@media (max-width: 575px) {
+    .coaches-hero-content h1 { font-size: 2.2rem; }
+    .coaches-hero-content p  { font-size: 1rem; }
+    .hero-info-card          { padding: 20px 16px; }
+}
+
+/* — 480px — */
+@media (max-width: 480px) {
+    .why-grid              { grid-template-columns: 1fr; }
+    .membership-grid       { grid-template-columns: 1fr; }
+}
+/* =========================
+   BOOK ONLINE PAGE
+========================= */
+.book-online-page {
+  padding: 70px 0 90px;
+  background: #f5f6f8;
+}
+
+.book-online-header {
+  margin-bottom: 28px;
+}
+
+.book-online-header h1 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #121a26;
+  margin-bottom: 8px;
+}
+
+.book-online-header p {
+  color: #5a6472;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.booking-programs {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 boxes in one row */
+  gap: 20px;
+  max-width: 1000px;  /* keeps them centered nicely */
+}
+
+.program-pill {
+  border: 1px solid #d9dde4;
+  background: #fff;
+  border-radius: 18px;
+  padding: 20px 16px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+}
+
+.program-pill:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+}
+
+.program-pill.active {
+  border-color: #f1c644;
+  background: #fffbea;
+  box-shadow: 0 12px 24px rgba(241, 198, 68, 0.15);
+}
+
+.program-pill__icon {
+  display: block;
+  font-size: 1.4rem;
+  margin-bottom: 8px;
+}
+
+.program-pill__title {
+  display: block;
+  font-weight: 800;
+  color: #1a1a2e;
+  margin-bottom: 4px;
+}
+
+.program-pill__meta {
+  display: block;
+  color: #666;
+  font-size: 0.92rem;
+}
+
+.booking-layout {
+  display: grid;
+  grid-template-columns: 1.15fr 0.95fr;
+  gap: 24px;
+  align-items: start;
+}
+
+.booking-calendar-card,
+.booking-session-card,
+.booking-form-wrap {
+  background: #fff;
+  border: 1px solid #e7e9ee;
+  border-radius: 24px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05);
+}
+
+.booking-calendar-card {
+  padding: 24px;
+}
+
+.booking-session-card {
+  padding: 24px;
+}
+
+.booking-session-card h2 {
+  font-size: 1.5rem;
+  margin-bottom: 18px;
+  color: #121a26;
+}
+
+.calendar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 22px;
+}
+
+.calendar-header h2 {
+  font-size: 1.8rem;
+  color: #1a1a2e;
+  font-weight: 800;
+}
+
+.calendar-nav {
+  width: 38px;
+  height: 38px;
+  border: 1px solid #d4d8df;
+  border-radius: 10px;
+  background: #fff;
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.calendar-nav:hover {
+  background: #f7f8fb;
+}
+
+.calendar-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.calendar-weekdays span {
+  text-align: center;
+  color: #7a808b;
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+}
+
+.calendar-day {
+  min-height: 48px;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  background: #f2f3f6;
+  color: #111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  position: relative;
+  cursor: default;
+}
+
+.calendar-day.is-empty {
+  background: transparent;
+}
+
+.calendar-day.is-disabled {
+  color: #b4b7bd;
+  background: #f3f3f3;
+}
+
+.calendar-day.is-available {
+  background: #e8f6ec;
+  color: #1d5e33;
+  cursor: pointer;
+}
+
+.calendar-day.is-available::after {
+  content: "";
+  position: absolute;
+  bottom: 6px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #22c55e;
+}
+
+.calendar-day.is-selected {
+  background: #f1c644;
+  color: #1a1a2e;
+  border-color: #e2b72b;
+}
+
+.calendar-day.is-selected::after {
+  background: #1a1a2e;
+}
+
+.calendar-legend {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-top: 18px;
+  font-size: 0.92rem;
+  color: #555;
+}
+
+.legend-dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 6px;
+}
+
+.legend-dot.available {
+  background: #22c55e;
+}
+
+.legend-dot.selected {
+  background: #f1c644;
+}
+
+.legend-dot.unavailable {
+  background: #d1d5db;
+}
+
+.session-selected-day {
+  background: #f3f0ea;
+  border-radius: 16px;
+  padding: 16px;
+  margin-bottom: 18px;
+}
+
+.session-selected-day strong {
+  display: block;
+  color: #1a1a2e;
+  font-size: 1.2rem;
+  margin-bottom: 4px;
+}
+
+.session-selected-day span {
+  color: #555;
+  display: block;
+}
+
+.session-slots {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.session-placeholder {
+  border: 1px dashed #d6dae2;
+  border-radius: 16px;
+  padding: 18px;
+  color: #737884;
+  background: #fafbfc;
+}
+
+.session-slot {
+  border: 1px solid #d8dde5;
+  border-radius: 16px;
+  padding: 16px;
+  background: #fff;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.session-slot:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.06);
+}
+
+.session-slot.is-selected {
+  border-color: #f1c644;
+  background: #fffbea;
+}
+
+.session-slot__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.session-slot__time {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #1a1a2e;
+}
+
+.session-slot__spots {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #16a34a;
+}
+
+.session-slot__meta {
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.booking-summary-bar {
+  position: sticky;
+  bottom: 18px;
+  margin-top: 28px;
+  background: #fff6d9;
+  border: 1px solid #f1c644;
+  border-radius: 18px;
+  padding: 16px 18px;
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  box-shadow: 0 12px 25px rgba(241, 198, 68, 0.18);
+  z-index: 20;
+}
+
+.booking-summary-bar.is-visible {
+  display: flex;
+  animation: bookingSlideUp 0.28s ease;
+}
+
+.booking-summary-text strong {
+  display: block;
+  color: #1a1a2e;
+  margin-bottom: 4px;
+}
+
+.booking-summary-text span {
+  color: #555;
+}
+
+.booking-summary-btn {
+  border: none;
+  background: #1a1a2e;
+  color: #fff;
+  font-weight: 800;
+  padding: 14px 20px;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.booking-form-wrap {
+  margin-top: 26px;
+  padding: 28px;
+}
+
+.booking-form-intro h2 {
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+  color: #121a26;
+}
+
+.booking-form-intro p {
+  color: #5a6472;
+  margin-bottom: 18px;
+}
+
+.booking-selection-note {
+  background: #fffbea;
+  border: 1px solid #f1c644;
+  border-radius: 16px;
+  padding: 14px 16px;
+  color: #1a1a2e;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.booking-form-shortcode {
+  margin-top: 8px;
+}
+
+@keyframes bookingSlideUp {
   from {
     opacity: 0;
-    transform: translateY(24px);
+    transform: translateY(18px);
   }
   to {
     opacity: 1;
@@ -2623,205 +3004,303 @@ button[type="submit"]:hover {
   }
 }
 
-/* =========================
-   TABLET
-========================= */
-
 @media (max-width: 1100px) {
-  .coaches-grid {
+  .booking-programs {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .coach-card:nth-child(4),
-  .coach-card:nth-child(5) {
-    grid-column: auto;
+  .booking-layout {
+    grid-template-columns: 1fr;
   }
+}
 
-  .coach-detail-panel {
+@media (max-width: 700px) {
+  .booking-programs {
     grid-template-columns: 1fr;
   }
 
-  .coach-detail-image img {
-    min-height: 380px;
+  .calendar-header h2 {
+    font-size: 1.4rem;
   }
+
+  .booking-summary-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+/* =========================
+   BOOK ONLINE WPFORMS FIX
+========================= */
+.book-online-page .wpforms-container {
+  margin-top: 0;
+}
+
+.book-online-page .wpforms-form {
+  max-width: 100%;
+}
+
+.book-online-page .wpforms-field {
+  margin-bottom: 18px !important;
+}
+
+.book-online-page .wpforms-field-label {
+  font-size: 0.95rem !important;
+  font-weight: 700 !important;
+  color: #121a26 !important;
+  margin-bottom: 8px !important;
+}
+
+.book-online-page .wpforms-field input,
+.book-online-page .wpforms-field textarea,
+.book-online-page .wpforms-field select {
+  border: 1px solid #d9dde4 !important;
+  border-radius: 12px !important;
+  padding: 12px 14px !important;
+  font-size: 0.96rem !important;
+  background: #fff !important;
+}
+
+.book-online-page .wpforms-field input:focus,
+.book-online-page .wpforms-field textarea:focus,
+.book-online-page .wpforms-field select:focus {
+  border-color: #f1c644 !important;
+  box-shadow: 0 0 0 3px rgba(241, 198, 68, 0.18) !important;
+}
+
+.book-online-page .wpforms-submit {
+  background: #1a1a2e !important;
+  color: #fff !important;
+  border: none !important;
+  border-radius: 12px !important;
+  padding: 14px 22px !important;
+  font-weight: 800 !important;
+  transition: all 0.25s ease !important;
+}
+
+.book-online-page .wpforms-submit:hover {
+  background: #0f1220 !important;
+  transform: translateY(-2px);
 }
 
 /* =========================
-   MOBILE
+   CALENDAR WEEKDAY FIX
 ========================= */
-
-@media (max-width: 767px) {
-  .coaches-page {
-    padding: 55px 0;
-  }
-
-  .coaches-page .container {
-    padding: 0 16px;
-  }
-
-  .coaches-header {
-    text-align: center;
-    margin-bottom: 28px;
-  }
-
-  .coaches-header h1 {
-    font-size: 2rem;
-  }
-
-  .coaches-header p {
-    font-size: 0.98rem;
-  }
-
-  .coaches-grid {
-    grid-template-columns: 1fr;
-    gap: 18px;
-  }
-
-  .coach-info-box {
-    min-height: auto;
-    padding: 16px 12px 18px;
-  }
-
-  .coach-mini-text {
-    font-size: 0.9rem;
-  }
-
-  .coach-see-more {
-    padding: 10px 16px;
-    font-size: 0.88rem;
-  }
-
-  .coach-detail-wrapper {
-    margin-top: 36px;
-  }
-
-  .coach-detail-panel {
-    padding: 18px;
-    gap: 20px;
-  }
-
-  .coach-detail-image img {
-    min-height: 280px;
-  }
-
-  .coach-detail-content h2 {
-    font-size: 1.55rem;
-  }
-
-  .coach-detail-content p {
-    font-size: 0.96rem;
-  }
-}
-.coach-close-detail {
-  background: #121a26;
-  color: #ffffff;
-  border: none;
-  padding: 10px 16px;
-  font-size: 0.88rem;
-  font-weight: 700;
-  cursor: pointer;
-  margin-bottom: 18px;
-  width: fit-content;
+.calendar-weekdays {
+  display: grid !important;
+  grid-template-columns: repeat(7, 1fr) !important;
+  gap: 10px !important;
+  margin-bottom: 14px !important;
 }
 
-.coach-close-detail:hover {
-  background: #000000;
+.calendar-weekdays span {
+  display: block !important;
+  text-align: center !important;
+  font-size: 0.88rem !important;
+  font-weight: 700 !important;
+  color: #7a808b !important;
+}
+
+.calendar-grid {
+  display: grid !important;
+  grid-template-columns: repeat(7, 1fr) !important;
+  gap: 10px !important;
+}
+/* WPForms Success Message */
+.wpforms-confirmation-container-full,
+.wpforms-confirmation-container {
+  background: #eaf8ee !important;
+  border: 2px solid #22c55e !important;
+  color: #166534 !important;
+  padding: 20px !important;
+  border-radius: 12px !important;
+  font-weight: 700 !important;
+  margin-bottom: 25px !important;
+  text-align: center;
 }
 /* =========================
-   INFO CARDS (TOP & BOTTOM)
+   HOME PHOTO SLIDESHOW
 ========================= */
-
-.coach-info-section {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 22px;
-  margin-bottom: 40px;
+.home-gallery-slider {
+  padding: 70px 0;
+  background: #f7f8fb;
 }
 
-.info-card {
-  background: #ffffff;
-  padding: 26px 22px;
-  border: 1px solid #e5e7eb;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-  transition: all 0.3s ease;
+.gallery-slider-header {
+  text-align: center;
+  margin-bottom: 24px;
 }
 
-.info-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 16px 35px rgba(0,0,0,0.1);
-}
-
-.info-card h3 {
-  font-size: 1.2rem;
+.gallery-slider-header h2 {
+  font-size: 2rem;
   font-weight: 800;
-  margin-bottom: 10px;
   color: #121a26;
+  margin-bottom: 8px;
 }
 
-.info-card p {
-  font-size: 0.95rem;
+.gallery-slider-header p {
   color: #5a6472;
-  line-height: 1.6;
+  font-size: 1rem;
 }
 
-.info-card.highlight {
-  background: #6f2dbd;
-  color: #ffffff;
+.gallery-slider {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
 }
 
-.info-card.highlight h3,
-.info-card.highlight p {
-  color: #ffffff;
+.gallery-slider-track {
+  position: relative;
+  width: 100%;
+  min-height: 420px;
+  background: #e9edf3;
 }
 
-.info-btn {
-  display: inline-block;
-  margin-top: 12px;
-  padding: 10px 18px;
-  background: #ffffff;
-  color: #6f2dbd;
-  font-weight: 700;
-  text-decoration: none;
-  font-size: 0.9rem;
+.gallery-slide {
+  display: none;
+  width: 100%;
+  height: 100%;
 }
 
-.info-btn:hover {
-  background: #f3f3f3;
+.gallery-slide.active {
+  display: block;
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
-
-@media (max-width: 1100px) {
-  .coach-info-section {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.gallery-slide img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  display: block;
 }
 
-@media (max-width: 767px) {
-  .coach-info-section {
-    grid-template-columns: 1fr;
-  }
+.gallery-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+  width: 46px;
+  height: 46px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(18, 26, 38, 0.72);
+  color: #fff;
+  font-size: 1.8rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
 }
-/* =========================
-   CENTER MESSAGE CARD
-========================= */
 
-.coach-message-card {
-  background: linear-gradient(135deg, #6f2dbd, #9b5de5);
-  border-radius: 30px;
-  padding: 30px 25px;
+.gallery-nav:hover {
+  background: rgba(18, 26, 38, 0.92);
+}
+
+.gallery-prev {
+  left: 14px;
+}
+
+.gallery-next {
+  right: 14px;
+}
+
+.gallery-dots {
   display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.gallery-dot {
+  width: 12px;
+  height: 12px;
+  border: none;
+  border-radius: 50%;
+  background: #c8ced8;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.gallery-dot.active {
+  background: #f1c644;
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .gallery-slider-track {
+    min-height: 260px;
+  }
+
+  .gallery-slide img {
+    height: 260px;
+  }
+
+  .gallery-nav {
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+  }
+}
+/* =========================
+   SOCIAL TENNIS BUTTON FIX
+========================= */
+.social-tennis-page .btn-primary,
+.page-social .btn-primary,
+.social-tennis-page .btn-outline,
+.page-social .btn-outline {
+  display: inline-flex;
   align-items: center;
   justify-content: center;
+  width: auto;
+  min-width: 0;
+  padding: 14px 24px;
+  border-radius: 999px;
+  font-weight: 700;
   text-align: center;
-  color: #ffffff;
-  box-shadow: 0 15px 40px rgba(111, 45, 189, 0.25);
-  position: relative;
-  overflow: hidden;
+  line-height: 1.2;
+  white-space: nowrap;
 }
 
+.social-tennis-page .btn-primary,
+.page-social .btn-primary {
+  background: #f7c948;
+  color: #1a1a2e !important;
+  border: none;
+}
+
+.social-tennis-page .btn-primary:hover,
+.page-social .btn-primary:hover {
+  background: #e6b800;
+  color: #1a1a2e !important;
+}
+
+.social-tennis-page .btn-outline,
+.page-social .btn-outline {
+  background: #ffffff;
+  color: #1a1a2e !important;
+  border: 1px solid #d9dde4;
+}
+
+.social-tennis-page .btn-outline:hover,
+.page-social .btn-outline:hover {
+  border-color: #f7c948;
+  color: #1a1a2e !important;
+}
+
+.social-tennis-page .hire-card .btn-primary,
+.page-social .hire-card .btn-primary,
+.social-tennis-page .hire-card .btn-outline,
+.page-social .hire-card .btn-outline {
+  margin-top: 12px;
+}
+
+.social-tennis-page .hire-card,
+.page-social .hire-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+<<<<<<< HEAD
 /* curved design effect */
 .coach-message-card::before {
   content: "";
@@ -3071,4 +3550,9 @@ button[type="submit"]:hover {
     margin-bottom: 18px;
   }
 >>>>>>> 6db67bab1678e7200fc9cb5f373974754609a832
+=======
+.social-tennis-page .hire-card p,
+.page-social .hire-card p {
+  flex-grow: 1;
+>>>>>>> 739221d (Initial commit: KC Tennis Blast theme files)
 }

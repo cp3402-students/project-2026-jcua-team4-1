@@ -21,7 +21,7 @@
             <h3>Court Hire</h3>
             <p>Available 24/7</p>
             <p>10 courts available</p>
-            <a href="https://play.tennis.com.au/KalyndaChaseRegionalTennisCentre" 
+            <a href="http://54.253.97.247/index.php/venue-hire-events/" 
                class="btn-primary" target="_blank">Book Now</a>
         </div>
 

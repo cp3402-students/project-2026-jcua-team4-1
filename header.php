@@ -37,9 +37,9 @@
 
         <!-- Book Now CTA -->
         <div class="header-cta">
-            <a href="https://play.tennis.com.au/KalyndaChaseRegionalTennisCentre" 
+            <a href="http://54.253.97.247/index.php/book-online/" 
                class="btn-book-now" target="_blank" rel="noopener">
-                Book Now
+                Book a Session
             </a>
         </div>
 

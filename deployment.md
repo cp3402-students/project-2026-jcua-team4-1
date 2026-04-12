@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Development and Deployment 
 The  purpose of this file is to explain  the  deployment and  development workflows that have been used to develop, test and deploy our theme  kc-blast-theme.
 
@@ -64,3 +65,6 @@ Search and install contact forms 7 for contact forms
 
 
 
+=======
+
+>>>>>>> 739221d (Initial commit: KC Tennis Blast theme files)

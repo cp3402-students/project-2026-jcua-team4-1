@@ -2,6 +2,7 @@
 /**
  * Template Name: Contact Page
  */
+<<<<<<< HEAD
 
 get_header(); ?>
 
@@ -121,6 +122,18 @@ get_header(); ?>
         </div>
     </section>
 
+=======
+get_header();
+?>
+
+<main id="primary" class="site-main contact-page">
+	<?php
+	while ( have_posts() ) :
+		the_post();
+		the_content();
+	endwhile;
+	?>
+>>>>>>> 739221d (Initial commit: KC Tennis Blast theme files)
 </main>
 
 <?php get_footer(); ?>
