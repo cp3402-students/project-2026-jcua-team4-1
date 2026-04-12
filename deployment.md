@@ -63,4 +63,12 @@ Select kc-tennis-blast-theme and activate
 Search and install contact forms 7 for contact forms 
 
 
+##  Git workflow
 
+### Branches 
+
+**main** : Production-ready code 
+**Staging**: Integration branch for changes and features
+
+### Development workflow
+### 1. C

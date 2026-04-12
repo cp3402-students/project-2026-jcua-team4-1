@@ -6,47 +6,32 @@ on:
       - main
 
 jobs:
-  deploy-production:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+      - name: Checkout Repo
+        uses: actions/checkout@v4
 
-      # Package ONLY the theme files (your repo root IS the theme)
-      - name: Package theme
+      - name: Setup SSH
         run: |
-          mkdir kc-blast-theme
-          shopt -s extglob
-          cp -r !(kc-blast-theme) kc-blast-theme
-          tar -czf theme.tar.gz kc-blast-theme
+          mkdir -p ~/.ssh
+          echo "${{ secrets.PROD_SSH_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -H ${{ secrets.PROD_HOST }} >> ~/.ssh/known_hosts
 
-      - name: Upload theme to Lightsail
-        uses: appleboy/scp-action@v0.1.7
-        with:
-          host: ${{ secrets.PROD_HOST }}
-          username: ${{ secrets.PROD_USER }}
-          key: ${{ secrets.PROD_SSH_KEY }}
-          source: "theme.tar.gz"
-          target: "/home/deploy/"
+      - name: Deploy Theme (root → theme folder)
+        run: |
+          rsync -avz --delete \
+            --exclude=".git" \
+            --exclude=".github" \
+            ./ \
+            ${{ secrets.PROD_USER }}@${{ secrets.PROD_HOST }}:/opt/bitnami/wordpress/wp-content/themes/your-theme/
 
-      - name: Deploy theme on Lightsail
-        uses: appleboy/ssh-action@v0.1.7
-        with:
-          host: ${{ secrets.PROD_HOST }}
-          username: ${{ secrets.PROD_USER }}
-          key: ${{ secrets.PROD_SSH_KEY }}
-          script: |
-            cd /home/deploy
-            tar -xzf theme.tar.gz
-
-            # Sync theme into Bitnami WordPress directory
-            sudo rsync -avz kc-blast-theme/ \
-              /opt/bitnami/wordpress/wp-content/themes/kc-blast-theme/
-
-            # Fix permissions for Bitnami
-            sudo chown -R bitnami:daemon /opt/bitnami/wordpress/wp-content/themes/kc-blast-theme
-            sudo chmod -R 775 /opt/bitnami/wordpress/wp-content/themes/kc-blast-theme
-
-            # Cleanup
-            rm -rf kc-blast-theme theme.tar.gz
+      - name: Fix Permissions
+        run: |
+          ssh ${{ secrets.PROD_USER }}@${{ secrets.PROD_HOST }} << 'EOF'
+            sudo chown -R bitnami:daemon /opt/bitnami/wordpress/wp-content/themes/your-theme
+            sudo find /opt/bitnami/wordpress/wp-content/themes/your-theme -type d -exec chmod 775 {} \;
+            sudo find /opt/bitnami/wordpress/wp-content/themes/your-theme -type f -exec chmod 664 {} \;
+          EOF
