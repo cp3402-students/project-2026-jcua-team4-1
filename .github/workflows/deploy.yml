@@ -1,64 +1,27 @@
-name: Deploy WordPress Theme to Lightsail
+name: Deploy WordPress Theme to Lightsail (Production)
 
 on:
   push:
     branches:
       - main
-      - staging
 
 jobs:
-  deploy-staging:
-    if: github.ref == 'refs/heads/staging'
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-
-      - name: Build theme
-        run: |
-          cd wp-content/themes/your-theme
-          npm install
-          npm run build
-
-      - name: Package theme
-        run: tar -czf theme.tar.gz wp-content/themes/kc-blast-theme
-
-      - name: Upload to staging server
-        uses: appleboy/scp-action@v0.1.7
-        with:
-          host: ${{ secrets.STAGING_HOST }}
-          username: ${{ secrets.STAGING_USER }}
-          key: ${{ secrets.STAGING_SSH_KEY }}
-          source: "theme.tar.gz"
-          target: "/home/deploy/"
-
-      - name: Deploy on staging
-        uses: appleboy/ssh-action@v0.1.7
-        with:
-          host: ${{ secrets.STAGING_HOST }}
-          username: ${{ secrets.STAGING_USER }}
-          key: ${{ secrets.STAGING_SSH_KEY }}
-          script: |
-            cd /home/deploy
-            tar -xzf theme.tar.gz
-            sudo rsync -avz wp-content/themes/kc-blast-theme/ /opt/bitnami/wordpress/wp-content/themes/kc-blast-theme/
-            rm theme.tar.gz
-
   deploy-production:
-    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-      - name: Build theme
-        run: |
-          cd wp-content/themes/your-theme
-          npm install
-          npm run build
-
+      # Package ONLY the theme files (your repo root IS the theme)
       - name: Package theme
-        run: tar -czf theme.tar.gz wp-content/themes/your-theme
+        run: |
+          mkdir kc-blast-theme
+          shopt -s extglob
+          cp -r !(kc-blast-theme) kc-blast-theme
+          tar -czf theme.tar.gz kc-blast-theme
 
-      - name: Upload to production server
+      - name: Upload theme to Lightsail
         uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.PROD_HOST }}
@@ -67,7 +30,7 @@ jobs:
           source: "theme.tar.gz"
           target: "/home/deploy/"
 
-      - name: Deploy on production
+      - name: Deploy theme on Lightsail
         uses: appleboy/ssh-action@v0.1.7
         with:
           host: ${{ secrets.PROD_HOST }}
@@ -76,5 +39,14 @@ jobs:
           script: |
             cd /home/deploy
             tar -xzf theme.tar.gz
-            sudo rsync -avz wp-content/themes/kc-blast-theme /opt/bitnami/wordpress/wp-content/themes/kc-blast-theme
-            rm theme.tar.gz
+
+            # Sync theme into Bitnami WordPress directory
+            sudo rsync -avz kc-blast-theme/ \
+              /opt/bitnami/wordpress/wp-content/themes/kc-blast-theme/
+
+            # Fix permissions for Bitnami
+            sudo chown -R bitnami:daemon /opt/bitnami/wordpress/wp-content/themes/kc-blast-theme
+            sudo chmod -R 775 /opt/bitnami/wordpress/wp-content/themes/kc-blast-theme
+
+            # Cleanup
+            rm -rf kc-blast-theme theme.tar.gz
