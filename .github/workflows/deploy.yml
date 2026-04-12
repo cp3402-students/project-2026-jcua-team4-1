@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 name: Deploy WordPress Theme to Lightsail (Production)
-=======
-name: Deploy WordPress Theme to Lightsail staging
->>>>>>> e09d1d04ff91c14527c9502f6359ccdbefd0af34
 
 on:
   push:
@@ -10,45 +6,6 @@ on:
       - main
 
 jobs:
-<<<<<<< HEAD
-=======
-  deploy-staging:
-    if: github.ref == 'refs/heads/staging'
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-
-      - name: Build theme
-        run: |
-          cd wp-content/themes/kc-blast-theme
-          npm install
-          npm run build
-
-      - name: Package theme
-        run: tar -czf theme.tar.gz wp-content/themes/kc-blast-theme
-
-      - name: Upload to staging server
-        uses: appleboy/scp-action@v0.1.7
-        with:
-          host: ${{ secrets.STAGING_HOST }}
-          username: ${{ secrets.STAGING_USER }}
-          key: ${{ secrets.STAGING_SSH_KEY }}
-          source: "theme.tar.gz"
-          target: "/home/deploy/"
-
-      - name: Deploy on staging
-        uses: appleboy/ssh-action@v0.1.7
-        with:
-          host: ${{ secrets.STAGING_HOST }}
-          username: ${{ secrets.STAGING_USER }}
-          key: ${{ secrets.STAGING_SSH_KEY }}
-          script: |
-            cd /home/deploy
-            tar -xzf theme.tar.gz
-            sudo rsync -avz wp-content/themes/kc-blast-theme/ /opt/bitnami/wordpress/wp-content/themes/kc-blast-theme/
-            rm theme.tar.gz
-
->>>>>>> e09d1d04ff91c14527c9502f6359ccdbefd0af34
   deploy-production:
     runs-on: ubuntu-latest
 
