@@ -40,9 +40,11 @@ jobs:
             cd /home/deploy
             tar -xzf theme.tar.gz
 
-            # Sync theme into Bitnami WordPress directory
-            rsync -avz kc-blast-theme/ \
-              /opt/bitnami/wordpress/wp-content/themes/kc-blast-theme/
+            # Ensure destination folder exists
+            mkdir -p /opt/bitnami/wordpress/wp-content/themes/kc-blast-theme
+
+            # Copy theme files into WordPress theme directory
+            cp -r kc-blast-theme/* /opt/bitnami/wordpress/wp-content/themes/kc-blast-theme/
 
             # Fix permissions for Bitnami
             chown -R bitnami:daemon /opt/bitnami/wordpress/wp-content/themes/kc-blast-theme
