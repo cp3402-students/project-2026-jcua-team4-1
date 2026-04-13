@@ -71,4 +71,123 @@ Search and install contact forms 7 for contact forms
 **Staging**: Integration branch for changes and features
 
 ### Development workflow
-### 1. C
+1. Create a staging branch from main 
+```bash
+git checkout staging
+git pull origin staging
+```
+2. Make changes locally in XAMPP
+Test thoroughly at http://localhost/kc-tennis-blast
+
+3. Commit changes with clear messages
+```bash
+git add .
+git commit -m "Change header colour "
+```
+
+4. Push feature 
+```bash
+git push origin staging/your-feature-name
+
+```
+5. Test changes on the staging environment
+
+6. Create Pull Request on GitHub
+Describe changes
+Request reviewers
+
+7. After review and approval, merge to main
+```bash
+git checkout main
+git pull origin main
+git merge --no-ff staging
+git push origin main
+```
+
+8. Review changes on the production site
+
+
+## Github Actions CI/CD
+
+### 1. Create GitHub Secrets
+
+Navigate to: **Settings → Secrets and variables → Actions**
+
+Required secrets:
+```
+PROD_HOST         # Your Lightsail instance IP
+PROD_USER         # SSH username (usually 'ubuntu' or 'bitnami')
+PROD_SSH_KEY     # Private SSH key for authentication
+```
+
+### 2. Add SSH Key to GitHub
+
+1. Download private key from lightsail instance 
+
+2. Copy private key content to GitHub Secrets
+
+### 3. Create GitHub Actions Workflow
+
+1. In your project directory;
+    Create `.github/workflows/deploy.yml`:
+
+2. Add your deployment workflow to automate deployment of your theme files to the production server.
+
+3. Push changes to github
+
+4. Verify deployment of theme files on your wordpress production site.
+
+## Staging environment 
+
+### 1. Initialise the lightsail instance 
+
+1. Create a new lightsail instance.
+
+2. Select platform:
+    * Linux/Unix
+
+3. Select a blueprint:   
+    * Wordpress bitnami
+
+4. Choose preffered instance size 
+
+### 2. Delpoy staging  site content
+
+1. Navigate to your local wordpress site 
+2. Install All in one WP migrate as a plugin 
+3. Export and download the file.
+4. Log in into your staging  site instance 
+5. Import downloaded wordpress file 
+6. Review changes  
+7. Merge changes to the main branch 
+
+
+## Production environment.
+
+### 1. Initialise the lightsail instance 
+
+1. Create a new lightsail instance.
+
+2. Select platform:
+    * Linux/Unix
+
+3. Select a blueprint:   
+    * Wordpress bitnami
+
+4. Choose preffered instance siz
+
+### 2. Delpoy staging  site content
+
+1. Navigate to your staging wordpress site 
+2. Install All in one WP migrate as a plugin 
+3. Export and download the file.
+4. Log in into your production site instance 
+5. Import downloaded wordpress file 
+6. Review changes  
+
+
+## Project management 
+
+* Discord for team communication
+* Trelllo for task managent
+* Weekly in person meetings
