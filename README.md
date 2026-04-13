@@ -34,7 +34,7 @@ https://github.com/cp3402-students/project-2026-jcua-team4-1
 | Sushmoy  
 | Ornysha  
 | Ramiz 
-| Kenny
+| Kenneth Njeri
 
 
 
