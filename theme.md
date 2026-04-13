@@ -159,5 +159,96 @@ Go to *Pages → Book Online* in the WordPress admin and edit the content
 there. The layout is controlled by page-class-book.php and styled 
 in style.css.
 
+## 8. functions.php — What Is Registered
+
+The functions.php file sets up all theme features. Here is a summary 
+of what is registered:
+
+### Navigation Menus
+- *Primary Menu* — the main top navigation bar (Home, Classes, Social 
+  Tennis, Venue Hire & Events, Contact, Coaches, Pro Shop)
+- The "Book a Session" button in the nav is added as a custom menu item 
+  styled with the gold button class
+
+### Stylesheets and Scripts
+- style.css is enqueued as the main stylesheet
+- Custom JS files from the js/ folder are enqueued with wp_enqueue_script
+- Scripts are loaded in the footer to avoid blocking page rendering
+
+### Theme Support
+The theme declares support for:
+- post-thumbnails — featured images on posts and pages
+- title-tag — lets WordPress manage the <title> tag
+- html5 — clean HTML5 markup for forms, search, galleries
+- custom-logo — the Tennis Blast logo in the header
+
+### Widget Areas
+- *Sidebar* — registered but not actively used on the main pages
+- *Footer* — the three-column footer (Contact, Office Hours, Court Hire) 
+  is hardcoded in footer.php rather than using widgets, to keep the 
+  layout consistent
+
+---
+
+## 9. Conventions Used
+
+Follow these conventions when adding or editing code in this theme.
+
+### PHP
+- All template files use standard WordPress template tags — no raw PHP 
+  database queries in templates
+- Use get_template_part() to include reusable sections from 
+  template-parts/
+- Never hardcode URLs — always use get_template_directory_uri() for 
+  asset paths and home_url() for internal links
+- Follow WordPress PHP coding standards (see phpcs.xml.dist)
+
+### CSS
+- All styles go in style.css — do not add <style> blocks inside 
+  template files
+- Use class names that are descriptive and specific to this theme, 
+  prefixed where possible (e.g. .kc-hero, .kc-footer, .kc-nav)
+- Mobile-first approach — base styles are for mobile, use @media 
+  queries to add desktop styles
+
+### JavaScript
+- All JS goes in the js/ folder and is enqueued via functions.php
+- No inline <script> tags in template files
+- Plain vanilla JS only — no jQuery
+
+---
+
+## 10. Important Design Decisions
+
+- *Dark navy theme* — chosen to match the client's existing branding 
+  and give the site a professional, sporty feel
+- *Gold CTA buttons* — the "Book a Session" and "Book Now" buttons use 
+  gold/yellow to stand out clearly against the dark navy background and 
+  draw the user's eye to the main action
+- *Green accent colour* — used sparingly for taglines and highlights to 
+  bring in the green from the Tennis Blast logo
+- *No page builders* — the theme is built with clean PHP templates to 
+  keep it reusable, lightweight, and in line with assignment requirements
+- *Hidden booking page* — kept out of the nav to reduce menu clutter. 
+  Users are guided to it naturally through CTA buttons on the homepage 
+  and nav bar
+- *Image slider built in JS* — a lightweight custom slider was built 
+  instead of using a plugin to keep the theme self-contained and reusable
+
+---
+
+## 11. How to Reuse This Theme on Another Site
+
+This theme contains no hardcoded site-specific content in its template 
+files. To use it on a different WordPress site:
+
+1. Zip the kc-blast-theme folder
+2. In WordPress admin go to *Appearance → Themes → Add New → Upload Theme*
+3. Upload the zip file and activate the theme
+4. Set up the navigation menu under *Appearance → Menus*
+5. Create pages and assign the correct custom templates to each page
+6. Add content through the WordPress admin — no content is baked into 
+   the theme files
+
 
 
