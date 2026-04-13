@@ -45,7 +45,7 @@ tested before they go live to the public.
 
 | Environment | URL | Purpose |
 |-------------|-----|---------|
-| Local | http://localhost/wordpress | Active development using XAMPP |
+| Local | http://localhost/kc-tennis-blast/| Active development using XAMPP |
 | Staging | http://54.253.97.247/ | Testing and client review before going live |
 | Production | http://3.106.246.239/ | Live public-facing website |
 
