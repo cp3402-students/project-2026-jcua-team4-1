@@ -35,3 +35,43 @@ https://github.com/cp3402-students/project-2026-jcua-team4-1
 | Ornysha  
 | Ramiz 
 | Kenny
+
+---
+
+## Site Environments
+
+This project follows a three-environment workflow to ensure changes are 
+tested before they go live to the public.
+
+| Environment | URL | Purpose |
+|-------------|-----|---------|
+| Local | http://localhost/wordpress | Active development using XAMPP |
+| Staging | http://54.253.97.247/ | Testing and client review before going live |
+| Production | http://3.106.246.239/ | Live public-facing website |
+
+*Local* is where all development happens first. Each team member runs 
+WordPress locally using XAMPP on their own machine. This allows us to write 
+and test code safely without affecting anything public.
+
+*Staging* is a live server on AWS that mirrors production. Before any 
+change goes to the production site, it is deployed to staging first and 
+reviewed. This is where the client can preview updates.
+
+*Production* is the final live website that the public and the client can 
+see. Only approved, tested changes are deployed here.
+
+---
+
+## Technology Stack
+
+| Tool / Technology | Purpose |
+|-------------------|---------|
+| WordPress | Content Management System |
+| Custom WordPress Theme | Built from a starter theme — no page builders used |
+| XAMPP | Local development environment |
+| AWS EC2 (Staging) | Staging server hosted on Amazon Web Services |
+| AWS EC2 (Production) | Production server hosted on Amazon Web Services |
+| Git + GitHub Classroom | Version control and team collaboration |
+| Trello / GitHub Projects | Project management and task tracking |
+| Slack / Discord | Team communication |
+| PHP, HTML, CSS, JavaScript | Theme development languages |
