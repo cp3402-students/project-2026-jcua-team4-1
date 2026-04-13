@@ -49,7 +49,7 @@ always reference the CSS variables or classes defined in `style.css`.
 | Page background | Light grey `#f4f4f4` |
 ## 4. Key Files and Folder Structure
 
-```
+
 kc-blast-theme/
 │
 ├── style.css               — Main stylesheet, theme metadata lives here
