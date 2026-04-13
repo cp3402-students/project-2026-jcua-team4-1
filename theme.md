@@ -82,9 +82,13 @@ kc-blast-theme/
 ├── assets/                 — Images and other static assets
 ├── template-parts/         — Reusable template parts
 └── languages/              — Translation files
+
+
+
+
 **Font:** The theme uses the default WordPress/system font stack. No 
 external Google Fonts are loaded to keep the site fast.
---
+
 
 ## 5. Custom Page Templates
 
