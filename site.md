@@ -146,3 +146,115 @@ only accessible when someone clicks:
 
 *Do not add this page to the navigation menu.* It is intentionally 
 hidden and accessed only through the CTA buttons.
+
+## 7. WPForms — Contact Form Management
+
+The contact form on the *Contact* page is built using the *WPForms* 
+plugin. Here is how to manage it.
+
+### To view form submissions:
+1. Go to *WPForms → Entries* in the WordPress admin
+2. Select the contact form to see all submitted entries
+3. Each entry shows the name, email, and message submitted
+
+### To edit the contact form:
+1. Go to *WPForms → All Forms*
+2. Click *Edit* on the contact form
+3. You can add, remove, or rearrange fields using the drag-and-drop 
+   builder
+4. Click *Save* when done
+
+### To change where form submissions are sent:
+1. Open the form in the WPForms editor
+2. Go to *Settings → Notifications*
+3. Update the email address in the *Send To Email Address* field
+4. Click *Save*
+
+### Important:
+- Do not delete the WPForms plugin — the contact form will disappear 
+  from the Contact page if you do
+- The form is embedded in the Contact page using a WPForms shortcode. 
+  If the form disappears from the page, check that the shortcode is 
+  still present in the *Contact* page editor
+
+---
+
+## 8. All-in-One WP Migration — Backups and Restores
+
+The *All-in-One WP Migration* plugin is used to back up and restore 
+the site. Use this whenever you need to move content between environments 
+or take a backup before making major changes.
+
+### To create a backup:
+1. Go to *All-in-One WP Migration → Export*
+2. Select *Export to → File*
+3. Download the .wpress file and store it safely
+
+### To restore from a backup:
+1. Go to *All-in-One WP Migration → Import*
+2. Upload the .wpress backup file
+3. Wait for the import to complete
+4. Go to *Settings → Permalinks* and click *Save Changes* — this 
+   step is important and must not be skipped
+
+> *Warning:* Importing a backup will overwrite all current content on 
+> the site. Make sure you export a fresh backup first before importing 
+> anything.
+
+---
+
+## 9. Navigation Menu Management
+
+The site has one main navigation menu with these items:
+- Home
+- Classes
+- Social Tennis
+- Venue Hire & Events
+- Contact
+- Coaches
+- Pro Shop
+- Book a Session (styled as a gold button — this is a custom CSS class)
+
+### To add or remove a menu item:
+1. Go to *Appearance → Menus*
+2. Select the *Primary Menu*
+3. Add pages from the left panel or drag to reorder
+4. Click *Save Menu*
+
+### Important:
+- *Do not add the Book Online page to the menu.* It is intentionally 
+  hidden and accessed only through CTA buttons
+- The *"Book a Session"* button in the nav has a custom CSS class 
+  applied to it that gives it the gold button style. If you remove and 
+  re-add it, make sure to reapply the CSS class book-session-btn in 
+  the menu item's *CSS Classes* field under *Screen Options*
+
+---
+
+## 10. Adding New Images and Media
+
+- All images must be licensed for commercial use before uploading
+- Upload images through *Media → Add New* in the WordPress admin
+- For the homepage slider, keep images landscape orientation and 
+  consistent in size
+- For coach profile photos, use square or portrait images for 
+  best results
+- Do not upload very large image files — compress images before 
+  uploading to keep the site loading fast (recommended: under 500KB 
+  per image)
+
+---
+
+## 11. Footer Details
+
+The footer shows three columns of information that the client may need 
+updated from time to time:
+
+| Column | Current Content |
+|--------|----------------|
+| Contact | 0421 177 764, kalyndachasetennis@outlook.com, 47-59 Kalynda Parade TSV |
+| Office Hours | Mon–Thu 1:00pm–9:00pm, Fri 1:00pm–7:30pm, Sat 7:00am–11:00am & 3:00pm–6:30pm, Sun 3:30pm–6:30pm |
+| Court Hire | Available 24/7, 10 courts available, Book Now button |
+
+To update footer content, a developer needs to edit footer.php in 
+the theme and redeploy. This cannot be changed from the WordPress admin.
