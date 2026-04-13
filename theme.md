@@ -50,6 +50,75 @@ always reference the CSS variables or classes defined in `style.css`.
 
 **Font:** The theme uses the default WordPress/system font stack. No 
 external Google Fonts are loaded to keep the site fast.
+--
+
+## 5. Custom Page Templates
+
+Each page on the site uses a dedicated custom template. This keeps the 
+layout of each page separate and easy to edit without affecting other pages.
+
+To assign a template to a page in WordPress:
+1. Go to *Pages* in the WordPress admin
+2. Open the page you want
+3. In the right sidebar under *Page Attributes*, select the template 
+   from the *Template* dropdown
+4. Click *Update*
+
+| Template File | Page It Is Used For | Notes |
+|---------------|---------------------|-------|
+| front-page.php | Home | Hero section, image slider, intro content |
+| page-classes.php | Classes | Lists all coaching class types |
+| page-contact.php | Contact | WPForms contact form embedded here |
+| page-coaches.php | Coaches | Coach profiles and bios |
+| page-pro-shop.php | Pro Shop | Shop/product listing page |
+| page-social-tennis.php | Social Tennis | Social events info |
+| page-venue-hire-events.php | Venue Hire & Events | Venue details and event bookings |
+| page-class-book.php | Book Online | Hidden booking page — see Section 7 |
+
+---
+
+## 6. JavaScript Files
+
+Custom JS is stored in the js/ folder and enqueued through functions.php.
+Do not add <script> tags directly into template files.
+
+The JS handles:
+- *Mobile navigation toggle* — shows/hides the nav menu on small screens 
+  when the hamburger icon is tapped
+- *Image slider on the homepage* — cycles through photos with previous/next 
+  arrow buttons and dot indicators at the bottom
+- *Book a Session page interactions* — handles class type selection, 
+  calendar date highlighting (available/selected/unavailable), and shows 
+  available time slots dynamically when a date is clicked
+
+All JS is plain vanilla JavaScript — no jQuery or external libraries are used.
+
+---
+
+## 7. The Hidden Booking Page (page-class-book.php)
+
+The *Book Online* page (page-class-book.php) is a custom template that 
+is intentionally hidden from the navigation menu. It is only accessible 
+when a user clicks the *"Book a Session"* button in the navigation bar 
+or the *"Book a Court Now"* button on the homepage hero section.
+
+### What it contains:
+- Four class type selector cards: Hot Shots (Ages 3–14), Squad Training 
+  (All levels), Private Classes (1-on-1), Tournament Travel (Juniors)
+- An interactive calendar showing available, selected, and unavailable dates
+- A time slot panel that updates when a date is selected
+- A booking request form at the bottom collecting name and other details
+
+### Why it is hidden from the menu:
+The page is excluded from the primary navigation menu in WordPress by 
+simply not adding it to the menu under *Appearance → Menus*. The page 
+still exists and is publicly accessible via its URL — it is just not 
+listed in the nav.
+
+### To edit the booking page:
+Go to *Pages → Book Online* in the WordPress admin and edit the content 
+there. The layout is controlled by page-class-book.php and styled 
+in style.css.
 
 
 
