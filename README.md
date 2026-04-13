@@ -68,11 +68,11 @@ see. Only approved, tested changes are deployed here.
 | WordPress | Content Management System |
 | Custom WordPress Theme | Built from a starter theme — no page builders used |
 | XAMPP | Local development environment |
-| AWS EC2 (Staging) | Staging server hosted on Amazon Web Services |
-| AWS EC2 (Production) | Production server hosted on Amazon Web Services |
+| AWS Lightsail (Staging) | Staging server hosted on Amazon Web Services |
+| AWS Lightsail (Production) | Production server hosted on Amazon Web Services |
 | Git + GitHub Classroom | Version control and team collaboration |
 | Trello / GitHub Projects | Project management and task tracking |
-| Slack / Discord | Team communication |
+| Discord | Team communication |
 | PHP, HTML, CSS, JavaScript | Theme development languages |
 
 ## Project Management and Communication
@@ -81,8 +81,8 @@ The team used a public project management board throughout the project to
 plan, assign, and track tasks. Every team member was responsible for updating 
 the board as they worked.
 
-- *Project Board:* (paste your Trello or GitHub Projects URL here)  
-- *Communication Channel:* (paste your Slack channel or Discord invite link here)
+- *Project Board:* ([Trello](https://trello.com/b/KOMrGsvh/cp3402-group4))  
+- *Communication Channel:* ([Discord](https://discord.gg/umZm6cKS))
 
 Markers and stakeholders can view the board to see how work was planned and 
 distributed across the team.
