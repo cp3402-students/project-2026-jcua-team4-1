@@ -36,7 +36,7 @@ https://github.com/cp3402-students/project-2026-jcua-team4-1
 | Ramiz 
 | Kenny
 
----
+
 
 ## Site Environments
 
@@ -60,7 +60,6 @@ reviewed. This is where the client can preview updates.
 *Production* is the final live website that the public and the client can 
 see. Only approved, tested changes are deployed here.
 
----
 
 ## Technology Stack
 
