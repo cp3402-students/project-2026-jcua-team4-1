@@ -74,3 +74,65 @@ see. Only approved, tested changes are deployed here.
 | Trello / GitHub Projects | Project management and task tracking |
 | Slack / Discord | Team communication |
 | PHP, HTML, CSS, JavaScript | Theme development languages |
+
+## Project Management and Communication
+
+The team used a public project management board throughout the project to 
+plan, assign, and track tasks. Every team member was responsible for updating 
+the board as they worked.
+
+- *Project Board:* (paste your Trello or GitHub Projects URL here)  
+- *Communication Channel:* (paste your Slack channel or Discord invite link here)
+
+Markers and stakeholders can view the board to see how work was planned and 
+distributed across the team.
+
+---
+
+## How to Get a Copy Running Locally
+
+Follow these steps to get the project running on your own machine:
+
+1. Clone this repository:
+bash
+   git clone https://github.com/cp3402-students/project-2026-jcua-team4-1.git
+
+
+2. Install XAMPP and start Apache and MySQL.
+
+3. Download a fresh copy of WordPress from wordpress.org and place it in your 
+   XAMPP htdocs folder.
+
+4. Copy the theme folder from this repository into: wp-content/themes/
+
+5. 5. Create a local database using phpMyAdmin and complete the WordPress 
+   installation by visiting http://localhost/wordpress in your browser.
+
+6. In the WordPress admin dashboard, go to Appearance → Themes and activate 
+   the custom theme.
+
+7. Import the WordPress export file (provided in the submission) to restore 
+   all content.
+
+For full setup instructions, refer to [deployment.md](./deployment.md).
+
+---
+
+## Documentation Files
+
+| File | Description |
+|------|-------------|
+| [deployment.md](./deployment.md) | Step-by-step guide for setting up local, staging, and production environments |
+| [theme.md](./theme.md) | Guide for developers on the theme structure, files, and conventions |
+| [site.md](./site.md) | Guide for the site maintainer on how to manage content in WordPress |
+
+---
+
+## Important Notes
+
+- WordPress core files are *not* tracked in this repository. See .gitignore.
+- No passwords, API keys, or secret credentials are stored anywhere in this 
+  repository or on the project management board.
+- All images and media used on the site are licensed for commercial use.
+- The theme is built to be reusable — it contains no hard-coded content, 
+  URLs, or site-specific IDs in the template files. 
