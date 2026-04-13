@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # Development and Deployment 
 The  purpose of this file is to explain  the  deployment and  development workflows that have been used to develop, test and deploy our theme  kc-blast-theme.
 
@@ -18,7 +18,7 @@ Create project directory in XAMPP
 cd C:/xampp/htdocs
 mkdir kc-tennis-blast
 cd kc-tennis-blast
-```
+
 
 ### 2. Install core wordpress files
 Download wordpress from the official site 
@@ -28,23 +28,23 @@ Move wordpress files tp project directory
 ### 3. Configure Local Database
 Start APache and MySQL in XAMPP
 Navigate to:
-```
+
 http://localhost/phpmyadmin
-```
+
 Create a new database 
 
 ### 4. Run the wordpress installer 
 Navigate to 
-```
+
 http://localhost/kc-tennis-blast
-```
+
 Enter database details and run the installer
 Set up site title, username and password.
 Click on open site to visit the site.
 Navigate to 
-```
+
 http://localhost/kc-tennis-blast/wp-admin
-```
+
 to access the admin page 
 
 ### 4. Set up theme files  
@@ -63,8 +63,3 @@ Select kc-tennis-blast-theme and activate
 ### 5. Download required plugins 
 Search and install contact forms 7 for contact forms 
 
-
-
-=======
-
->>>>>>> 739221d (Initial commit: KC Tennis Blast theme files)
