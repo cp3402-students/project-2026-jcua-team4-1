@@ -49,7 +49,8 @@ template.
   updated. This site does not have a blog, so posts are not used.
 
 
-
+If the client wants to add news updates or announcements in the future, 
+Posts could be used for that — but for now, stick to Pages.(
 
 
 ## 4. How to Edit an Existing Page
