@@ -1,68 +1,55 @@
-# Kc-blast-theme — Developer Handover
+# Theme Documentation
 
-## Server Details
-- **Host:** AWS Lightsail, Sydney Zone A (ap-southeast-2a)
-- **IP:** 54.253.97.247
-- **OS:** Debian Linux
-- **Web Server:** Apache2
-- **SSH Access:** Via Lightsail browser-based SSH — no `.pem` key required
+This document explains the `kc-blast-theme` to a developer who is taking 
+over or continuing development. Read this before touching any theme files.
 
----
 
-## Theme Location
-```
-/var/www/html/wp-content/themes/kc-blast-theme/
-```
 
----
+## 1. Theme Overview
 
-## Key Files & Structure
-```
-kc-blast-theme/
-├── style.css          # Main stylesheet
-├── functions.php      # Theme functions
-├── header.php         # Header template
-├── footer.php         # Footer template
-├── front-page.php     # Homepage template
-├── 404.php            # Error page
-├── archive.php        # Archive page
-├── style-rtl.css      # RTL stylesheet
-└── js/                # JavaScript files
-```
+- **Theme Name:** KC Blast Theme
+- **Folder Name:** `kc-blast-theme`
+- **Built From:** Underscores (_s) starter theme
+- **WordPress Site:** Tennis Blast Kalynda Chase — a tennis coaching 
+  business based in Townsville, QLD
+- **Purpose:** Provide information about coaching classes, allow users to 
+  book sessions, and give the club an online presence
 
----
 
-## Theme Features
-- Active theme on **Tennis Blast Kalynda Chase** WordPress site
-- Custom front page template via `front-page.php`
-- WPForms plugin integrated for forms
 
----
+## 2. Theme Features
 
-## Conventions Used
-- File permissions: `775`
-- File owner: `www-data:www-data` (required for Apache)
-- WordPress installed at `/var/www/html/` (not default Bitnami path)
+- Full-width hero section on the homepage with overlay text and two 
+  call-to-action buttons
+- Sticky navigation bar with logo, main menu links, and a highlighted 
+  "Book a Session" button
+- Image slider on the homepage (built with plain JS — no plugin)
+- Seven custom page templates for each section of the site
+- One hidden booking page (`page-class-book.php`) with an interactive 
+  calendar and session selector
+- Dark navy footer with three columns: Contact, Office Hours, Court Hire
+- Responsive design — works on mobile, tablet, and desktop
+- WPForms plugin used for the contact form on the Contact page
 
----
 
-## Important Design Decisions
-- Upload limit increased to `512M` via `wp-config.php` and `php.ini`
-- Config file located at `/var/www/wp-config.php`
-- 1GB swap file added at `/swapfile` to prevent out-of-memory crashes
 
----
+## 3. Colour Scheme and Fonts
 
-## Non-Obvious Things ⚠️
-- Server has **limited RAM** — always monitor memory usage
-- There are **3 Lightsail instances** on this account — always verify the correct server before running commands:
+These colours are defined in `style.css` and used consistently across 
+all templates. Do not hardcode these hex values in individual templates — 
+always reference the CSS variables or classes defined in `style.css`.
 
-| Instance | IP |
-|---|---|
-| Tennis | 54.253.97.247 |
-| Deploymentsite | 3.25.197.137 |
-| Deployement | 3.106.246.239 |
+| Element | Colour |
+|---------|--------|
+| Background (dark sections, nav, footer) | Dark navy `#12172b` |
+| Primary button (Book a Session, Book Now) | Gold/yellow `#f5c518` |
+| Accent text (taglines, highlights) | Green `#4caf50` |
+| Body text on dark backgrounds | White `#ffffff` |
+| Body text on light backgrounds | Dark grey |
+| Page background | Light grey `#f4f4f4` |
 
-- If site shows a **white screen**, check Apache: `sudo service apache2 status`
-- If **OOM errors** appear in logs, restart Apache: `sudo service apache2 restart`
-- Check logs at: `sudo tail -50 /var/log/apache2/error.log`
+**Font:** The theme uses the default WordPress/system font stack. No 
+external Google Fonts are loaded to keep the site fast.
+
+
+
