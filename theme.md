@@ -47,7 +47,41 @@ always reference the CSS variables or classes defined in `style.css`.
 | Body text on dark backgrounds | White `#ffffff` |
 | Body text on light backgrounds | Dark grey |
 | Page background | Light grey `#f4f4f4` |
+## 4. Key Files and Folder Structure
 
+```
+kc-blast-theme/
+│
+├── style.css               — Main stylesheet, theme metadata lives here
+├── style-rtl.css           — Right-to-left language support (from _s)
+├── index.php               — Fallback template (required by WordPress)
+├── front-page.php          — Homepage template
+├── header.php              — Site header, nav bar, logo
+├── footer.php              — Site footer, 3-column layout
+├── page.php                — Default page template
+├── single.php              — Single blog post template
+├── archive.php             — Archive/blog listing template
+├── search.php              — Search results template
+├── sidebar.php             — Sidebar (registered but not used on most pages)
+├── comments.php            — Comments template (from _s)
+├── 404.php                 — Custom 404 error page
+├── functions.php           — Theme setup, menus, scripts, styles
+├── composer.json           — Dependency config (from _s)
+├── phpcs.xml.dist          — PHP coding standards config
+│
+├── page-classes.php        — Custom template: Classes page
+├── page-contact.php        — Custom template: Contact page
+├── page-coaches.php        — Custom template: Coaches page
+├── page-pro-shop.php       — Custom template: Pro Shop page
+├── page-social-tennis.php  — Custom template: Social Tennis page
+├── page-venue-hire-events.php — Custom template: Venue Hire & Events page
+├── page-class-book.php     — Custom template: Book Online (hidden page)
+│
+├── inc/                    — Additional PHP includes (from _s structure)
+├── js/                     — Custom JavaScript files
+├── assets/                 — Images and other static assets
+├── template-parts/         — Reusable template parts
+└── languages/              — Translation files
 **Font:** The theme uses the default WordPress/system font stack. No 
 external Google Fonts are loaded to keep the site fast.
 --
@@ -75,7 +109,7 @@ To assign a template to a page in WordPress:
 | page-venue-hire-events.php | Venue Hire & Events | Venue details and event bookings |
 | page-class-book.php | Book Online | Hidden booking page — see Section 7 |
 
----
+
 
 ## 6. JavaScript Files
 
@@ -93,7 +127,7 @@ The JS handles:
 
 All JS is plain vanilla JavaScript — no jQuery or external libraries are used.
 
----
+
 
 ## 7. The Hidden Booking Page (page-class-book.php)
 
