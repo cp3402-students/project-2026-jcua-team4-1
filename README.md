@@ -87,7 +87,7 @@ the board as they worked.
 Markers and stakeholders can view the board to see how work was planned and 
 distributed across the team.
 
----
+
 
 ## How to Get a Copy Running Locally
 
@@ -116,7 +116,7 @@ bash
 
 For full setup instructions, refer to [deployment.md](./deployment.md).
 
----
+
 
 ## Documentation Files
 
@@ -126,7 +126,7 @@ For full setup instructions, refer to [deployment.md](./deployment.md).
 | [theme.md](./theme.md) | Guide for developers on the theme structure, files, and conventions |
 | [site.md](./site.md) | Guide for the site maintainer on how to manage content in WordPress |
 
----
+
 
 ## Important Notes
 
