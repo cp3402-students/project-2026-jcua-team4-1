@@ -13,7 +13,7 @@ based at 47-59 Kalynda Parade, Townsville, QLD. The site gives visitors
 information about coaching classes, social tennis, venue hire, the pro 
 shop, and allows them to book a session online.
 
-**Production site:** http://3.106.246.239/  
+**Production site:** http://3.106.35.192/  
 **Staging site:** http://54.253.97.247/  
 **WordPress admin:** http://54.253.97.247/wp-admin
 
