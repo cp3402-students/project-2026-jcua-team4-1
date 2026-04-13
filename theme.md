@@ -50,6 +50,7 @@ always reference the CSS variables or classes defined in `style.css`.
 ## 4. Key Files and Folder Structure
 
 
+```
 kc-blast-theme/
 │
 ├── style.css               — Main stylesheet, theme metadata lives here
@@ -82,7 +83,7 @@ kc-blast-theme/
 ├── assets/                 — Images and other static assets
 ├── template-parts/         — Reusable template parts
 └── languages/              — Translation files
-
+```
 
 
 
